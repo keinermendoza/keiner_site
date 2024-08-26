@@ -1,0 +1,18 @@
+{% load allauth %}
+
+<article class="flex flex-col gap-2 py-2 px-4 rounded-md bg-slate-100 border-3 border-blue-300 shadow-md">
+    <header class="items-center text-xl flex">
+        <h2 class="grow italic">{{attrs.title}}</h2>
+
+        {% if slots.dropdown %}{% slot dropdown %}{% endslot %}{% endif %}
+
+    </header>
+    <main class="grow bg-slate-300 p-2 rounded-md">
+        <p>{{attrs.body}}</p>
+    </main>
+    {% if slots.footer %}
+        {% slot footer %}
+        {% endslot %}
+    {% endif %}
+
+</article>

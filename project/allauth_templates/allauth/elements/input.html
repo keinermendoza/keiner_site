@@ -1,0 +1,65 @@
+{% load allauth %}
+<div>
+    
+    {% if attrs.field.field.label %}
+    <label for="{{ attrs.field.id_for_label }}" class="block text-sm mb-2 dark:text-white">
+        {{attrs.field.field.label}}
+    </label>
+    {% endif %}
+
+    <div class="relative">
+    {% if attrs.field.widget_type == "textarea" %}
+        <textarea {% if attrs.field.field.widget.is_required %}required{% endif %}
+                  {% if attrs.fieldfield.widget.attrs.rows %}rows="{{ attrs.fieldfield.widget.attrs.rows }}"{% endif %}
+                  {% if attrs.fieldfield.widget.attrs.cols %}cols="{{ attrs.fieldfield.widget.attrs.cols }}"{% endif %}
+                  {% if attrs.field.field.disabled %}disabled{% endif %}
+                  {% if attrs.field.field.widget.attrs.readonly %}readonly{% endif %}
+                  {% if attrs.field.field.widget.attrs.checked %}checked{% endif %}
+                  {% if attrs.field.name %}name="{{ attrs.field.name }}"{% endif %}
+                  {% if attrs.field.id_for_label %}id="{{ attrs.field.id_for_label }}"{% endif %}
+                  class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 
+                    focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none 
+                    dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+                  {% if attrs.field.field.widget.attrs.placeholder %}placeholder="{{ attrs.field.field.widget.attrs.placeholder }}"{% endif %}>{% slot value %}{% endslot %}</textarea>
+    {% else %}
+        <input {% if attrs.field.field.widget.is_required %}required{% endif %}
+               {% if attrs.field.field.disabled %}disabled{% endif %}
+               {% if attrs.field.field.widget.attrs.readonly %}readonly{% endif %}
+               {% if attrs.field.field.widget.attrs.checked %}checked{% endif %}
+               {% if attrs.field.name %}name="{{ attrs.field.name }}"{% endif %}
+               {% if attrs.field.id_for_label %}id="{{ attrs.field.id_for_label }}"{% endif %}
+               {% if attrs.field.field.widget.attrs.placeholder %}placeholder="{{ attrs.field.field.widget.attrs.placeholder }}"{% endif %}
+               {% if attrs.field.field.widget.attrs.autocomplete %}autocomplete="{{ attrs.field.field.widget.attrs.autocomplete }}"{% endif %}
+               value='{{ attrs.field.value|default_if_none:"" }}'
+               type="{{ attrs.field.widget_type }}"
+               class="py-3 px-4 block w-full border border-gray-200 rounded-lg text-sm focus:border-blue-500 
+                    focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none 
+                    dark:bg-slate-900 dark:border-gray-700 dark:text-gray-400 dark:focus:ring-gray-600"
+
+               >
+    {% endif %}
+
+    {% if attrs.field.errors %}
+    <div class="absolute inset-y-0 end-0 flex items-center pointer-events-none pe-3">
+        <svg class="h-5 w-5 text-red-500" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4zm.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+        </svg>
+    </div>
+    {% endif %}
+
+</div>
+
+{% for error in attrs.field.errors %}
+    <p class="error-message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+{% endfor %}
+    
+
+
+    {% if attrs.field.help_text %}
+    <div class="mt-2 text-[0.8rem] text-gray-500 [&>ul]:list-disc [&>ul]:list-inside [&>ul]:grid [&>ul]:gap-2 ">
+        {{attrs.field.help_text}}
+    </div>
+    {% endif %}
+    
+
+</div>

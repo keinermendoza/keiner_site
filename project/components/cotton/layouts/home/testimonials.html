@@ -1,0 +1,38 @@
+<section id="clientes" class="px-4 md:px-6 lg:px-8 py-10 text-white bg-darkblue-back" id="testimonials">
+    <div class="max-w-7xl mx-auto relative">
+        <div class="text-center sm:pb-10">
+            <h2 class="text-4xl">CLIENTES</h2>
+        </div>
+
+        <!-- transition clock -->
+        <div class="autoplay-progress
+        z-0 inset-0 mx-auto
+        relative my-5 
+        sm:my-0 sm:absolute 
+        sm:top-0 sm:translate-x-[180px] sm:-translate-y-1 
+        xl:translate-y-0 xl:translate-x-0 xl:top-[50%] ">
+            <svg viewBox="0 0 48 48">
+              <circle cx="24" cy="24" r="20"></circle>
+            </svg>
+            <span></span>
+        </div>
+
+        <!-- 'testimonial_card.html' is in  '/project/template_components' -->
+        <div class="swiper" id="testimonial-wrapper">
+            <div class="swiper-wrapper">
+                {% for testimonial in testimonials %}
+                    <c-ui.testimonial-card :testimonial="testimonial" />
+                {% endfor %}
+
+                
+                {% with testimonials|length as testimonials_length %}
+                {% if testimonials_length < 3 %}
+                    {% for testimonial in testimonials %}
+                        <c-ui.testimonial-card :testimonial="testimonial" />
+                    {% endfor %}
+                {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,84 @@
+{% comment %} this is copy of core/base.html with miniimum changes {% endcomment %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keiner Mendoza - {% block title %}{% endblock title %}</title>
+    <script src="{% static 'js/vendor.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
+
+    {% block script %}{% endblock script %}
+</head>
+<body class="max-w-[2000px] mx-auto flex flex-col min-h-screen"  >
+    {% include 'core/partials/base/navbar.html' %}
+
+    {% include 'core/partials/base/toast.html' %}
+    
+    <main class="grow bg-custom-gray">
+
+        <div class="py-10 p-4 md:p-6 lg:p-8 xl:p-10">
+        {% block main %}{% endblock main %}
+        </div>
+
+    </main>
+
+    <footer class="p-4 md:p-6 lg:p-8 xl:p-10  bg-gradient-to-b from-darkblue-card to-darkblue-card-gradient text-white ">
+        <div id="footer-nav-container transition-colort"
+            class="max-w-7xl mx-auto xl:text-lg flex gap-8 flex-wrap justify-between w-full"
+        >
+            <div id="footer-developer-info"
+                class=" flex flex-col gap-5 xl:gap-6"
+            >
+                <h3 class="text-xl xl:text-3xl font-oxanium font-semibold">KEINER MENDOZA</h3>
+                <figure class="flex gap-8 items-center">
+                    <img src="{% static 'blog/images/profile.webp' %}" alt="Keiner Mendoza"
+                        class="w-20 h-20 xl:w-28 xl:h-28 rounded-full"
+                    >
+                    <figcaption class="text-sm xl:text-base">
+                        <p>Desarrollador web</p>
+                        <p>Licenciado en Economia</p>
+                        <p>Usuario Linux</p>
+                        <p>Autor de este sitio</p>
+                    </figcaption>
+                </figure>
+                <div class="flex gap-4">
+                    <img src="{% static 'blog/icons/linkedin.svg' %}" alt="linkedin icon"
+                        class="w-7 h-7 xl:w-9 xl:h-9"
+                    >
+                    <img src="{% static 'blog/icons/white-github.svg' %}" alt="github icon"
+                        class="w-7 h-7 xl:w-9 xl:h-9"
+                    >
+                </div>
+            </div>
+            {% comment %} <nav class="" id="footer-current-page-sections-nav">
+                <h4 class="mb-3 xl:mb-5 text-lg xl:text-xl">EN ESTA PAGINA</h4>
+                <ul class="text-secundary flex flex-col gap-1 relative left-1">
+                    {% block footer_nav_this_page %}
+                    {% endblock footer_nav_this_page %}
+                </ul>
+
+            </nav> {% endcomment %}
+            <nav class="d-none lg:block" id="footer-other-pages-nav">
+                <h4 class="mb-3 xl:mb-5 text-lg xl:text-xl">TODAS LAS PAGINAS</h4>
+                <ul class="text-secundary flex flex-col gap-1 relative left-1">
+                    <li><a class="hover:text-white cursor-pointer hover:underline underline-offset-4"  href="{% url 'core:home' %}">Pagina Principal</a></li>
+                    <li><a class="hover:text-white cursor-pointer hover:underline underline-offset-4" href="{% url 'core:about' %}">Sobre Mi</a></li>
+                    <li><a class="hover:text-white cursor-pointer hover:underline underline-offset-4" href="">Publicaciones</a></li>
+                </ul>
+
+            </nav>
+            <div class="flex flex-col  gap-4" id="footer-create-account">
+                <h4 class="text-lg xl:text-xl">CREAR CUENTA</h4>
+                <p>Quieres mantedenerte <br>
+                    informado de los nuevos <br>
+                    proyectos y publicaciones?
+                </p>
+                <a class="block transition-all outline-offset-4 hover:outline hover:outline-2 hover:scale-105 hover:outline-white bg-primary text-center rounded-md py-2 px-4"  href="">CREAR CUENTA</a>
+            </div>
+        </div>
+        <p class="text-sm xl:text-base text-center mt-8">© 2024 Keiner Mendoza. Todos los Derechos Reservados</p>
+    </footer>
+</body>
+</html>

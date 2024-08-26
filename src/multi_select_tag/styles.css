@@ -1,0 +1,180 @@
+.mult-select-tag {
+    max-width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1),0 1px 2px -1px rgb(0 0 0 / 0.1);
+    --tw-shadow-color: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+    --border-color: white;
+}
+
+.mult-select-tag .wrapper {
+    width: 100%
+}
+
+.mult-select-tag .body {
+    position: relative;
+    display: flex;
+    border: 2px solid var(--border-color);
+    background: #fff;
+    min-height: 2.15rem;
+    width: 100%;
+    min-width: 14rem
+}
+
+.mult-select-tag .input-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    padding: .2rem 0.4rem;
+    align-items: center
+}
+
+.mult-select-tag .input-body {
+    display: flex;
+    width: 100%;
+    padding: .5rem;
+
+}
+
+.mult-select-tag .body .span-helper-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: absolute;
+    height: 100%;
+    place-content: center;
+    left: 0.5rem;
+    color: gray;
+    font-size: smaller;
+}
+
+.mult-select-tag .body .span-helper-text.hidden {
+    display: none;
+}
+
+
+.mult-select-tag .input {
+    width: 100%;
+    border-radius: .25rem;
+    padding: .5rem;
+
+    color: #2d3748;
+    outline: 0;
+    border: 1px solid var(--border-color)
+}
+
+.mult-select-tag .btn-container {
+    border-radius: inherit;
+    place-self: flex-start;
+}
+
+.mult-select-tag .btn-container > button {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+    border-radius: inherit;
+    padding: 1rem;
+    background-color: #3b82f6; 
+    -webkit-appearance: none;
+    text-transform: none;
+    margin: 0;
+    outline: 0;
+
+}
+
+.mult-select-tag .btn-container > button:hover {
+    background-color: hsl(217, 91%, 55%)
+}
+
+
+.mult-select-tag .btn-container button svg {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    bottom: 7px;
+    width: 80%;
+    height: 80%;
+    color: #fff;
+}
+
+.mult-select-tag .drawer {
+    position: absolute;
+    background: #c9c6c6;
+    max-height: 15rem;
+    z-index: 40;
+    top: 98%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    border: 1px solid var(--border-color);
+    border-radius: .25rem;
+    
+}
+
+.mult-select-tag ul {
+    list-style-type: none;
+    padding: .5rem;
+    margin: 0
+}
+
+.mult-select-tag ul li {
+    padding: .5rem;
+    border-radius: .25rem;
+    cursor: pointer
+}
+
+.mult-select-tag ul li:hover {
+    background: rgb(243 244 246)
+}
+
+.mult-select-tag .item-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .2rem .4rem;
+    margin: .2rem;
+    border: 1px solid;
+    border-radius: 9999px
+}
+
+.mult-select-tag .item-label {
+    max-width: 100%;
+    line-height: 1;
+    font-size: .75rem;
+    flex: 0 1 auto
+}
+
+.mult-select-tag .item-close-container {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row-reverse
+}
+
+.mult-select-tag .item-close-svg {
+    width: 1rem;
+    margin-left: .5rem;
+    height: 1rem;
+    cursor: pointer;
+    border-radius: 9999px;
+    display: block
+}
+
+.hidden {
+    display: none
+}
+
+.mult-select-tag .shadow {
+    box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow)
+}
+
+.mult-select-tag .rounded {
+    border-radius: .375rem
+}

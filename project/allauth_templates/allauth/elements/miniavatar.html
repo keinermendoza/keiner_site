@@ -1,0 +1,12 @@
+{% load static %}
+<div class="flex items-center gap-2">
+    <img
+        class="w-8 h-8 rounded-full"
+        {% if attrs.user.picture %}
+        src="{{ attrs.user.picture }}"
+        {% else %}
+        src="{% static 'parafrasis/images/gray_square.svg' %}"
+        {% endif %} 
+        alt="{{user.username}} profile picture">
+    <p class="text-sm">@{{attrs.user.username}}</p>
+</div>

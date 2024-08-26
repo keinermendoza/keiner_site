@@ -1,0 +1,62 @@
+{% load static %}
+{% load process_string %}
+{% comment %} 
+    page_obj: 
+        class: Page
+    elided_page_range:
+        class: list
+    paginator
+        class: Paginator
+        only used to avoid render the ELLIPSIS when iterate over elided_page_range 
+{% endcomment %}
+
+<nav class="flex flex-wrap items-center justify-center gap-2">
+    {% for page_number in elided_page_range %}
+        {% if page_obj.number == page_number%}
+            {% if page_obj.has_previous %}
+            <a 
+                class="shadow-lg rounded-md p-2 bg-blue-600 transition ease-in-out duration-300 scale-95 hover:scale-110 "
+                hx-target="#blog_list_paginated_list"
+                hx-swap="outerHTML transition:true"
+                hx-replace-url="true"
+                hx-get="{{request.get_full_path | remove_page_param }}page={{ page_obj.previous_page_number }}"
+                href="{{request.get_full_path | remove_page_param }}page={{ page_obj.previous_page_number }}"
+                >
+                <img class="w-5 h-5" src="{% static 'icons/arrow-left.svg' %}" alt="previous">
+            </a>
+            {% endif %}
+
+            <span aria-current="page" class="py-2 px-3 bg-gray-200 rounded-md shadow">
+                Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+            </span>
+
+            {% if page_obj.has_next %}
+            <a 
+                    class="shadow-lg rounded-md p-2 bg-blue-600 transition ease-in-out duration-300 scale-100 hover:scale-110"
+                    hx-target="#blog_list_paginated_list"
+                    hx-swap="outerHTML transition:true"
+                    hx-replace-url="true"
+                    hx-get="{{request.get_full_path | remove_page_param }}page={{ page_obj.next_page_number }}"
+                    href="{{request.get_full_path | remove_page_param }}page={{ page_obj.next_page_number }}"
+                >
+                <img class="w-5 h-5" src="{% static 'icons/arrow-right.svg' %}" alt="next">
+                
+            </a>
+            {% endif %}
+
+        {% else %}
+            {% if page_number != paginator.ELLIPSIS %}
+                <a 
+                    class="shadow-lg rounded-md px-3 py-1  bg-blue-600 transition ease-in-out duration-300 scale-95 hover:scale-110 "
+                    hx-target="#blog_list_paginated_list"
+                    hx-swap="outerHTML transition:true"
+                    hx-replace-url="true"
+                    hx-get="{{request.get_full_path | remove_page_param }}page={{ page_number }}"
+                    href="{{request.get_full_path | remove_page_param }}page={{ page_number }}"
+                >
+                {{page_number}}
+                </a>
+            {% endif %}
+        {% endif %}
+        {% endfor %}
+</nav> 

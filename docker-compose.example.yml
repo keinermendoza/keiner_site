@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  web:
+    build: ./project
+    command: 
+      - /bin/sh
+      - -c
+      - |
+        . /usr/src/app/entrypoint.sh 
+        python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./project:/usr/src/app
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.example
+    depends_on:
+      - db
+  
+  webpack:
+    build: .
+    volumes:
+      - ./:/app
+    command: npm run webpack
+    tty: true
+
+  tailwindcss:
+    build: .
+    volumes:
+      - ./:/app
+    command: npm run tailwind
+    tty: true
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    ports:
+      - 5672:5672
+  
+  celery:
+    build:
+      context: ./project
+      dockerfile: Dockerfile.prod
+    command: celery --app=config worker -l INFO
+    env_file:
+      - ./.env.example
+    depends_on:
+      - rabbitmq
+      - web
+
+  db:
+    image: postgres:16-bullseye
+    volumes:
+      - new_homesite_data_exmaple:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=mydb
+    ports:
+      - 5431:5432
+volumes:
+  new_homesite_data_exmaple:

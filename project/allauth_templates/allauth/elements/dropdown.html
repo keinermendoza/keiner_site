@@ -1,0 +1,22 @@
+{% load allauth %}
+
+<div x-data="{ open: false }" class="relative">
+    <button 
+        @click="open = ! open"
+        type="button"
+        class="grid place-content-center rounded-md transition-colors hover:bg-gray-300 text-gray-600 hover:text-gray-800 "
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+        </svg>
+    </button>
+
+    <div 
+      x-cloak x-show="open" :class="open ? 'text-red-500' : 'text-blue-500'" @click.away="open = false" 
+      class="z-10 w-36 absolute top-6 right-0 bg-white border border-gray-200 rounded-lg shadow"
+      x-transition:enter="duration-200 ease-out"
+      x-transition:enter-start="opacity-0 -translate-y-5 scale-90"
+      x-transition:enter-end="opacity-100 translate-y-0 scale-100"
+    >{% slot %}{% endslot %}</div>
+
+</div>

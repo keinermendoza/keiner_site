@@ -1,0 +1,13 @@
+.env
+.env.dev
+.env.prod
+.env.database
+__pycache__
+db.sqlite
+assets/tailwind/output.css
+node_modules
+project/staticfiles/css/
+project/staticfiles/js/
+media
+_scripts/
+_backups/

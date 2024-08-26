@@ -1,0 +1,20 @@
+<div class="flex flex-col items-center gap-5" id="blog_list_paginated_list">
+    <div 
+        id="posts-container"
+        class="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
+        {% for post in posts %}
+        <c-ui.blog-card 
+            title="{{post.title}}"
+            preview="{{post.preview}}"
+            href="{{post.get_absolute_url}}"
+            :image="post.image"
+            :topics="post.topics.all"
+        /> 
+        {% endfor %}
+    </div>
+    <c-ui.pagination
+        :page_obj="page_obj"
+        :elided_page_range="elided_page_range"
+        :paginator="paginator"
+    /> 
+</div>

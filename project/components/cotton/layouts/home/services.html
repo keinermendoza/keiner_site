@@ -1,0 +1,107 @@
+<section id="servicios" x-data="{activeSec:'sencillo'}">
+    <div class="relative px-4 md:px-6 lg:px-8 py-10 text-white bg-darkblue-card-gradient" id="testimonials">
+        <div class="absolute top-0 left-0 w-full h-full bars"></div>
+
+        <div class="max-w-7xl mx-auto relative">
+            <div class="text-center pb-16">
+                <h2 class="text-4xl ">SERVICIOS</h2>
+                <p class="text-lg">Use los siguientes botones para ver los diferentes servicios</p>
+            </div>
+
+            <div class="realtive left-0 right-0 mx-auto max-w-sm md:max-w-4xl md:absolute md:top-[70%] w-full grid md:grid-cols-3 gap-10 md:text-xl ">
+                <c-ui.service-stat
+                    title="Sitio Sencillo" 
+                    target="sencillo"> 
+                    <svg width="70" height="70" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M58.7502 25V30H68.9646L39.3752 59.5895L28.1252 48.3395L11.9824 64.4822L15.518 68.0178L28.1252 55.4105L39.3752 66.6605L72.5002 33.5356V43.75H77.5002V25H58.7502Z" fill="black"/>
+                        <path d="M7.5 16.25H2.5V77.5H77.5V72.5H7.5V16.25Z" fill="black"/>
+                    </svg>
+                </c-ui.service-stat>
+                
+                <c-ui.service-stat
+                    title="Sitio + Panel de Control"
+                    target="panel">
+                    <svg width="70" height="70" viewBox="0 0 101 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M88 71.875V83.0813L72.375 67.4563V46.875C72.3747 46.2948 72.2129 45.7262 71.9077 45.2327C71.6024 44.7393 71.1659 44.3406 70.6469 44.0812L53.625 35.5656V18.2125L61.7063 26.2937L66.125 21.875L50.5 6.25L34.875 21.875L39.2937 26.2937L47.375 18.2125V35.5687L30.3531 44.0781C29.8336 44.3377 29.3968 44.7369 29.0915 45.2309C28.7863 45.725 28.6247 46.2943 28.625 46.875V67.4563L13 83.0813V71.875H6.75V93.75H28.625V87.5H17.4188L32.3656 72.5531L49.1031 80.9219C49.5369 81.1386 50.0151 81.2515 50.5 81.2515C50.9849 81.2515 51.4631 81.1386 51.8969 80.9219L68.6344 72.5531L83.5813 87.5H72.375V93.75H94.25V71.875H88ZM47.375 73.0687L34.875 66.8187V51.9313L47.375 58.1813V73.0687ZM50.5 52.7562L38.7375 46.875L50.5 40.9938L62.2625 46.875L50.5 52.7562ZM66.125 66.8187L53.625 73.0687V58.1813L66.125 51.9313V66.8187Z" fill="black"/>
+                    </svg>
+                </c-ui.service-stat>
+
+                <c-ui.service-stat
+                    title="Aplicación Web"
+                    target="app">
+                    <svg width="152" height="72" viewBox="0 0 190 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M33.7502 71.73C30.5515 72.6587 27.2372 73.1284 23.9064 73.125C18.5499 73.1327 13.263 71.9114 8.45265 69.555C8.31044 66.1939 9.26783 62.878 11.1797 60.11C13.0916 57.3419 15.8537 55.2726 19.0475 54.2156C22.2413 53.1587 25.6926 53.1717 28.8783 54.2527C32.064 55.3338 34.8105 57.4239 36.7014 60.2062M33.7502 71.73V71.7187C33.7502 67.545 34.8227 63.6187 36.7014 60.2062M33.7502 71.73V72.1275C40.9671 76.4741 49.2354 78.7642 57.6602 78.75C66.4014 78.75 74.5802 76.3312 81.5627 72.1275L81.5664 71.7187C81.5693 66.4105 79.8054 61.2522 76.5527 57.0572C73.3001 52.8622 68.7438 49.8691 63.6021 48.5497C58.4604 47.2304 53.0258 47.6598 48.1552 49.7703C43.2845 51.8809 39.2548 55.5525 36.7014 60.2062M45.0002 23.9062C45.0002 27.2629 46.3336 30.4821 48.7071 32.8556C51.0806 35.2291 54.2998 36.5625 57.6564 36.5625C61.0131 36.5625 64.2322 35.2291 66.6057 32.8556C68.9792 30.4821 70.3127 27.2629 70.3127 23.9062C70.3127 20.5496 68.9792 17.3304 66.6057 14.9569C64.2322 12.5834 61.0131 11.25 57.6564 11.25C54.2998 11.25 51.0806 12.5834 48.7071 14.9569C46.3336 17.3304 45.0002 20.5496 45.0002 23.9062ZM14.0627 32.3437C14.0627 34.9545 15.0998 37.4583 16.9458 39.3043C18.7919 41.1504 21.2957 42.1875 23.9064 42.1875C26.5171 42.1875 29.0209 41.1504 30.867 39.3043C32.7131 37.4583 33.7502 34.9545 33.7502 32.3437C33.7502 29.733 32.7131 27.2292 30.867 25.3832C29.0209 23.5371 26.5171 22.5 23.9064 22.5C21.2957 22.5 18.7919 23.5371 16.9458 25.3832C15.0998 27.2292 14.0627 29.733 14.0627 32.3437Z" fill="black"/>
+                        <path d="M33.7502 71.73C30.5515 72.6587 27.2372 73.1284 23.9064 73.125C18.5499 73.1327 13.263 71.9114 8.45265 69.555C8.31044 66.1939 9.26783 62.878 11.1797 60.11C13.0916 57.3419 15.8537 55.2726 19.0475 54.2156C22.2413 53.1587 25.6926 53.1717 28.8783 54.2527C32.064 55.3338 34.8105 57.4239 36.7014 60.2062M33.7502 71.73V71.7187C33.7502 67.545 34.8227 63.6187 36.7014 60.2062M33.7502 71.73V72.1275C40.9671 76.4741 49.2354 78.7642 57.6602 78.75C66.4014 78.75 74.5802 76.3312 81.5627 72.1275L81.5664 71.7187C81.5693 66.4105 79.8054 61.2522 76.5527 57.0572C73.3001 52.8622 68.7438 49.8691 63.6021 48.5497C58.4604 47.2304 53.0258 47.6598 48.1552 49.7703C43.2845 51.8809 39.2548 55.5525 36.7014 60.2062M45.0002 23.9062C45.0002 27.2629 46.3336 30.4821 48.7071 32.8556C51.0806 35.2291 54.2998 36.5625 57.6564 36.5625C61.0131 36.5625 64.2322 35.2291 66.6057 32.8556C68.9792 30.4821 70.3127 27.2629 70.3127 23.9062C70.3127 20.5496 68.9792 17.3304 66.6057 14.9569C64.2322 12.5834 61.0131 11.25 57.6564 11.25C54.2998 11.25 51.0806 12.5834 48.7071 14.9569C46.3336 17.3304 45.0002 20.5496 45.0002 23.9062ZM14.0627 32.3437C14.0627 34.9545 15.0998 37.4583 16.9458 39.3043C18.7919 41.1504 21.2957 42.1875 23.9064 42.1875C26.5171 42.1875 29.0209 41.1504 30.867 39.3043C32.7131 37.4583 33.7502 34.9545 33.7502 32.3437C33.7502 29.733 32.7131 27.2292 30.867 25.3832C29.0209 23.5371 26.5171 22.5 23.9064 22.5C21.2957 22.5 18.7919 23.5371 16.9458 25.3832C15.0998 27.2292 14.0627 29.733 14.0627 32.3437Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M156.25 71.73C159.448 72.6587 162.763 73.1284 166.094 73.125C171.45 73.1327 176.737 71.9114 181.547 69.555C181.69 66.1939 180.732 62.878 178.82 60.11C176.908 57.3419 174.146 55.2726 170.952 54.2156C167.759 53.1587 164.307 53.1717 161.122 54.2527C157.936 55.3338 155.19 57.4239 153.299 60.2062M156.25 71.73V71.7187C156.25 67.545 155.177 63.6187 153.299 60.2062M156.25 71.73V72.1275C149.033 76.4741 140.765 78.7642 132.34 78.75C123.599 78.75 115.42 76.3312 108.437 72.1275L108.434 71.7187C108.431 66.4105 110.195 61.2522 113.447 57.0572C116.7 52.8622 121.256 49.8691 126.398 48.5497C131.54 47.2304 136.974 47.6598 141.845 49.7703C146.715 51.8809 150.745 55.5525 153.299 60.2062M145 23.9062C145 27.2629 143.666 30.4821 141.293 32.8556C138.919 35.2291 135.7 36.5625 132.344 36.5625C128.987 36.5625 125.768 35.2291 123.394 32.8556C121.021 30.4821 119.687 27.2629 119.687 23.9062C119.687 20.5496 121.021 17.3304 123.394 14.9569C125.768 12.5834 128.987 11.25 132.344 11.25C135.7 11.25 138.919 12.5834 141.293 14.9569C143.666 17.3304 145 20.5496 145 23.9062ZM175.937 32.3437C175.937 34.9545 174.9 37.4583 173.054 39.3043C171.208 41.1504 168.704 42.1875 166.094 42.1875C163.483 42.1875 160.979 41.1504 159.133 39.3043C157.287 37.4583 156.25 34.9545 156.25 32.3437C156.25 29.733 157.287 27.2292 159.133 25.3832C160.979 23.5371 163.483 22.5 166.094 22.5C168.704 22.5 171.208 23.5371 173.054 25.3832C174.9 27.2292 175.937 29.733 175.937 32.3437Z" fill="black"/>
+                        <path d="M156.25 71.73C159.448 72.6587 162.763 73.1284 166.094 73.125C171.45 73.1327 176.737 71.9114 181.547 69.555C181.69 66.1939 180.732 62.878 178.82 60.11C176.908 57.3419 174.146 55.2726 170.952 54.2156C167.759 53.1587 164.307 53.1717 161.122 54.2527C157.936 55.3338 155.19 57.4239 153.299 60.2062M156.25 71.73V71.7187C156.25 67.545 155.177 63.6187 153.299 60.2062M156.25 71.73V72.1275C149.033 76.4741 140.765 78.7642 132.34 78.75C123.599 78.75 115.42 76.3312 108.437 72.1275L108.434 71.7187C108.431 66.4105 110.195 61.2522 113.447 57.0572C116.7 52.8622 121.256 49.8691 126.398 48.5497C131.54 47.2304 136.974 47.6598 141.845 49.7703C146.715 51.8809 150.745 55.5525 153.299 60.2062M145 23.9062C145 27.2629 143.666 30.4821 141.293 32.8556C138.919 35.2291 135.7 36.5625 132.344 36.5625C128.987 36.5625 125.768 35.2291 123.394 32.8556C121.021 30.4821 119.687 27.2629 119.687 23.9062C119.687 20.5496 121.021 17.3304 123.394 14.9569C125.768 12.5834 128.987 11.25 132.344 11.25C135.7 11.25 138.919 12.5834 141.293 14.9569C143.666 17.3304 145 20.5496 145 23.9062ZM175.937 32.3437C175.937 34.9545 174.9 37.4583 173.054 39.3043C171.208 41.1504 168.704 42.1875 166.094 42.1875C163.483 42.1875 160.979 41.1504 159.133 39.3043C157.287 37.4583 156.25 34.9545 156.25 32.3437C156.25 29.733 157.287 27.2292 159.133 25.3832C160.979 23.5371 163.483 22.5 166.094 22.5C168.704 22.5 171.208 23.5371 173.054 25.3832C174.9 27.2292 175.937 29.733 175.937 32.3437Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </c-ui.service-stat>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-[#0f5074] px-4 md:px-6 lg:px-8" id="service-gallery">
+        <div class="max-w-7xl py-10 md:pt-40 text-white mx-auto flex flex-col items-center gap-5">
+            <div id="services-container"
+                class="w-full">
+                <c-ui.service-article
+                    title="Sitio Sencillo" 
+                    id="sencillo"
+                    description="Ideal si buscas mostrar tu trabajo de forma profesional, personalizada y directa. 
+                    Incluye hasta 7 secciones, entre las que suelen estar una breve reseña de tu empresa o trabajo,
+                    galería de productos o servicios, recomendaciones de clientes y una sección de contacto."
+                    
+                    :features="['Compra y gestión de dominio', 'Gestión de certificado SSL', 'Redacción de contenido','Edición de imágenes', 'Creación de animaciones web', 'Diseño web responsivo', 'Puesta en línea del sitio', '2 Meses de Hosting gratis (2$ mensual)']"
+
+                    aclarations="Ofrecemos el servicio de hosting por $2 al mes. El servicio de hosting es necesario, 
+                    pero si lo deseas, puedes contratarlo de forma independiente.">
+                    <c-slot name="slot_actions">
+                        <c-ui.whatsapp-btn 
+                            shrink=True  
+                            message="Hola, estaba leyendo sobre el servicio de *Creación de Sitio Sencillo* y me gustaía saber más.">
+                            Quiero un sitio sencillo
+                        </c-ui.whatsapp-btn> 
+                    </c-slot >
+                </c-ui.service-article>
+
+                <c-ui.service-article
+                    title="Sitio + Panel de Control" 
+                    id="panel"
+                    description="Ideal si buscas mostrar tu trabajo de forma profesional, personalizada y directa. 
+                    Incluye hasta 7 secciones, entre las que suelen estar una breve reseña de tu empresa o trabajo,
+                    galería de productos o servicios, recomendaciones de clientes y una sección de contacto."
+                    
+                    :features="['Compra y gestión de dominio', 'Gestión de certificado SSL', 'Redacción de contenido','Edición de imágenes', 'Creación de animaciones web', 'Diseño web responsivo', 'Puesta en línea del sitio', 'Creación de sitio extra (panel de control)', 'Configuración de base de datos', 'Creación de API REST']"
+
+                    aclarations="Ofrecemos el servicio de hosting por $2 al mes. El servicio de hosting es necesario, 
+                    pero si lo deseas, puedes contratarlo de forma independiente.">
+                    <c-slot name="slot_actions">
+                        <c-ui.whatsapp-btn 
+                        shrink=True  limit_grow=True message="Hola, estaba leyendo sobre el servicio de *Creación de Sitio + Panel de Control* y me gustaía saber más.">
+                        Quiero un sitio + Panel de Control
+                        </c-ui.whatsapp-btn> 
+                    </c-slot >
+                </c-ui.service-article>
+
+                <c-ui.service-article
+                    title="Aplicación Web" 
+                    id="app"
+
+                    description="Si quieres ofrecer servicios o información personalizada por cliente, esta es la opción ideal. Del mismo modo, si quieres crear un sistema de gestión administrativa o cualquier otro sistema que requiera de lógica de programación especializada."
+                    
+                    :features="['Compra y gestión de dominio', 'Gestión de certificado SSL', 'Redacción de contenido','Edición de imágenes', 'Creación de animaciones web', 'Diseño web responsivo', 'Puesta en línea del sitio', 'Creación de sitio extra (panel de control)', 'Gestión de cuentas de usuarios', 'Sistema automatizado de notificaciones por email', 'Funciones especiales que requiera tu aplicació']"
+
+                    aclarations="Cualquier servicio de hosting o infraestructura será gestionada directamente con nosotros.">
+                    <c-slot name="slot_actions">
+                        <c-ui.whatsapp-btn 
+                            shrink=True
+                            message="Hola, estaba leyendo sobre el servicio de *Creación de Apicación Web* y me gustaía saber más.">
+                            Quiero una Aplicación Web
+                        </c-ui.whatsapp-btn> 
+                    </c-slot >
+                </c-ui.service-article>
+            </div>
+        </div>
+    </div>
+</section>
+    

@@ -1,0 +1,48 @@
+{% load allauth %}
+
+<section class="w-full max-w-[85rem] py-10 px-4 sm:px-6 lg:px-8 mx-auto">
+    <div class="flex h-full items-center">
+        <div class="w-full max-w-md mx-auto p-6">
+          
+            <div class="bg-white border border-gray-200 rounded-xl shadow-2xl">
+                <div class="p-4 sm:p-7">
+                    
+                    <header class="text-center">
+                        {% slot title %}
+                        {% endslot %}
+
+                        {% if slots.subtitle %}
+                        <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">
+                            {% slot subtitle %}
+                            {% endslot %}
+                        </p>
+                        {% endif %}
+                    </header>
+                    
+                    <hr class="my-5 border-slate-300">
+
+                    <form
+                        class="rounded-md p-4 w-full bg-white"
+                        method="{{ attrs.method }}" action="{{ attrs.action }}">
+                        {% slot body %}
+                        {% endslot %}
+                        
+                        <div class="mt-4 flex {% if attrs.btn_w_full %}[&>button]:w-full{% else %}justify-end{% endif %} ">
+                        {% slot actions %}
+                        {% endslot %}
+                        </div>
+                    </form>
+
+                {% if slots.footer %}
+                    <footer class="mt-4 text-center text-gray-600 text-sm">
+                    {% slot footer %}
+                    {% endslot %}
+                    </footer>
+                {% endif %}
+
+                </div>  
+            </div>  
+
+        </div>  
+    </div>
+</section> 

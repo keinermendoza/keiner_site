@@ -1,0 +1,29 @@
+{% load allauth i18n %}
+
+{% comment %}
+    Recives a django form element and render its content following the next steps:
+    - render the non field errors if exists
+    - renders each field using the input allauth component 
+{% endcomment %}
+
+<div class="grid gap-y-4">
+    
+    {% if attrs.form.non_field_errors %}
+    <div class="non-field-errors">
+        {% for error in form.non_field_errors %}
+        <p class="error-message text-red-400 text-sm mb-[0.15em]">{{ error }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+{% for field in attrs.form %}
+
+    {% element input field=field %}
+    {% endelement %}
+
+{% endfor %}
+</div>
+
+
+
+

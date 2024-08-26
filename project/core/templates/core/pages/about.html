@@ -1,0 +1,67 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Sobre Mi{% endblock title %}
+
+{% block main %}
+<section id="sobre-mi" 
+    class="relative overflow-hidden p-4 md:p-6 lg:p-8 bg-[hsl(202,61%,50%)]">
+
+    <!-- waves -->
+    <c-ui.vertical-wave extra_class="left-0  -translate-x-[50%] lg:-translate-x-[10%]" />
+    <c-ui.vertical-wave extra_class="right-0 translate-x-[50%] lg:translate-x-[10%] rotate-180" />
+
+    <!-- about me -->
+    <div class="max-w-7xl h-full mx-auto flex flex-col gap-12 lg:gap-10 py-10">
+        <h1 class="text-darkblue-card-gradient relative text-center text-6xl underline decoration-2 decoration-double underline-offset-4">Sobre Mi</h1>
+        
+        <c-ui.about-card
+            message="Soy venezolano, mi lengua nativa es el español, pero también hablo portugués y algo de inglés, curiosamente, la mayoría de mis interacciones en línea son en inglés."
+            figcaption="Yo">
+            <c-slot name="slot_image">
+                <div class="relative">
+                    <img class="z-10 relative mx-auto max-h-80 object-cover rounded-3xl" src="{% static 'core/images/me_profile.png' %}" alt="keiner mendoza">
+                    <div class="absolute z-20 bottom-0 left-0 h-8 w-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[#2461E6]"></div>
+                </div>
+            </c-slot name="slot_image">
+        </c-ui.about-card>
+
+        <c-ui.about-card
+            img_to_left=True
+            message="Me gradué como licenciado en Economía al mismo tiempo que me hacía cargo del área administrativa del negocio familiar, una panadería. Estas dos experiencias me enseñaron constancia, atención a los detalles y a priorizar las necesidades del cliente."
+            figcaption="Mi madre y yo en nuestra panaderia">
+            <c-slot name="slot_image">
+                <div class="relative">
+                    <img class="z-10 relative w-full object-cover rounded-3xl" src="{% static 'core/images/panaderia.png' %}" alt="yo en la panaderia con mi madre">
+                    <div class="absolute z-20 bottom-0 left-0 h-8 w-full bg-gradient-to-b from-[rgba(0,0,0,0)] to-[#2461E6]"></div>
+                </div>
+            </c-slot name="slot_image">
+        </c-ui.about-card>
+
+        <c-ui.about-card
+            message="Soy una persona abierta a los cambios y que busca constantemente superarse. Prueba de esto es que emigré a un país con una lengua diferente en busca de mejores oportunidades."
+            figcaption="Proyecto Personal. Hecho con Django & Javascript">
+            <c-slot name="slot_image">
+                <iframe class="max-w-[min(100%,32rem)] md:max-w-sm mx-auto relative z-10 rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/kP7-FN1Qy3g?si=LT0VaFfVro9CMExs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </c-slot name="slot_image">
+        </c-ui.about-card>
+
+        <c-ui.about-card
+            img_to_left=True
+            message="Me apasiona el desarrollo web y amo construir páginas para otras personas. Cada proyecto me aporta algo nuevo y actualmente estoy buscando un trabajo a tiempo completo como desarrollador web."
+            figcaption="Proyecto Personal Para CS50w">
+            <c-slot name="slot_image">
+                <iframe class="max-w-[min(100%,32rem)] md:max-w-sm mx-auto relative z-10 rounded-lg" width="560" height="315" src="https://www.youtube.com/embed/YHcE5yeVJME?si=xZwcTUgo_zjdQCbF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </c-slot name="slot_image">
+        </c-ui.about-card>
+
+    </div>
+</section>
+<c-layouts.contact />
+
+{% endblock main %}
+
+{% block footer_nav_this_page %}
+<c-ui.footer-link href="#sobre-mi">Sobre Mi</c-ui.footer-link>
+<c-ui.footer-link href="#contacto">Contactame</c-ui.footer-link>
+{% endblock footer_nav_this_page %}

@@ -1,0 +1,27 @@
+{% extends "core/base.html" %}
+{% load static %}
+
+{% block title %}Pagina Principal{% endblock title %}
+
+{% block script %}
+{% endblock script %}
+
+
+{% block main %}
+
+<c-layouts.home.hero />
+<c-layouts.home.services />
+<c-layouts.home.projects :projects="projects" />
+<c-layouts.home.testimonials :testimonials="testimonials" />
+<c-layouts.contact />
+
+{% endblock main %}
+
+{% block footer_nav_this_page %}
+<c-ui.footer-link href="#hero">Inicio</c-ui.footer-link>
+<c-ui.footer-link href="#proyectos">Proyectos</c-ui.footer-link>
+<c-ui.footer-link href="#clientes">Referencias</c-ui.footer-link>
+<c-ui.footer-link href="#contacto">Contactame</c-ui.footer-link>
+<c-ui.footer-link href="#ultimos-posts">Ultimas Publicaciones</c-ui.footer-link>
+{% endblock footer_nav_this_page %}
+    

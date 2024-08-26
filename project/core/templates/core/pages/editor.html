@@ -1,0 +1,15 @@
+{% extends "core/base.html" %}
+{% load static %}
+{% block script %}
+<script defer src="{% static 'js/editor_react.js' %}"></script>
+{% endblock script %}
+{% block title %}Editor{% endblock title %}
+{% block main %}
+<section class=" overflow-hidden p-4 md:p-6 lg:p-8 bg-gray-200 relative h-[clamp(600px,80vw,min(90vh,800px))] " 
+    id="hero">
+    <div class="max-w-7xl h-full mx-auto">
+        <div id="editor-app">
+        </div>
+    </div>
+</section>
+{% endblock main %}

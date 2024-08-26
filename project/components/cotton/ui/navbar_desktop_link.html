@@ -1,0 +1,10 @@
+<a 
+class="{% if href == request.path_info %}text-secundary{% else %}text-white{% endif %}
+font-medium cursor-pointer hover:underline underline-offset-4 py-3 md:py-6" 
+
+{% if href == request.path_info %}
+  aria-current="page"
+{% endif %}
+
+href="{{ href }}" 
+>{{text}}</a>

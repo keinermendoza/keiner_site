@@ -1,0 +1,49 @@
+{% load process_string %}
+<style>
+    @font-face{
+        font-family: 'oxanium';
+        src: url("{{'fonts/Oxanium-VariableFont_wght_new.woff'|clean_amperson}}") format('woff');
+    }
+    @font-face{
+        font-family: 'mont';
+        src: url("{{'fonts/MontserratAlternates-Medium.woff'|clean_amperson }}") format('woff');
+    }
+
+    @font-face{
+        font-family: 'lime';
+        src: url("{{'fonts/Limelight-Regular.woff'|clean_amperson }}") format('woff');
+    }
+
+    @font-face{
+        font-family: 'poppins';
+        src: url("{{'fonts/Poppins-Regular_new.woff'|clean_amperson }}") format('woff');
+    }
+
+    
+    html {
+        font-family: "mont", system-ui, sans-serif;
+    }
+    
+    .font-oxanium {
+        font-family: 'oxanium',
+    }
+    
+    .font-poppins {
+        font-family: 'poppins',
+    }
+    
+    .markdown-simple-container ul li::before{
+        content: url("{{'icons/check-badge-solid_new.svg'|clean_amperson}}");
+    }
+    
+    .form-container-hacker {
+        background-image: url("{{'images/hacker_new.jpg'|clean_amperson}}");
+        background-size: cover;
+        background-position: center;
+    }
+    .services-bg {
+        background-image: url("{{'images/services_bg.png'|clean_amperson}}");
+        background-size: cover;
+        background-position: center;
+    }
+</style>

@@ -1,0 +1,47 @@
+<form
+    x-cloak
+    x-data="{show:false}"
+    x-init="show = true"
+    x-show="show"
+
+    class="bg-opacity-30 bg-black w-fit rounded-md p-2  my-4 ml-auto"
+    method="get" 
+    hx-get="{% url 'blog:list' %}"
+    hx-swap="outerHTML"
+    hx-replace-url="true"
+    hx-trigger="excecute_blog_post_filtering from:body"
+
+    hx-target="#blog_list_paginated_list"
+    >
+    <h3 class="text-xl mb-2">Search</h3>
+    <div class="flex flex-wrap gap-2">
+
+        <div>
+            <label
+                class="block" 
+                for="id_title__icontains">Bucar por titulo</label>
+            <input
+                class="rounded-md py-[0.3rem] px-2"
+                x-on:input.debounce.500ms="$dispatch('excecute_blog_post_filtering')"
+                type="text" 
+                name="title__icontains" 
+                id="id_title__icontains">
+        </div>
+        <div>
+            <label
+                class="block" 
+                >Buscar por Categoŕas</label>
+            <span
+                id="filter_source_help_text"
+                class="fixed right-[999999px]">Categorías</span>
+            <select 
+                name="topics" 
+                id="topics_filter_id" 
+                multiple>
+                {% for option in filter.form.topics  %}
+                    {{ option }}
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</form>

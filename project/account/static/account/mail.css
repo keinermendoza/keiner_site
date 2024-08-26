@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {border-radius: inherit;
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background-image: linear-gradient(rgba(0, 0, 40, 0.700), rgba(0, 0, 40, 0.950)), url('ecommerce.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 1100px;
+    background-color: gray;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+figure {
+    border-radius: 50%;
+    max-width: min(90%, 250px);
+    margin: auto;
+    height: auto;
+}
+
+.min-250px {
+    min-width: 250px;
+}
+.max-500px {
+    max-width: 500px;
+}
+.txt-center {
+    text-align: center;
+}
+.m-center {
+    margin-inline: auto;
+}
+.txt-header > *{
+    margin-block: 25px;
+}
+.photo {
+    object-position: center;
+    object-fit: cover;
+}
+
+.tipic-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap:30px;
+}
+
+.container {
+    padding-inline: 15px;
+}
+section {
+    padding-block: 15px;
+}
+section > * {
+    margin-block: 10px;
+}
+.gray-card {
+    display: block;
+    padding: 20px;
+    color: black;
+    background-color: rgb(219, 214, 214);
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.493);
+}
+.important {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+}
+button {
+    padding: 10px 5px;
+    border-radius: 5px;
+    background-color: gold;
+    border: double black 1px;
+    font-size: 2rem;
+}

@@ -1,0 +1,16 @@
+{% load static %}
+<template id="toast-template">
+<div id="toast"
+        class="toast appears-500 text-darkblue-card-gradient bg-cyan-400 
+        w-[90%] z-50 font-semibold 
+        p-2 rounded-lg border-2 border-solid border-darkblue-card-gradient
+        flex justify-between items-center gap-2 
+        fixed top-20 right-0 left-0 mx-auto      
+        sm:w-fit sm:mr-0 sm:right-6
+        ">
+    <img id="toast-svg-icon" 
+        class="w-5 h-5"
+    src="{% static 'icons/check-badge.svg' %}" alt="toast status icon">
+    <p id="toast-text-message"></p>
+</div>
+</template>
