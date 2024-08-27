@@ -48,6 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
           }
 
     });
+
+    const bannerSwipper = new Swiper('#banner-wrapper', {
+      modules: [Autoplay, Navigation, Pagination],
+      loop: true,
+      speed: 1000,
+      autoplay: true,
+      slidesPerView: 1,
+    })
     
 
 });

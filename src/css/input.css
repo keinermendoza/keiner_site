@@ -156,6 +156,7 @@ background: rgba(0, 0, 0, 0.8);
         scale: 1;
     }
 }
+
 .appears-300 {animation: appears .3s ease-out forwards;}
 .appears-500 {animation: appears .6s ease forwards;}
 .disappears-500 {animation: appears .6s ease reverse;}

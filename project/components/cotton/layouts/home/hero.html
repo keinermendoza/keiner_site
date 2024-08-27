@@ -1,14 +1,16 @@
 {% load static %}
-<section class="px-4 md:px-6 lg:px-8 bg-gradient-to-br lg:bg-[hsl(215,100%,45%)] text-white from-[#002861] to-[hsl(215,100%,45%)] relative h-[clamp(600px,80vw,min(90vh,800px))] " 
+<section class="px-4 md:px-6 lg:px-8 bg-gradient-to-br text-white from-[#002861] to-[hsl(215,100%,35%)] relative h-[clamp(600px,80vw,min(90vh,800px))] " 
     id="hero">
+    <div class="absolute top-0 left-0 w-full h-full bars"></div>
+
     <div class="max-w-7xl h-full mx-auto">
 
         <!-- wave and background wave -->
         <div id="hero-background-same-as-wave"
-            class="bg-gradient-to-r from-[hsl(202,30%,50%)] to-[#84bfe1] absolute left-0 w-1/2 h-full 
+            class="bg-gradient-to-r  from-[hsl(202,30%,50%)] to-[#84bfe1] absolute left-0 w-1/2 h-full 
             z-0 hidden lg:block"></div>
         <svg
-            class="absolute hidden lg:block inset-0 mx-auto translate-x-[45%] top-0 h-full"
+            class="absolute hidden lg:block inset-0 mx-auto z-10 translate-x-[45%] top-0 h-full"
             viewBox="0 0 320 1440">
             <path
                 fill="#84bfe1"
@@ -17,10 +19,20 @@
                 id="path1" />
         </svg>
 
+        <svg
+            class="absolute hidden lg:block inset-0 mx-auto z-0 translate-x-[50%] top-0 h-full "
+            viewBox="0 0 320 1440">
+            <path
+                fill="#fff"
+                fill-opacity="1"
+                d="m 224,0 -5.3,21.8 C 213,43.6 203,87 197.3,131 192,174.5 192,218 192,262 c 0,43.5 0,87 5.3,131 5.7,43.4 15.7,87 -5.3,131 -21,43.3 -75,87 -101.3,131 -26.7,43.2 -26.7,87 0,130 26.3,44.1 80.3,88 69.3,131 -11,44 -85,88 -112,131 -27,43.9 -5,88 32,131 37,43.8 91,87 101.3,131 10.7,43.7 -21.3,87 -37.3,109 l -16,22 H 0 v -21.8 C 0,1396.4 0,1353 0,1309 0,1265.5 0,1222 0,1178 0,1134.5 0,1091 0,1047 0,1003.6 0,960 0,916 0,872.7 0,829 0,785 0,741.8 0,698 0,655 0,610.9 0,567 0,524 0,480 0,436 0,393 0,349.1 0,305 0,262 0,218.2 0,175 0,131 0,87.3 0,44 0,22 V 0 Z"
+                id="path1" />
+        </svg>
+
         <!-- tooltips -->
         <div id="tooltips-container"
             class="absolute left-0 right-0 mx-auto bottom-0 
-            md:left-auto md:m-0 md:right-8 w-2/5  min-w-72 h-2/3 md:h-2/3 lg:h-5/6">
+            md:left-auto md:m-0 md:right-8 xl:right-32 w-2/5  min-w-72 h-2/3 md:h-2/3 lg:h-5/6">
             
             <c-ui.hero-tooltip 
                 message="Mi lengua nativa es el español. Vivo en Brasil, así que hablo portugués y, gracias a la web, sé algo de inglés."
@@ -70,7 +82,7 @@
         </div>
 
         <!-- my photo -->
-        <figure class="z-10 absolute left-0 right-0 mx-auto bottom-0 md:left-auto md:m-0 md:right-8 w-2/5  min-w-72 h-[75vh] ">
+        <figure class="z-10 absolute left-0 right-0 mx-auto bottom-0 md:left-auto md:m-0 md:right-8 xl:right-32 w-2/5  min-w-72 h-[75vh] ">
             <img src="{% static 'core/images/me_profile.png' %}" alt="keiner mendoza"
             class="w-full h-full object-contain object-bottom">
         </figure>
@@ -94,7 +106,7 @@
                     </p>
                 </div>
 
-                <c-ui.secondary_btn href="#contacto" >
+                <c-ui.secondary_btn extra_class="hidden md:flex" href="#contacto" >
                     <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke="white" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
