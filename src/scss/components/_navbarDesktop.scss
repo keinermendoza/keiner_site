@@ -1,0 +1,40 @@
+@use '../globals/variables' as *;
+
+$gap: 2rem;
+
+.navbar-desktop-wrapper {
+    display: none;
+
+    @media (min-width:$break-md) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: end;
+        gap: 1rem;
+    }
+
+    @media (min-width:$break-lg) {
+        @include flex-row-between;
+        flex-grow: 1;
+
+    }
+
+    & .navbar-desktop-list {
+        display: flex;
+        justify-content: end;
+        gap: $gap;
+        @media (min-width:$break-lg) {
+            @include flex-row-between;
+        }
+    }
+    & .contact-data {
+        @include flex-row-between;
+        gap: $gap;
+        color: $clr-gray;
+        font-size: $fs-xs;
+        & a {
+            gap: 0.5rem;
+        }
+
+        
+    }
+}

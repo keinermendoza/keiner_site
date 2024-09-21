@@ -1,113 +1,50 @@
 {% load static %}
-<section class="px-4 md:px-6 lg:px-8 bg-gradient-to-br lg:bg-[hsl(215,100%,45%)] text-white from-[#002861] to-[hsl(215,100%,45%)] relative h-[clamp(600px,80vw,min(90vh,800px))] " 
+<c-vars :links="[{'text':'Inicio', 'href':'/'}, {'text':'Blog', 'href':'#blog', 'disabled':'true'}]" />
+
+<header
+    class="hero"
     id="hero">
-    <div class="max-w-7xl h-full mx-auto">
+    <c-layouts.section-wrapper>
+        
+        <nav class="header-navegation">
+            <span class="brand-logo">Keiner Mendoza</span>
 
-        <!-- wave and background wave -->
-        <div id="hero-background-same-as-wave"
-            class="bg-gradient-to-r from-[hsl(202,30%,50%)] to-[#84bfe1] absolute left-0 w-1/2 h-full 
-            z-0 hidden lg:block"></div>
-        <svg
-            class="absolute hidden lg:block inset-0 mx-auto translate-x-[45%] top-0 h-full"
-            viewBox="0 0 320 1440">
-            <path
-                fill="#84bfe1"
-                fill-opacity="1"
-                d="m 224,0 -5.3,21.8 C 213,43.6 203,87 197.3,131 192,174.5 192,218 192,262 c 0,43.5 0,87 5.3,131 5.7,43.4 15.7,87 -5.3,131 -21,43.3 -75,87 -101.3,131 -26.7,43.2 -26.7,87 0,130 26.3,44.1 80.3,88 69.3,131 -11,44 -85,88 -112,131 -27,43.9 -5,88 32,131 37,43.8 91,87 101.3,131 10.7,43.7 -21.3,87 -37.3,109 l -16,22 H 0 v -21.8 C 0,1396.4 0,1353 0,1309 0,1265.5 0,1222 0,1178 0,1134.5 0,1091 0,1047 0,1003.6 0,960 0,916 0,872.7 0,829 0,785 0,741.8 0,698 0,655 0,610.9 0,567 0,524 0,480 0,436 0,393 0,349.1 0,305 0,262 0,218.2 0,175 0,131 0,87.3 0,44 0,22 V 0 Z"
-                id="path1" />
-        </svg>
+            <c-ui.navbar-desktop :links=links />
+            {% comment %} <c-ui.navbar-mobile /> {% endcomment %}
+            <button class="navbar-toggle-button" aria-label="Navbar toogle visibility button">
+                <svg width="12" height="11" viewBox="0 0 12 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.2417C0 1.04279 0.0790175 0.852021 0.21967 0.711369C0.360322 0.570717 0.551088 0.491699 0.75 0.491699H11.25C11.4489 0.491699 11.6397 0.570717 11.7803 0.711369C11.921 0.852021 12 1.04279 12 1.2417C12 1.44061 11.921 1.63138 11.7803 1.77203C11.6397 1.91268 11.4489 1.9917 11.25 1.9917H0.75C0.551088 1.9917 0.360322 1.91268 0.21967 1.77203C0.0790175 1.63138 0 1.44061 0 1.2417ZM0 5.4917C0 5.29279 0.0790175 5.10202 0.21967 4.96137C0.360322 4.82072 0.551088 4.7417 0.75 4.7417H11.25C11.4489 4.7417 11.6397 4.82072 11.7803 4.96137C11.921 5.10202 12 5.29279 12 5.4917C12 5.69061 11.921 5.88138 11.7803 6.02203C11.6397 6.16268 11.4489 6.2417 11.25 6.2417H0.75C0.551088 6.2417 0.360322 6.16268 0.21967 6.02203C0.0790175 5.88138 0 5.69061 0 5.4917ZM0 9.7417C0 9.54279 0.0790175 9.35202 0.21967 9.21137C0.360322 9.07072 0.551088 8.9917 0.75 8.9917H5.25C5.44891 8.9917 5.63968 9.07072 5.78033 9.21137C5.92098 9.35202 6 9.54279 6 9.7417C6 9.94061 5.92098 10.1314 5.78033 10.272C5.63968 10.4127 5.44891 10.4917 5.25 10.4917H0.75C0.551088 10.4917 0.360322 10.4127 0.21967 10.272C0.0790175 10.1314 0 9.94061 0 9.7417Z" fill="#F8F8F8"/>
+                </svg>
+            </button>
+        </nav>
 
-        <!-- tooltips -->
-        <div id="tooltips-container"
-            class="absolute left-0 right-0 mx-auto bottom-0 
-            md:left-auto md:m-0 md:right-8 w-2/5  min-w-72 h-2/3 md:h-2/3 lg:h-5/6">
-            
-            <c-ui.hero-tooltip 
-                message="Mi lengua nativa es el español. Vivo en Brasil, así que hablo portugués y, gracias a la web, sé algo de inglés."
-                str_position="to-left"
-                extra_class="top-1/2 left-1/2 lg:translate-y-20">
-                <c-slot name="slot_svg_path">
-                    <path stroke-linecap="round" stroke="black" stroke-linejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 0 1 .865-.501 48.172 48.172 0 0 0 3.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
-                </c-slot >
-                <c-slot name="slot_title_spans">
-                    <span class="hidden sm:block md:hidden lg:block">Múltiples</span>
-                    <span>Idiomas</span>
-                </c-slot >
-            </c-ui.hero-tooltip >
-
-            <c-ui.hero-tooltip 
-                message="Me encanta el desarrollo web. Imprimo esa pasión en todas las etapas del desarrollo, hasta llevar los requerimientos del producto a producción."
-                str_position="to-right-md-left"
-                extra_class="top-1/3 left-0 antialiased
-                    sm:-left-12 
-                    lg:left-0
-                    lg:translate-y-16
-                    2xl:left-[10%]">
-                <c-slot name="slot_svg_path">
-                    <path stroke-linecap="round" stroke="black" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
-                </c-slot >
-                <c-slot name="slot_title_spans">
-                    <span>Pasión</span>
-                </c-slot >
-            </c-ui.hero-tooltip >
-
-            <c-ui.hero-tooltip 
-                message="Cubro todos los aspectos del desarrollo web, desde el diseño, pasando por la gestión de hosting y dominio, así como los aspectos técnicos de programación."
-                str_position="to-left"
-                extra_class=" top-0 right-0 
-                sm:-top-8 sm:-right-32 
-                md:-right-4
-                lg:top-0
-                2xl:right-[5%]">
-                <c-slot name="slot_svg_path">
-                    <path stroke="black" stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
-                </c-slot >
-                <c-slot name="slot_title_spans">
-                    <span class="hidden sm:block md:hidden lg:block">Desarrollo</span>
-                    <span>Fullstack</span>
-                </c-slot >
-            </c-ui.hero-tooltip > 
+        <div class="hero-content">
+                <h1 class="title-page">
+                    <span class="my-name">
+                        Soy Keiner Mendoza
+                    </span>
+                    <br>
+                    El desarrollador  full stack que estas buscando
+                </h1>
+                <p class="claim">
+                    Desarrollo sitios web y aplicaciones orientadas al manejo de datos. Utilizo mis conocimientos en programación para crear soluciones personalizadas y visualmente atractivas, siempre enfocadas en resolver las necesidades de cada proyecto.
+                </p>
+            <div class="call-to-action">
+                <button class="primary-button" aria-label="contact me using whatsapp">
+                    <svg width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.1542 2.76094C14.3772 0.979687 12.0107 0 9.49576 0C4.30469 0 0.0805804 4.22411 0.0805804 9.41518C0.0805804 11.0734 0.51317 12.6935 1.33594 14.1228L0 19L4.99174 17.6895C6.36585 18.4402 7.91384 18.8346 9.49152 18.8346H9.49576C14.6826 18.8346 19 14.6105 19 9.41942C19 6.90446 17.9312 4.54219 16.1542 2.76094ZM9.49576 17.2484C8.08772 17.2484 6.70937 16.871 5.50915 16.1585L5.225 15.9888L2.26473 16.765L3.05357 13.8768L2.86696 13.5799C2.08237 12.333 1.67098 10.8953 1.67098 9.41518C1.67098 5.10201 5.18259 1.5904 9.5 1.5904C11.5908 1.5904 13.5545 2.40469 15.0304 3.88482C16.5062 5.36496 17.4138 7.32857 17.4096 9.41942C17.4096 13.7368 13.8089 17.2484 9.49576 17.2484ZM13.7877 11.3873C13.5545 11.2685 12.3967 10.7002 12.1804 10.6239C11.9641 10.5433 11.8071 10.5051 11.6502 10.7426C11.4933 10.9801 11.0438 11.506 10.9038 11.6672C10.7681 11.8241 10.6281 11.8453 10.3949 11.7266C9.01228 11.0353 8.10469 10.4924 7.19286 8.92745C6.95112 8.51183 7.4346 8.54152 7.88415 7.64241C7.96049 7.48549 7.92232 7.34978 7.86295 7.23103C7.80357 7.11228 7.33281 5.95446 7.13772 5.48371C6.94688 5.02567 6.75179 5.08929 6.60759 5.0808C6.47188 5.07232 6.31496 5.07232 6.15804 5.07232C6.00112 5.07232 5.74665 5.1317 5.53036 5.36495C5.31406 5.60246 4.70759 6.17076 4.70759 7.32857C4.70759 8.48638 5.55156 9.60603 5.66607 9.76295C5.78482 9.91987 7.32433 12.2949 9.68661 13.317C11.1795 13.9616 11.7647 14.0167 12.5112 13.9065C12.965 13.8386 13.9022 13.3382 14.0973 12.7868C14.2924 12.2355 14.2924 11.7647 14.233 11.6672C14.1779 11.5612 14.021 11.5018 13.7877 11.3873Z" fill="#00094A"/>
+                    </svg>
+                    Contactame
+                </button>
+                <a href="#descargar-cv" class="secondary-button"  aria-label="download my CV">
+                    <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.9558 1.1875C10.9558 0.530664 10.4251 0 9.76831 0C9.11147 0 8.58081 0.530664 8.58081 1.1875V10.1939L5.85698 7.47012C5.39312 7.00625 4.6398 7.00625 4.17593 7.47012C3.71206 7.93398 3.71206 8.6873 4.17593 9.15117L8.92593 13.9012C9.3898 14.365 10.1431 14.365 10.607 13.9012L15.357 9.15117C15.8208 8.6873 15.8208 7.93398 15.357 7.47012C14.8931 7.00625 14.1398 7.00625 13.6759 7.47012L10.9558 10.1939V1.1875ZM2.64331 13.0625C1.33335 13.0625 0.268311 14.1275 0.268311 15.4375V16.625C0.268311 17.935 1.33335 19 2.64331 19H16.8933C18.2033 19 19.2683 17.935 19.2683 16.625V15.4375C19.2683 14.1275 18.2033 13.0625 16.8933 13.0625H13.1267L11.4457 14.7436C10.5179 15.6713 9.01499 15.6713 8.08726 14.7436L6.40991 13.0625H2.64331ZM16.2996 15.1406C16.5358 15.1406 16.7623 15.2345 16.9293 15.4015C17.0964 15.5685 17.1902 15.795 17.1902 16.0312C17.1902 16.2675 17.0964 16.494 16.9293 16.661C16.7623 16.828 16.5358 16.9219 16.2996 16.9219C16.0634 16.9219 15.8368 16.828 15.6698 16.661C15.5028 16.494 15.4089 16.2675 15.4089 16.0312C15.4089 15.795 15.5028 15.5685 15.6698 15.4015C15.8368 15.2345 16.0634 15.1406 16.2996 15.1406Z" fill="white"/>
+                    </svg>
+                    Descargar CV
+                </a>
+            </div>
         </div>
 
-        <!-- my photo -->
-        <figure class="z-10 absolute left-0 right-0 mx-auto bottom-0 md:left-auto md:m-0 md:right-8 w-2/5  min-w-72 h-[75vh] ">
-            <img src="{% static 'core/images/me_profile.png' %}" alt="keiner mendoza"
-            class="w-full h-full object-contain object-bottom">
-        </figure>
-
-        <!-- text and call to action section -->
-        <article 
-            class="relative z-10 pt-10 md:pt-20 h-full flex flex-col md:block justify-start items-center text-center md:text-left lg:text-darkblue-card-gradient">
-            <h2 class="text-2xl md:text-3xl xl:text-4xl mb-5">Keiner Mendoza</h2>
-            <h1 class="text-3xl sm:text-4xl md:text-5xl xl:text-6xl mb-8 flex flex-wrap justify-center md:block">
-                <span class="whitespace-pre">Desarrollador </span>
-                <span>Web</span>
-            </h1>
-
-            <div class="relative z-20 grow flex flex-col items-center justify-end md:block">
-                <div class="hidden md:block xl:text-xl max-w-sm lg:max-w-md xl:max-w-lg">
-                    <p class="mb-4 ">
-                        Creo páginas web personalizadas para empresas, personas o eventos. Tendrás un sitio donde publicar lo que quieras con libertad y estilo.
-                    </p>
-                    <p>
-                        También estoy abierto a trabajar en equipo a tiempo parcial o completo.
-                    </p>
-                </div>
-
-                <c-ui.secondary_btn href="#contacto" >
-                    <svg class="w-9 h-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                        <path stroke-linecap="round" stroke="white" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
-                    </svg>
-                    <span class="text-2xl">Eviar Email</span>
-                </c-ui.secondary_btn>
-                
-                <c-ui.whatsapp_btn 
-                    margin=True 
-                    animate=True 
-                    message="Hola, acabo de ver tu sitio web y me gustaría contratar tus servicios ¿puedes darme más información?">
-                    Contactame
-                </c-ui.whatsapp_btn>
-            </div>
-        </article>
-    </div>
-</section>
+        <img class="hero-image" src="{% static 'core/images/hero-image.png' %}" alt="photo of Keiner Mendoza">
+    </c-layouts.section-wrapper>
+</header>

@@ -1,0 +1,40 @@
+@use './variables' as *;
+
+.flex-between {
+    @include flex-row-between;
+    line-height: 1;
+}
+.icon {
+
+}
+.mini-icon {
+    height: 0.875rem;
+}
+.nav-item {
+
+}
+.nav-link {
+
+}
+a.disabled {
+    opacity: 0.5;
+    pointer-events: none
+}
+.primary-button {
+    @include button;
+    background-color: $clr-primary;
+    color: $clr-black;
+}
+
+.secondary-button {
+    @include button;
+    background-color: $clr-black;
+    border: 2px solid $clr-white;
+    color: $clr-white;
+}
+.section-wrapper {
+    width: min(100%, $break-lg);
+    margin-inline: auto;
+    padding-inline: $inline-padding-mobile;
+    padding-block: $block-padding-desktop;
+}

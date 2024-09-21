@@ -1,0 +1,93 @@
+// fonts
+$ff-body: 'Plus Jakarta Sans', 'sans-serif';
+
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+
+
+$fs-base: 0.938rem;
+$fs-h2-desktop:2rem;
+$fs-h3-desktop:1.5rem;
+$fs-h4-desktop:1.25rem;
+
+$fs-h2-mobile:1.5rem;
+$fs-h3-mobile:1.125rem;
+
+$fs-p-desktop: 1rem;
+$fs-p-mobile: 0.875rem;
+
+$fs-xs:0.625rem;
+
+// sizes
+$inline-padding-desktop: 10rem;
+$block-padding-desktop: 3rem;
+
+$inline-padding-tablet: 2rem;
+$inline-padding-mobile: 1.25rem;
+
+$min-height: min(100vh, 44rem);
+
+$break-sm:30rem;
+$break-md:52.125rem;
+$break-lg:76rem;
+
+// colors
+$clr-white: hsl(0, 0%, 100%);
+$clr-black: #00094A;
+$clr-gray:#C9E0E8;
+$clr-gray-dark: #4D5381;
+$clr-primary:#19C2F8;
+
+$clr-secondary:#0C66E0;
+$clr-secondary-lgd:#07387A;
+
+@mixin button {
+    display: flex;
+    align-items: center;
+    gap: 0.625em;
+    padding: 0.625em 0.875em;
+    border-radius: 1em;
+}
+
+.button {
+    @include button;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-row-between {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+// @mixin title-format {
+//     font-family: $ff-titles;
+//     font-weight: 400;
+//     text-transform: uppercase;
+// }
+
+body {
+    font-family: $ff-body;
+    font-weight: $fw-500;
+    font-size: $fs-p-mobile;
+    background-color: $clr-white;
+    color: $clr-black;
+    line-height: 1.5;
+    @media (min-width:$break-md) {
+        font-size: $fs-p-desktop;
+    }
+}
+
+
+// main {
+//     padding-inline: $mobile-inline-padding;
+//     @media (min-width:$break-md) {
+//         padding-inline:$desktop-inline-padding;
+//     }
+// }

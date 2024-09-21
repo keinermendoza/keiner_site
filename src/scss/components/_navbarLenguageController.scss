@@ -1,0 +1,29 @@
+@use '../globals/variables' as *;
+
+.navbar-lenguage-controller {
+    position: relative;
+    
+    .lang-toogle-button {
+        cursor: pointer;
+        &:hover {
+            background-color: $clr-white;
+            color: $clr-black;
+        }
+    }
+    .lang-option-list {
+        background-color: $clr-gray;
+        border: 2px solid $clr-gray;
+        color: $clr-black;
+        border-radius: 1em;
+        display: none;
+        &.isOpen {
+            @include flex-column;
+            position: absolute;
+            top: 100%;
+            right: 0;
+        }
+    }
+    .current {
+        background-color: $clr-white;
+    }
+}
