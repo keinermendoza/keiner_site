@@ -1,0 +1,57 @@
+@use '../globals/variables' as *;
+
+.features {
+    &__main-text {
+        text-align: center;
+        margin-inline: auto;
+        max-width: 24rem;
+        margin-bottom: 1rem;
+        color: $clr-gray-dark;
+
+        @media (min-width:$break-md) {
+            max-width: 34rem;
+            margin-bottom: 3rem;
+        }
+
+        & .title {
+            color: $clr-black;
+            margin-bottom: 1rem;
+        }
+    }
+
+    /** all cards in single column **/
+    & .features__gallery {
+        display: grid;
+        gap: 1rem;
+        width: fit-content;
+        margin-inline: auto;
+
+        /** 2 cards in row and the third centred in second row **/
+        @media (min-width:$break-md) {
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(2,1fr);
+
+            & .feature-card {
+                grid-column: span 2;
+
+                &:nth-child(3) {
+                    grid-column: 2 / span 2;
+                }
+            }
+        }
+
+        /** 3 cards in sigle row **/
+        @media (min-width:$break-lg) {
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 1fr;
+            & .feature-card {
+                grid-column: span 1;
+                
+                &:nth-child(3) {
+                    grid-column: span 1;
+                }
+            }
+        }
+    }
+
+}

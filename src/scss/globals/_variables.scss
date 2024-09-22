@@ -51,9 +51,7 @@ $clr-secondary-lgd:#07387A;
     transition: background-color 200ms;
 }
 
-.button {
-    @include button;
-}
+
 
 @mixin flex-column {
     display: flex;

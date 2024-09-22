@@ -1,0 +1,25 @@
+@use '../globals/variables' as *;
+
+.feature-card {
+    @include flex-column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+    background-color: $clr-gray;
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+    box-shadow:  0 0.9rem 1.5rem -1rem  $clr-gray-dark;
+    max-width: 20rem;
+
+    @media (min-width:$break-md) {
+        max-width: 22rem;
+    }
+    @media (min-width:$break-lg) {
+        max-width: 100%;
+    }
+    &__description {
+        filter: opacity(80%);
+        text-align: start;
+    }
+}

@@ -46,6 +46,18 @@ a.disabled {
     opacity: 0.5;
     pointer-events: none
 }
+
+.button {
+    @include button;
+}
+.h2 {
+    font-weight: $fw-700;
+    font-size: $fs-h2-mobile;
+    line-height: 1.2;
+    @media (min-width:$break-md) {
+        font-size: $fs-h2-desktop;
+    }
+}
 .primary-button {
     @include button;
     background-color: $clr-primary;

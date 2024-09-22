@@ -1,0 +1,8 @@
+.tech-icon {
+    width: fit-content;
+    position: relative;
+    &__text {
+        position: absolute;
+        display: none;
+    }
+}
