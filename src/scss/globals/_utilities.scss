@@ -1,4 +1,5 @@
 @use './variables' as *;
+@use "sass:color";
 
 .flex-between {
     @include flex-row-between;
@@ -16,6 +17,31 @@
 .nav-link {
 
 }
+
+.underline-effect {
+    position: relative;
+
+    &::after  {
+        content: '';
+        position: absolute;
+        bottom: -.5rem;
+        left: 0;
+        width: 100%;
+        height: 1px;
+    
+        transform: scaleX(0);
+        transform-origin: center;
+        background-color: $clr-white;
+        transition: transform 250ms;
+    }
+    
+    &:hover:after {
+        transform: scaleX(1);
+    }
+}
+    
+
+
 a.disabled {
     opacity: 0.5;
     pointer-events: none
@@ -24,6 +50,10 @@ a.disabled {
     @include button;
     background-color: $clr-primary;
     color: $clr-black;
+    &:hover {
+        // background-color:color.adjust($clr-primary, $lightness: 15%, $space: hsl);
+        background-color:$clr-secondary;
+    }
 }
 
 .secondary-button {
@@ -31,6 +61,10 @@ a.disabled {
     background-color: $clr-black;
     border: 2px solid $clr-white;
     color: $clr-white;
+    &:hover {
+        background-color:$clr-secondary;
+        background-color:color.adjust($clr-black, $lightness: 20%, $space: hsl);
+    }
 }
 .section-wrapper {
     width: min(100%, $break-lg);

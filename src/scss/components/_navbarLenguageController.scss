@@ -1,29 +1,59 @@
 @use '../globals/variables' as *;
+@use "sass:color";
+
+@keyframes from-none-slide-down {
+    from {
+        display: flex;
+        opacity: 0;
+        top: 50%;
+    }
+    to {
+        opacity: 1;
+        top: 120%;
+    }
+}
 
 .navbar-lenguage-controller {
     position: relative;
-    
+
     .lang-toogle-button {
         cursor: pointer;
         &:hover {
-            background-color: $clr-white;
-            color: $clr-black;
+            background-color: color.adjust($clr-black, $lightness: 15%, $space: hsl);
+        }
+        & span {
+            user-select: none;
+        }
+        & .lang-toogle-button__arrow {
+            transition: transform 200ms;
+        }
+        &.isOpen {
+            & .lang-toogle-button__arrow {
+                transform: rotate(-180deg);
+            }
         }
     }
     .lang-option-list {
-        background-color: $clr-gray;
-        border: 2px solid $clr-gray;
-        color: $clr-black;
-        border-radius: 1em;
         display: none;
+        position: absolute;
+        right: 0;
+        background-color: $clr-gray;
+        color: $clr-black;
+        border-radius: 0.75rem;
+        
         &.isOpen {
             @include flex-column;
-            position: absolute;
-            top: 100%;
-            right: 0;
+            animation: from-none-slide-down  forwards 200ms;
         }
-    }
-    .current {
-        background-color: $clr-white;
+
+        /** modifing utility class all the list items have the button class **/
+        & .button {
+            border-radius: 0.75rem;
+            border: 0.25rem $clr-gray solid;
+            &:hover {
+                background-color:color.adjust($clr-gray, $lightness: -20%, $space: hsl);
+            }
+        }
+        
     }
 }

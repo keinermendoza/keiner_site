@@ -1,13 +1,40 @@
 @use '../globals/variables' as *;
 
+@keyframes from-none-slide-left {
+    from {
+        display: flex;
+        left: 100%;
+    }
+    to {
+        left:0;
+    }
+}
+
 .navbar-mobile {
     display: none;
     position: fixed;
+    background-color: $clr-black;
+    top:0;
     width: 100%;
     height: 100%;
+    z-index: 10;
+
+    color: $clr-white;
+    text-align: center;
+    font-size: 2rem;
+    gap:1rem;
 
     &.isOpen {
-        
+        @include flex-column;
+        justify-content: center;
+        animation: from-none-slide-left forwards 200ms;
+        @media (min-width:$break-md) {
+            display: none;
+        }
+    }
+
+    & .nav-item {
+        position: relative;
     }
 }
 
