@@ -1,8 +1,43 @@
+@use '../globals/variables' as *;
+
 .tech-icon {
     width: fit-content;
     position: relative;
     &__text {
+        font-size: $fs-p-mobile;
+        background-color: $clr-black;
+        color: $clr-white;
+        width: 10rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
         position: absolute;
+        bottom: 140%;
+        left: -1rem;
         display: none;
+        & p {
+            position: relative;
+            z-index: 10;
+        }
+        /** square **/
+        &::after {
+            $size:1.5rem;
+            position: absolute;
+            transform: rotate(45deg);
+            left: 1rem;
+            bottom: -.5rem;
+            content: "";
+            background-color: $clr-black;
+            width: $size;
+            height: $size;
+            z-index: 0;
+            border-radius: 0.2rem;
+
+        }
+    }
+    &:hover,
+    &:focus {
+        .tech-icon__text {
+            display: block;
+        }
     }
 }

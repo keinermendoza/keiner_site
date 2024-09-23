@@ -1,20 +1,22 @@
 <div class="project-card-grid">
-    <img src={{image}} alt={{title}}>
+    <img class="project-card-grid__image" src={{image}} alt={{title}}>
     <div class="project-card-grid__summary-section">
-        <h3>{{title}}</h3>
+        <h3 class="h3">{{title}}</h3>
         <div class="summary">
             {{summary}}
         </div>
     </div>
-    <iframe width="560" height="315" src={{video}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe class="project-card-grid__video" width="560" height="315" src={{video}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="project-card-grid__procces-section">
         <div class="procces">
-            <h3>Procces</h3>
+            <h3 class="h3" >Procces</h3>
             {{procces}}
         </div>
         <div class="tech-stack">
-            <h3>Tecnologías</h3>
-            {{tech_stack}}
+            <h3 class="h3">Tecnologías</h3>
+            <div class="tech-svgs">
+                {{tech_stack}}
+            </div>
         </div>
     </div>
 </div>
