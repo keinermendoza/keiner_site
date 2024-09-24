@@ -1,5 +1,8 @@
 @use '../globals/variables' as *;
 
+$gap-title: 1.5rem;
+$gap-list:1rem;
+
 /** TODO use utility functions for flex direction instead of defining here **/
 .footer {
     background-color: $clr-black;
@@ -11,43 +14,59 @@
         justify-content: center;
         gap: 3rem;
 
-
         @media (min-width:$break-md) {
             @include flex-row-between;
         }
     }
 
-    .brand-section,
-    .availables-pages,
-    .contact-section,
-    .availables-pages__nav-list,
-    .contact-section__link-list {
-        @include flex-column;
-        justify-content: space-between;
+    .brand-section {
+        gap:2rem;
         align-items: center;
-        gap: 1.5rem;
-    }
+        @media (min-width:$break-md) {align-items: start;}
 
-    .availables-pages__nav-list,
-    .contact-section__link-list {
-        gap: 1rem;
-    }
 
-    .social-links {
-        @include flex-row-between;
-        gap: 1.5rem;
-
-        @media (min-width:$break-md) {
-            align-items: start;
+        .brand-logo {
+            font-size: 1.5rem;
+            font-weight: $fw-700;
+        }
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: $gap-title;
+            @media (min-width:$break-md) {align-items: start;}
         }
     }
 
     .availables-pages {
+        gap: $gap-title;
 
+        &__title {
+            font-size: 1.25rem;
+        }
+
+        &__nav-list {
+            gap: $gap-list;
+            color: $clr-gray;
+
+        }
     }
-
     .contact-section {
+        gap: $gap-title;
+        
+        &__title {
+            font-size: 1.25rem;
+        }
 
+        &__link-list {
+            gap: $gap-list;
+            color: $clr-gray;
+            font-size: $fs-xs;
+
+            & a {
+                gap: .5rem;
+            }
+        }
     }
+
 
 }

@@ -5,6 +5,15 @@
     @include flex-row-between;
     line-height: 1;
 }
+
+.flex-col {
+    @include flex-column;
+}
+
+.items-center {
+    align-items: center;
+}
+
 .icon {
     width: 2rem;
     height: auto;
