@@ -1,0 +1,53 @@
+@use '../globals/variables' as *;
+
+/** TODO use utility functions for flex direction instead of defining here **/
+.footer {
+    background-color: $clr-black;
+    color: $clr-white;
+
+    .section-wrapper {
+        @include flex-column;
+        align-items: center;
+        justify-content: center;
+        gap: 3rem;
+
+
+        @media (min-width:$break-md) {
+            @include flex-row-between;
+        }
+    }
+
+    .brand-section,
+    .availables-pages,
+    .contact-section,
+    .availables-pages__nav-list,
+    .contact-section__link-list {
+        @include flex-column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .availables-pages__nav-list,
+    .contact-section__link-list {
+        gap: 1rem;
+    }
+
+    .social-links {
+        @include flex-row-between;
+        gap: 1.5rem;
+
+        @media (min-width:$break-md) {
+            align-items: start;
+        }
+    }
+
+    .availables-pages {
+
+    }
+
+    .contact-section {
+
+    }
+
+}

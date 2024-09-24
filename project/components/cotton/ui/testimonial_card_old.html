@@ -1,0 +1,20 @@
+<div class="swiper-slide ">
+    <div class="my-custom-slide-container h-full w-full grid place-content-center">
+    <article class="md:min-h-[215px] lg:min-h-[190px] max-w-[460px] flex flex-col p-5 rounded-md bg-darkblue-card text-white">
+        <header class="flex items-center gap-5 mb-3">
+            <figure class="w-16 h-16 rounded-full overflow-hidden bg-gray-600 border-solid border-secundary border-2">
+                <img 
+                class="w-full h-full object-cover"
+                src="{{ testimonial.image.url }}" alt="{{testimonial.name}}">
+            </figure>
+            <div>
+                <p class="text-xl font-semibold">{{testimonial.name}}</p>
+                <p class="text-lg">{{testimonial.profession}}</p>
+            </div>
+        </header>
+        <div class="grow">
+            <p>{{testimonial.message}}</p>
+        </div>
+    </article>
+    </div>
+</div>

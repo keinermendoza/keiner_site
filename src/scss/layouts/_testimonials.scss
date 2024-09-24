@@ -1,0 +1,34 @@
+@use '../globals/variables' as *;
+
+.testimonials {
+    background-color: $clr-black;
+    color: $clr-white;
+
+    .title {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .testimonials-grid {
+        display: grid;
+        gap: 2rem;
+        @media (min-width:$break-md) {grid-template-columns: 1fr 1fr;}
+
+        /** I declared these styles here beaacuse are more related to the context than the component itself **/
+        .testimonial-card {
+            margin-inline: auto;
+
+            @media (min-width:$break-md) {
+                &:nth-child(1) {justify-content: start;}
+                &:nth-child(2) {
+                    margin-top: 5rem;
+                    justify-content: end;
+                }
+            }
+
+            @media (min-width:$break-lg) {
+                &:nth-child(1) {justify-content: center;}
+            }
+        }
+    }
+}
