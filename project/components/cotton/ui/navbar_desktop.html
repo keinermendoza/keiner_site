@@ -2,7 +2,9 @@
 
     <ul class="navbar-desktop-list">
         {% for link in links  %}
-        <li class="nav-item underline-effect">
+        <li class="nav-item underline-effect relative">
+            {% if link.disabled %}<span class="badge-primary">Proximamente</span>{% endif %}
+            
             <a class="nav-link {% if link.disabled %}disabled coming-soon{% endif %}" href="{{link.href}}">
                 {{link.text}}
             </a>

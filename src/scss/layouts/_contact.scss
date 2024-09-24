@@ -26,11 +26,18 @@
         @include flex-column;
         gap: 1.25rem;
         line-height: 1.5;
-        color: $clr-black;
+        color: $clr-gray-dark;
         text-align: center;
         margin-inline: auto;
         margin-bottom: 2rem;
-        width: min(100%, 40rem);
+        width: min(100%, 24rem);
+
+        @media (min-width:$break-md) {
+            width: 36rem;
+            margin-bottom: 3rem;
+        }
+
+        & .title {color: $clr-black;}
     }
 
     &__main {
@@ -46,6 +53,7 @@
     }
 
     &__other {
+        color: $clr-gray;
         text-align: center;
         @include flex-column;
         gap: 1rem;
@@ -54,8 +62,11 @@
             @include flex-column;
             gap: 1rem;
             .my-email {
+                color: $clr-white;
                 font-weight: $fw-700;
                 font-size: 1rem;
+                @media (min-width:$break-md) {font-size: 1.25rem;}
+
             }
         }
         &__whatsapp {

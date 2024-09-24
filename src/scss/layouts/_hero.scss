@@ -1,4 +1,5 @@
 @use '../globals/variables' as *;
+@use "sass:color";
 
 .header-navegation-wrapper {
     position: fixed;
@@ -6,8 +7,11 @@
     left:0;
     right: 0;
     z-index: 20;
-    background-color: $clr-black;
+    background: linear-gradient(to right, $clr-black, color.adjust($clr-black, $lightness: 10%, $space: hsl));
+
+    // background-color: $clr-black;
     width: 100%;
+    border-bottom: $clr-primary 1px solid;
 
     .header-navegation {
         @include flex-row-between;

@@ -1,18 +1,19 @@
 @use '../globals/variables' as *;
+@use "sass:color";
 
 $gap-title: 1.5rem;
 $gap-list:1rem;
 
 /** TODO use utility functions for flex direction instead of defining here **/
 .footer {
-    background-color: $clr-black;
+    background: linear-gradient(to bottom, $clr-black, color.adjust($clr-black, $lightness: 10%, $space: hsl));
     color: $clr-white;
 
     .section-wrapper {
         @include flex-column;
         align-items: center;
         justify-content: center;
-        gap: 3rem;
+        gap: 2rem;
 
         @media (min-width:$break-md) {
             @include flex-row-between;
@@ -20,7 +21,7 @@ $gap-list:1rem;
     }
 
     .brand-section {
-        gap:2rem;
+        gap:$gap-title;
         align-items: center;
         @media (min-width:$break-md) {align-items: start;}
 

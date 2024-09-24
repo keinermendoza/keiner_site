@@ -51,6 +51,15 @@ $clr-secondary-lgd:#07387A;
     transition: background-color 200ms;
 }
 
+@mixin badge {
+    font-size: $fs-xs;
+    display: block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: -40%;
+    left: 110%;
+}
 
 
 @mixin flex-column {
