@@ -1,0 +1,30 @@
+@use '../globals/variables' as *;
+
+.contact-form {
+    @include flex-column;
+    gap: 1rem;
+    background: linear-gradient($clr-secondary, $clr-secondary-lgd);
+    padding: 1rem;
+    border-radius: 1rem;
+    max-width: 22rem;
+
+    & .input-group {
+        @include flex-column;
+        gap: 0.25rem;
+        & label {
+            display: block;
+        }
+    
+        & input,
+        textarea {
+            width: 100%;
+            color: $clr-black;
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.6rem;
+        }
+    }
+
+    & .secondary-button {
+        margin-inline-start: auto;
+    }
+}
