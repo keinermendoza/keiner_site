@@ -11,3 +11,5 @@ project/staticfiles/js/
 media
 _scripts/
 _backups/
+.venv
+venv

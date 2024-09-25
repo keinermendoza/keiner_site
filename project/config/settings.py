@@ -2,11 +2,13 @@ import os
 from pathlib import Path
 from django.urls import reverse_lazy
 from django.utils.translation import gettext_lazy as _
+from dotenv import load_dotenv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+load_dotenv(BASE_DIR.parent / '.env.dev')
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
@@ -140,9 +142,9 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en'
 
 LANGUAGES = [
-('en', _('English')),
-('es', _('Spanish')),
-('pt', _('Portuguese'))
+    ('en', _('English')),
+    ('es', _('Spanish')),
+    ('pt', _('Portuguese'))
 ]
 
 TIME_ZONE = 'America/Manaus'
@@ -152,7 +154,7 @@ USE_I18N = True
 USE_TZ = True
 
 LOCALE_PATHS = [
-BASE_DIR / 'locale',
+    BASE_DIR / 'locale',
 ]
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
@@ -185,10 +187,10 @@ ACCOUNT_ADAPTER = 'core.adapter.AccountAdapterEmailAsync'
 # Database
 DATABASES = {
     'default': {
-        'ENGINE': "django.db.backends.postgresql",
+        'ENGINE': os.environ.get('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
         'HOST': os.environ.get('SQL_HOST'),
         'USER': os.environ.get('USER'),
-        'NAME': os.environ.get('NAME'),
+        'NAME': os.environ.get('NAME', BASE_DIR / 'db.sqlite3'),
         'PASSWORD': os.environ.get('PASSWORD'),
         'PORT': os.environ.get('SQL_PORT'),
     }

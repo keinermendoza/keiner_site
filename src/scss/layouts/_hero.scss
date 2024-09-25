@@ -1,6 +1,6 @@
 @use '../globals/variables' as *;
 @use "sass:color";
-
+$break-smaller: 23rem;
 .header-navegation-wrapper {
     position: fixed;
     top:0;
@@ -105,7 +105,7 @@
                     display: none;
                     font-size: 1.25rem;
                     color: $clr-gray;
-                    @media (min-width:22.5rem) {
+                    @media (min-width:$break-smaller) {
                         display: inline;
                     }
                     @media (min-width:$break-md) {
@@ -127,13 +127,12 @@
 
             .call-to-action{ 
                 display: flex;
-                flex-wrap: wrap;
+                // flex-wrap: wrap;
                 justify-content: center;
                 gap: 1rem;
-                @media (min-width: $break-md) {
-                    justify-content: start;
-                    
-                }
+                font-size: $fs-xs;
+                @media (min-width: $break-smaller) {font-size:inherit;}
+                @media (min-width: $break-md) {justify-content: start;}
             }
         }
 
