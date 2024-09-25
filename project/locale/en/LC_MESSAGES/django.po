@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-24 21:01-0400\n"
+"POT-Creation-Date: 2024-09-25 13:07-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -296,8 +296,8 @@ msgstr ""
 #: allauth_templates/account/email_confirm.html:39
 #, python-format
 msgid ""
-"This email confirmation link expired or is invalid. Please <a "
-"href=\"%(email_url)s\">issue a new email confirmation request</a>."
+"This email confirmation link expired or is invalid. Please <a href="
+"\"%(email_url)s\">issue a new email confirmation request</a>."
 msgstr ""
 
 #: allauth_templates/account/login.html:7
@@ -794,8 +794,8 @@ msgstr ""
 #, python-format
 msgid ""
 "You decided to cancel logging in to our site using one of your existing "
-"accounts. If this was a mistake, please proceed to <a "
-"href=\"%(login_url)s\">sign in</a>."
+"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
+"\">sign in</a>."
 msgstr ""
 
 #: allauth_templates/socialaccount/messages/account_connected.txt:2
@@ -854,6 +854,54 @@ msgstr ""
 msgid "Sign Out Other Sessions"
 msgstr ""
 
+#: components/cotton/layouts/home/features.html:6
+msgid "I am ready to contribute to your project."
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:7
+msgid ""
+"I love creating websites, these are some of the skills I have developed in "
+"previous projects."
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:11
+msgid "Responsive Design"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:18
+msgid ""
+"I implement visually appealing and user-friendly web designs through tools "
+"such as"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:18
+#: components/cotton/layouts/home/features.html:41
+#: components/cotton/layouts/home/features.html:52
+msgid "and"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:22
+msgid "Data management"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:41
+msgid ""
+"I create dynamic websites capable of handling user-customized data, based on "
+"languages, libraries, and frameworks such as"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:45
+msgid "Deployment to Production"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:52
+msgid "I have launched websites on various platforms such as"
+msgstr ""
+
+#: components/cotton/layouts/home/features.html:52
+msgid "I am also familiar with"
+msgstr ""
+
 #: components/cotton/layouts/home/hero.html:33
 msgid "I'm"
 msgstr ""
@@ -877,17 +925,107 @@ msgstr ""
 msgid "Download CV"
 msgstr ""
 
-#: config/settings.py:145
-msgid "English"
-msgstr "Inglés"
+#: components/cotton/layouts/home/projects.html:5
+msgid "Projects"
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:16
+msgid ""
+"It is a website focused on promoting courses published on the Hotmart "
+"platform."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:19
+msgid ""
+"Users can search and filter courses, while site administrators have a "
+"control panel with an integrated editor to modify course information, "
+"including image management."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:25
+msgid ""
+"I designed it using Figma and implemented it with Tailwind CSS. I developed "
+"a REST API with Django, which included file handling, and integrated the "
+"WYSIWYG Editor.js with React. Finally, I provisioned the server, configured "
+"the database, and enabled a storage service to manage the files."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:31
+#: components/cotton/layouts/home/projects.html:124
+msgid ""
+"Django is a high-level Python web framework that encourages rapid "
+"development and clean, pragmatic design."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:42
+#: components/cotton/layouts/home/projects.html:163
+msgid ""
+"React is the library for web and native user interfaces. Build user "
+"interfaces out of individual pieces called components written in JavaScript."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:52
+msgid ""
+"React Router is a JavaScript framework that lets us handle \"client side "
+"routing\" routing in React applications."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:63
+#: components/cotton/layouts/home/projects.html:171
+msgid ""
+"Tailwind CSS is a utility-first CSS framework for rapidly building modern "
+"websites without ever leaving your HTML."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:79
+msgid ""
+"Webpack is a module bundler. Its main purpose is to bundle JavaScript files "
+"for usage in a browser"
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:92
+msgid ""
+"Docker is a software platform that allows you to build, test, and deploy "
+"applications quickly using containers."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:109
+msgid ""
+"It is a landing page for a lawyer specialized in Commercial and Civil Law."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:113
+msgid ""
+"It has the typical structure of a landing page, as well as a blog section "
+"and a contact form that sends an email directly to the site owner."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:120
+msgid ""
+"I designed the interface using Figma and implemented it with Next.js and "
+"Tailwind CSS. I developed a REST API with Django and enabled the Django "
+"admin panel to manage blog posts and configure email sending via SMTP. "
+"Finally, I made two separate deployments: one for the frontend in Next.js "
+"and another for the backend in Django."
+msgstr ""
+
+#: components/cotton/layouts/home/projects.html:136
+msgid ""
+"Next.js is a flexible React framework that gives you building blocks to "
+"create fast, full-stack web applications."
+msgstr ""
 
 #: config/settings.py:146
-msgid "Spanish"
-msgstr "Español"
+msgid "English"
+msgstr ""
 
 #: config/settings.py:147
+msgid "Spanish"
+msgstr ""
+
+#: config/settings.py:148
 msgid "Portuguese"
-msgstr "Portugues"
+msgstr ""
 
 #: core/templates/admin/change_form_trix_handle_images.html:20
 msgid "Home"
