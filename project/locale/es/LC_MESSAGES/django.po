@@ -8,16 +8,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 13:07-0400\n"
-"PO-Revision-Date: 2024-09-25 12:13-0400\n"
+"POT-Creation-Date: 2024-09-26 12:37-0400\n"
+"PO-Revision-Date: 2024-09-26 12:51-0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
-"1 : 2;\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
 #: allauth_templates/account/account_inactive.html:7
@@ -92,16 +91,13 @@ msgstr ""
 #: allauth_templates/account/email/account_already_exists_message.txt:4
 #, python-format
 msgid ""
-"You are receiving this email because you or someone else tried to signup for "
-"an\n"
+"You are receiving this email because you or someone else tried to signup for an\n"
 "account using email address:\n"
 "\n"
 "%(email)s\n"
 "\n"
-"However, an account using that email address already exists.  In case you "
-"have\n"
-"forgotten about this, please use the password forgotten procedure to "
-"recover\n"
+"However, an account using that email address already exists.  In case you have\n"
+"forgotten about this, please use the password forgotten procedure to recover\n"
 "your account:\n"
 "\n"
 "%(password_reset_url)s"
@@ -132,8 +128,7 @@ msgstr ""
 #: allauth_templates/account/email/base_notification.txt:10
 #, python-format
 msgid ""
-"If you do not recognize this change then please take proper security "
-"precautions immediately. The change to your account originates from:\n"
+"If you do not recognize this change then please take proper security precautions immediately. The change to your account originates from:\n"
 "\n"
 "- IP address: %(ip)s\n"
 "- Browser: %(user_agent)s\n"
@@ -160,8 +155,7 @@ msgstr ""
 #: allauth_templates/account/email/email_confirmation_message.txt:5
 #, python-format
 msgid ""
-"You're receiving this email because user %(user_display)s has given your "
-"email address to register an account on %(site_domain)s.\n"
+"You're receiving this email because user %(user_display)s has given your email address to register an account on %(site_domain)s.\n"
 "\n"
 "To confirm this is correct, go to %(activate_url)s"
 msgstr ""
@@ -189,10 +183,8 @@ msgstr ""
 
 #: allauth_templates/account/email/password_reset_key_message.txt:4
 msgid ""
-"You're receiving this email because you or someone else has requested a "
-"password reset for your user account.\n"
-"It can be safely ignored if you did not request a password reset. Click the "
-"link below to reset your password."
+"You're receiving this email because you or someone else has requested a password reset for your user account.\n"
+"It can be safely ignored if you did not request a password reset. Click the link below to reset your password."
 msgstr ""
 
 #: allauth_templates/account/email/password_reset_key_message.txt:9
@@ -229,8 +221,7 @@ msgstr ""
 #, python-format
 msgid ""
 "You are receiving this email because you or someone else has requested a\n"
-"password for your user account. However, we do not have any record of a "
-"user\n"
+"password for your user account. However, we do not have any record of a user\n"
 "with email %(email)s in our database.\n"
 "\n"
 "This mail can be safely ignored if you did not request a password reset.\n"
@@ -298,8 +289,8 @@ msgstr ""
 #: allauth_templates/account/email_confirm.html:39
 #, python-format
 msgid ""
-"This email confirmation link expired or is invalid. Please <a href="
-"\"%(email_url)s\">issue a new email confirmation request</a>."
+"This email confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new email confirmation request</a>."
 msgstr ""
 
 #: allauth_templates/account/login.html:7
@@ -425,8 +416,8 @@ msgstr ""
 #, python-format
 msgid ""
 "The password reset link was invalid, possibly because it has already been "
-"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password reset</"
-"a>."
+"used.  Please request a <a href=\"%(passwd_reset_url)s\">new password "
+"reset</a>."
 msgstr ""
 
 #: allauth_templates/account/password_reset_from_key_done.html:11
@@ -461,9 +452,7 @@ msgstr ""
 msgid ""
 "\n"
 "                Already have an account? Then please \n"
-"                <a class=\"text-blue-600 decoration-2 hover:underline font-"
-"medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-"
-"gray-600\" \n"
+"                <a class=\"text-blue-600 decoration-2 hover:underline font-medium dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600\" \n"
 "                    href=\"%(login_url)s\">sign in</a>.\n"
 "            "
 msgstr ""
@@ -500,8 +489,8 @@ msgstr ""
 
 #: allauth_templates/account/snippets/warn_no_email.html:3
 msgid ""
-"You currently do not have any email address set up. You should really add an "
-"email address so you can receive notifications, reset your password, etc."
+"You currently do not have any email address set up. You should really add an"
+" email address so you can receive notifications, reset your password, etc."
 msgstr ""
 
 #: allauth_templates/account/verification_sent.html:6
@@ -529,9 +518,7 @@ msgstr ""
 #: allauth_templates/account/verified_email_required.html:18
 msgid ""
 "We have sent an email to you for\n"
-"verification. Please click on the link inside that email. If you do not see "
-"the verification email in your main inbox, check your spam folder. "
-"Otherwise\n"
+"verification. Please click on the link inside that email. If you do not see the verification email in your main inbox, check your spam folder. Otherwise\n"
 "contact us if you do not receive it within a few minutes."
 msgstr ""
 
@@ -550,8 +537,8 @@ msgstr ""
 msgid "Menu:"
 msgstr ""
 
-#: allauth_templates/mfa/authenticate.html:9 allauth_templates/mfa/index.html:5
-#: allauth_templates/mfa/index.html:9
+#: allauth_templates/mfa/authenticate.html:9
+#: allauth_templates/mfa/index.html:5 allauth_templates/mfa/index.html:9
 msgid "Two-Factor Authentication"
 msgstr ""
 
@@ -658,7 +645,8 @@ msgid "Enter an authenticator code:"
 msgstr ""
 
 #: allauth_templates/mfa/recovery_codes/generate.html:9
-msgid "You are about to generate a new set of recovery codes for your account."
+msgid ""
+"You are about to generate a new set of recovery codes for your account."
 msgstr ""
 
 #: allauth_templates/mfa/recovery_codes/generate.html:11
@@ -781,7 +769,8 @@ msgstr ""
 
 #: allauth_templates/socialaccount/login.html:20
 #, python-format
-msgid "You are about to sign in using a third-party account from %(provider)s."
+msgid ""
+"You are about to sign in using a third-party account from %(provider)s."
 msgstr ""
 
 #: allauth_templates/socialaccount/login.html:27
@@ -797,8 +786,8 @@ msgstr ""
 #, python-format
 msgid ""
 "You decided to cancel logging in to our site using one of your existing "
-"accounts. If this was a mistake, please proceed to <a href=\"%(login_url)s"
-"\">sign in</a>."
+"accounts. If this was a mistake, please proceed to <a "
+"href=\"%(login_url)s\">sign in</a>."
 msgstr ""
 
 #: allauth_templates/socialaccount/messages/account_connected.txt:2
@@ -857,6 +846,49 @@ msgstr ""
 msgid "Sign Out Other Sessions"
 msgstr ""
 
+#: components/cotton/forms/contact_form.html:5
+msgid "Name"
+msgstr "Nombre"
+
+#: components/cotton/forms/contact_form.html:13
+msgid "Message"
+msgstr "Mensaje"
+
+#: components/cotton/forms/contact_form.html:21
+msgid "Send"
+msgstr "Enviar"
+
+#: components/cotton/layouts/home/contact.html:10
+#: components/cotton/layouts/home/footer.html:46
+#: components/cotton/layouts/old_contact.html:11
+#| msgid "Contact me"
+msgid "Contact"
+msgstr "Contacto"
+
+#: components/cotton/layouts/home/contact.html:11
+msgid ""
+"You can message me on WhatsApp, but if you prefer not to use that method, "
+"you can also contact me through the contact form in this section."
+msgstr ""
+"                Puedes escribirme por Whatsapp, pero si prefieres no usar "
+"ese medio tambien puedes contactarme el formulario de contacto en esta "
+"sección."
+
+#: components/cotton/layouts/home/contact.html:23
+msgid "If you prefer, you can write to me directly at my email."
+msgstr ""
+"                        Si lo prefieres puedes escribirme directamente a mi "
+"email."
+
+#: components/cotton/layouts/home/contact.html:34
+msgid "I prefer contact through WhatsApp."
+msgstr ""
+"                        Yo prefiero el contacto por medio de Whatsapp."
+
+#: components/cotton/layouts/home/contact.html:44
+msgid "Start conversation"
+msgstr "Iniciar conversación"
+
 #: components/cotton/layouts/home/features.html:6
 msgid "I am ready to contribute to your project."
 msgstr "Estoy listo para aportar a tu proyecto"
@@ -893,15 +925,15 @@ msgstr "Manejo de Datos"
 
 #: components/cotton/layouts/home/features.html:41
 msgid ""
-"I create dynamic websites capable of handling user-customized data, based on "
-"languages, libraries, and frameworks such as"
+"I create dynamic websites capable of handling user-customized data, based on"
+" languages, libraries, and frameworks such as"
 msgstr ""
 "Creo sitios web dinámicos capaces de manejar datos personalizados por "
 "usuario, basándome en lenguajes, librerías y frameworks como"
 
 #: components/cotton/layouts/home/features.html:45
 msgid "Deployment to Production"
-msgstr ""
+msgstr "Despliegue a Produccion"
 
 #: components/cotton/layouts/home/features.html:52
 msgid "I have launched websites on various platforms such as"
@@ -910,6 +942,39 @@ msgstr "He puesto en marcha sitios web en diferentes plataformas tales como"
 #: components/cotton/layouts/home/features.html:52
 msgid "I am also familiar with"
 msgstr "Tambien estoy familiarizado con"
+
+#: components/cotton/layouts/home/footer.html:7
+msgid "Go to Keiner's Linkedin Profile"
+msgstr "Ir al Perfil de Linkedin de Keiner"
+
+#: components/cotton/layouts/home/footer.html:12
+msgid "Go to Keiner's Github Profile"
+msgstr "Ir al Perfil de Github de Keiner"
+
+#: components/cotton/layouts/home/footer.html:22
+msgid "Pages on this site"
+msgstr "Páginas en este sitio"
+
+#: components/cotton/layouts/home/footer.html:30
+#: core/templates/admin/change_form_trix_handle_images.html:20
+msgid "Home"
+msgstr "Inicio"
+
+#: components/cotton/layouts/home/footer.html:35
+msgid "Coming soon"
+msgstr "Próximamente"
+
+#: components/cotton/layouts/home/footer.html:49
+msgid "developer location"
+msgstr "Localización del desarrollador"
+
+#: components/cotton/layouts/home/footer.html:59
+msgid "send me an email"
+msgstr "enviame un email"
+
+#: components/cotton/layouts/home/footer.html:68
+msgid "my telephone number"
+msgstr "mi numero de letefono"
 
 #: components/cotton/layouts/home/hero.html:33
 msgid "I'm"
@@ -940,13 +1005,15 @@ msgstr "Descargar CV"
 
 #: components/cotton/layouts/home/projects.html:5
 msgid "Projects"
-msgstr ""
+msgstr "Proyectos"
 
 #: components/cotton/layouts/home/projects.html:16
 msgid ""
 "It is a website focused on promoting courses published on the Hotmart "
 "platform."
 msgstr ""
+"Es un sitio web enfocado en la promoción de cursos publicados en la "
+"plataforma Hotmart."
 
 #: components/cotton/layouts/home/projects.html:19
 msgid ""
@@ -954,6 +1021,10 @@ msgid ""
 "control panel with an integrated editor to modify course information, "
 "including image management."
 msgstr ""
+"Los usuarios pueden buscar y filtrar cursos, mientras que los "
+"administradores del sitio cuentan con un panel de control con un editor "
+"integrado para modificar la información de los cursos, incluyendo la gestión"
+" de imágenes."
 
 #: components/cotton/layouts/home/projects.html:25
 msgid ""
@@ -962,6 +1033,11 @@ msgid ""
 "WYSIWYG Editor.js with React. Finally, I provisioned the server, configured "
 "the database, and enabled a storage service to manage the files."
 msgstr ""
+"Realicé el diseño utilizando Figma y lo implementé con Tailwind CSS. "
+"Desarrollé una API REST con Django, que incluyó el manejo de archivos e "
+"integré el editor WYSIWYG Editor.js con React. Finalmente, aprovisioné el "
+"servidor, configuré la base de datos y habilité un servicio de "
+"almacenamiento para gestionar los archivos."
 
 #: components/cotton/layouts/home/projects.html:31
 #: components/cotton/layouts/home/projects.html:124
@@ -969,6 +1045,8 @@ msgid ""
 "Django is a high-level Python web framework that encourages rapid "
 "development and clean, pragmatic design."
 msgstr ""
+"Django es un marco web de Python de alto nivel que fomenta el desarrollo "
+"rápido y un diseño limpio y pragmático."
 
 #: components/cotton/layouts/home/projects.html:42
 #: components/cotton/layouts/home/projects.html:163
@@ -976,12 +1054,17 @@ msgid ""
 "React is the library for web and native user interfaces. Build user "
 "interfaces out of individual pieces called components written in JavaScript."
 msgstr ""
+"React es la biblioteca para interfaces de usuario web y nativas. Crea "
+"interfaces de usuario a partir de piezas individuales llamadas componentes "
+"escritos en JavaScript."
 
 #: components/cotton/layouts/home/projects.html:52
 msgid ""
 "React Router is a JavaScript framework that lets us handle \"client side "
 "routing\" routing in React applications."
 msgstr ""
+"React Router es un marco de JavaScript que nos permite manejar el "
+"enrutamiento del lado del cliente en aplicaciones React."
 
 #: components/cotton/layouts/home/projects.html:63
 #: components/cotton/layouts/home/projects.html:171
@@ -989,29 +1072,40 @@ msgid ""
 "Tailwind CSS is a utility-first CSS framework for rapidly building modern "
 "websites without ever leaving your HTML."
 msgstr ""
+"Tailwind CSS es un marco CSS de utilidad primero para construir rápidamente "
+"sitios web modernos sin salir nunca de tu HTML."
 
 #: components/cotton/layouts/home/projects.html:79
 msgid ""
 "Webpack is a module bundler. Its main purpose is to bundle JavaScript files "
 "for usage in a browser"
 msgstr ""
+"Webpack es un empaquetador de módulos. Su principal objetivo es agrupar "
+"archivos JavaScript para su uso en un navegador."
 
 #: components/cotton/layouts/home/projects.html:92
 msgid ""
 "Docker is a software platform that allows you to build, test, and deploy "
 "applications quickly using containers."
 msgstr ""
+"Docker es una plataforma de software que te permite construir, probar y "
+"desplegar aplicaciones rápidamente utilizando contenedores."
 
 #: components/cotton/layouts/home/projects.html:109
 msgid ""
 "It is a landing page for a lawyer specialized in Commercial and Civil Law."
 msgstr ""
+"Es una landing page para una abogada especializada en Derecho Mercantil y "
+"Civil."
 
 #: components/cotton/layouts/home/projects.html:113
 msgid ""
 "It has the typical structure of a landing page, as well as a blog section "
 "and a contact form that sends an email directly to the site owner."
 msgstr ""
+"Tiene la estructura típica de una landing page, además de una sección de "
+"blog y un formulario de contacto que envía un correo electrónico "
+"directamente a la propietaria del sitio."
 
 #: components/cotton/layouts/home/projects.html:120
 msgid ""
@@ -1021,12 +1115,33 @@ msgid ""
 "Finally, I made two separate deployments: one for the frontend in Next.js "
 "and another for the backend in Django."
 msgstr ""
+"Diseñé la interfaz utilizando Figma y la implementé con Next.js y Tailwind "
+"CSS. Desarrollé una API REST con Django y habilité el panel de "
+"administración de Django para gestionar las publicaciones del blog y "
+"configurar el envío de correos electrónicos a través de SMTP. Finalmente, "
+"realicé dos despliegues separados: uno para el frontend en Next.js y otro "
+"para el backend en Django."
 
 #: components/cotton/layouts/home/projects.html:136
 msgid ""
 "Next.js is a flexible React framework that gives you building blocks to "
 "create fast, full-stack web applications."
 msgstr ""
+"Next.js es un marco flexible de React que te proporciona los bloques de "
+"construcción para crear aplicaciones web rápidas y de pila completa."
+
+#: components/cotton/layouts/old_contact.html:15
+msgid ""
+"You can message me directly on WhatsApp. I will personally attend to you."
+msgstr ""
+
+#: components/cotton/ui/project_card_grid.html:14
+msgid "Process"
+msgstr "Proceso"
+
+#: components/cotton/ui/project_card_grid.html:18
+msgid "Technologies"
+msgstr "Tecnologías"
 
 #: config/settings.py:146
 msgid "English"
@@ -1039,10 +1154,6 @@ msgstr "Español"
 #: config/settings.py:148
 msgid "Portuguese"
 msgstr "Portugues"
-
-#: core/templates/admin/change_form_trix_handle_images.html:20
-msgid "Home"
-msgstr "Inicio"
 
 #: core/templates/admin/change_form_trix_handle_images.html:34
 #, python-format

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 13:07-0400\n"
+"POT-Creation-Date: 2024-09-26 12:37-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,6 +854,42 @@ msgstr ""
 msgid "Sign Out Other Sessions"
 msgstr ""
 
+#: components/cotton/forms/contact_form.html:5
+msgid "Name"
+msgstr ""
+
+#: components/cotton/forms/contact_form.html:13
+msgid "Message"
+msgstr ""
+
+#: components/cotton/forms/contact_form.html:21
+msgid "Send"
+msgstr ""
+
+#: components/cotton/layouts/home/contact.html:10
+#: components/cotton/layouts/home/footer.html:46
+#: components/cotton/layouts/old_contact.html:11
+msgid "Contact"
+msgstr ""
+
+#: components/cotton/layouts/home/contact.html:11
+msgid ""
+"You can message me on WhatsApp, but if you prefer not to use that method, "
+"you can also contact me through the contact form in this section."
+msgstr ""
+
+#: components/cotton/layouts/home/contact.html:23
+msgid "If you prefer, you can write to me directly at my email."
+msgstr ""
+
+#: components/cotton/layouts/home/contact.html:34
+msgid "I prefer contact through WhatsApp."
+msgstr ""
+
+#: components/cotton/layouts/home/contact.html:44
+msgid "Start conversation"
+msgstr ""
+
 #: components/cotton/layouts/home/features.html:6
 msgid "I am ready to contribute to your project."
 msgstr ""
@@ -900,6 +936,39 @@ msgstr ""
 
 #: components/cotton/layouts/home/features.html:52
 msgid "I am also familiar with"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:7
+msgid "Go to Keiner's Linkedin Profile"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:12
+msgid "Go to Keiner's Github Profile"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:22
+msgid "Pages on this site"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:30
+#: core/templates/admin/change_form_trix_handle_images.html:20
+msgid "Home"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:35
+msgid "Coming soon"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:49
+msgid "developer location"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:59
+msgid "send me an email"
+msgstr ""
+
+#: components/cotton/layouts/home/footer.html:68
+msgid "my telephone number"
 msgstr ""
 
 #: components/cotton/layouts/home/hero.html:33
@@ -1015,6 +1084,19 @@ msgid ""
 "create fast, full-stack web applications."
 msgstr ""
 
+#: components/cotton/layouts/old_contact.html:15
+msgid ""
+"You can message me directly on WhatsApp. I will personally attend to you."
+msgstr ""
+
+#: components/cotton/ui/project_card_grid.html:14
+msgid "Process"
+msgstr ""
+
+#: components/cotton/ui/project_card_grid.html:18
+msgid "Technologies"
+msgstr ""
+
 #: config/settings.py:146
 msgid "English"
 msgstr ""
@@ -1025,10 +1107,6 @@ msgstr ""
 
 #: config/settings.py:148
 msgid "Portuguese"
-msgstr ""
-
-#: core/templates/admin/change_form_trix_handle_images.html:20
-msgid "Home"
 msgstr ""
 
 #: core/templates/admin/change_form_trix_handle_images.html:34

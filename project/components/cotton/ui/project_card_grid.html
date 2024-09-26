@@ -1,3 +1,5 @@
+{% load static i18n %}
+
 <div class="project-card-grid">
     <img class="project-card-grid__image" src={{image}} alt={{title}}>
     <div class="project-card-grid__summary-section">
@@ -9,11 +11,11 @@
     <iframe class="project-card-grid__video" width="560" height="315" src={{video}} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     <div class="project-card-grid__procces-section">
         <div class="procces">
-            <h3 class="h3" >Procces</h3>
+            <h3 class="h3" > {% trans "Process" %}</h3>
             {{procces}}
         </div>
         <div class="tech-stack">
-            <h3 class="h3">Tecnologías</h3>
+            <h3 class="h3">{% trans "Technologies" %}</h3>
             <div class="tech-svgs">
                 {{tech_stack}}
             </div>

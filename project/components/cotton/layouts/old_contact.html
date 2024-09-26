@@ -1,4 +1,5 @@
-{% load static %}
+{% load static i18n %}
+
 <section id="contacto" class="overflow-hidden relative px-4 md:px-6 lg:px-8 ">
     <img class="absolute bottom-0 left-0 w-screen min-h-20 object-cover z-0" src="{% static 'icons/many_buildings.svg' %}" alt="">
     <img class="absolute bottom-2 -right-30 opacity-40 w-screen min-h-16 object-cover z-0" src="{% static 'icons/many_buildings.svg' %}" alt="">
@@ -7,11 +8,12 @@
         
         <article class="max-w-lg text-center md:text-left">
             <div class="pb-5 md:pb-10">
-                <h2 class="text-4xl ">Contactame</h2>
+                <h2 class="text-4xl ">{% trans "Contact" %}</h2>
             </div>
             <div class="flex flex-col gap-6">
-                <p class="text-xl">Puedes escribir directamente a mi whatsapp
-                    Yo mismo te atenderé.
+                <p class="text-xl">
+                    {% trans "You can message me directly on WhatsApp. I will personally attend to you." %}
+                    {% comment %} Puedes escribir directamente a mi whatsapp. Yo mismo te atenderé. {% endcomment %}
                 </p>
 
                 <div class="mx-auto lg:ml-0">

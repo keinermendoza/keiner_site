@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-25 13:07-0400\n"
-"PO-Revision-Date: 2024-09-25 13:07-0400\n"
+"POT-Creation-Date: 2024-09-26 12:37-0400\n"
+"PO-Revision-Date: 2024-09-26 12:46-0400\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -845,6 +845,45 @@ msgstr ""
 msgid "Sign Out Other Sessions"
 msgstr ""
 
+#: components/cotton/forms/contact_form.html:5
+msgid "Name"
+msgstr "Nome"
+
+#: components/cotton/forms/contact_form.html:13
+msgid "Message"
+msgstr "Mensagem"
+
+#: components/cotton/forms/contact_form.html:21
+msgid "Send"
+msgstr "Enviar"
+
+#: components/cotton/layouts/home/contact.html:10
+#: components/cotton/layouts/home/footer.html:46
+#: components/cotton/layouts/old_contact.html:11
+#| msgid "Contact me"
+msgid "Contact"
+msgstr "Contato "
+
+#: components/cotton/layouts/home/contact.html:11
+msgid ""
+"You can message me on WhatsApp, but if you prefer not to use that method, "
+"you can also contact me through the contact form in this section."
+msgstr ""
+"Você pode me escrever pelo WhatsApp, mas se preferir não usar esse meio, "
+"você também pode me contatar pelo formulário de contato nesta seção"
+
+#: components/cotton/layouts/home/contact.html:23
+msgid "If you prefer, you can write to me directly at my email."
+msgstr "Se preferir, você pode me escrever diretamente no meu email."
+
+#: components/cotton/layouts/home/contact.html:34
+msgid "I prefer contact through WhatsApp."
+msgstr "Eu prefiro o contato por meio do WhatsApp."
+
+#: components/cotton/layouts/home/contact.html:44
+msgid "Start conversation"
+msgstr "Iniciar conversa"
+
 #: components/cotton/layouts/home/features.html:6
 msgid "I am ready to contribute to your project."
 msgstr "Estou pronto para contribuir com o seu projeto."
@@ -889,7 +928,7 @@ msgstr ""
 
 #: components/cotton/layouts/home/features.html:45
 msgid "Deployment to Production"
-msgstr ""
+msgstr "Implantação em Produção"
 
 #: components/cotton/layouts/home/features.html:52
 msgid "I have launched websites on various platforms such as"
@@ -898,6 +937,39 @@ msgstr "Lancei sites em várias plataformas, como"
 #: components/cotton/layouts/home/features.html:52
 msgid "I am also familiar with"
 msgstr "Além disso, tenho familiaridade com"
+
+#: components/cotton/layouts/home/footer.html:7
+msgid "Go to Keiner's Linkedin Profile"
+msgstr "Ir para o perfil de LinkedIn do Keiner"
+
+#: components/cotton/layouts/home/footer.html:12
+msgid "Go to Keiner's Github Profile"
+msgstr "Ir para o perfil de Github do Keiner"
+
+#: components/cotton/layouts/home/footer.html:22
+msgid "Pages on this site"
+msgstr "Páginas neste site"
+
+#: components/cotton/layouts/home/footer.html:30
+#: core/templates/admin/change_form_trix_handle_images.html:20
+msgid "Home"
+msgstr "Inicio"
+
+#: components/cotton/layouts/home/footer.html:35
+msgid "Coming soon"
+msgstr "Em breve"
+
+#: components/cotton/layouts/home/footer.html:49
+msgid "developer location"
+msgstr "localização do desenvolvedor"
+
+#: components/cotton/layouts/home/footer.html:59
+msgid "send me an email"
+msgstr "me envie um e-mail"
+
+#: components/cotton/layouts/home/footer.html:68
+msgid "my telephone number"
+msgstr "meu numero de telefone"
 
 #: components/cotton/layouts/home/hero.html:33
 msgid "I'm"
@@ -928,13 +1000,14 @@ msgstr "Baixar CV"
 
 #: components/cotton/layouts/home/projects.html:5
 msgid "Projects"
-msgstr ""
+msgstr "Projetos"
 
 #: components/cotton/layouts/home/projects.html:16
 msgid ""
 "It is a website focused on promoting courses published on the Hotmart "
 "platform."
 msgstr ""
+"É um site focado na promoção de cursos publicados na plataforma Hotmart."
 
 #: components/cotton/layouts/home/projects.html:19
 msgid ""
@@ -942,6 +1015,9 @@ msgid ""
 "control panel with an integrated editor to modify course information, "
 "including image management."
 msgstr ""
+"Os usuários podem buscar e filtrar cursos, enquanto os administradores do "
+"site têm um painel de controle com um editor integrado para modificar as "
+"informações dos cursos, incluindo o gerenciamento de imagens."
 
 #: components/cotton/layouts/home/projects.html:25
 msgid ""
@@ -950,6 +1026,11 @@ msgid ""
 "WYSIWYG Editor.js with React. Finally, I provisioned the server, configured "
 "the database, and enabled a storage service to manage the files."
 msgstr ""
+"Eu o projetei usando o Figma e implementei com Tailwind CSS. Desenvolvi uma "
+"API REST com Django, que incluiu o gerenciamento de arquivos, e integrei o "
+"Editor WYSIWYG Editor.js com React. Por fim, provisionei o servidor, "
+"configurei o banco de dados e habilitei um serviço de armazenamento para "
+"gerenciar os arquivos."
 
 #: components/cotton/layouts/home/projects.html:31
 #: components/cotton/layouts/home/projects.html:124
@@ -957,6 +1038,8 @@ msgid ""
 "Django is a high-level Python web framework that encourages rapid "
 "development and clean, pragmatic design."
 msgstr ""
+"Django é um framework web de alto nível em Python que incentiva o "
+"desenvolvimento rápido e um design limpo e pragmático."
 
 #: components/cotton/layouts/home/projects.html:42
 #: components/cotton/layouts/home/projects.html:163
@@ -964,12 +1047,17 @@ msgid ""
 "React is the library for web and native user interfaces. Build user "
 "interfaces out of individual pieces called components written in JavaScript."
 msgstr ""
+"React é a biblioteca para interfaces de usuário web e nativas. Construa "
+"interfaces de usuário a partir de peças individuais chamadas componentes, "
+"escritas em JavaScript."
 
 #: components/cotton/layouts/home/projects.html:52
 msgid ""
 "React Router is a JavaScript framework that lets us handle \"client side "
 "routing\" routing in React applications."
 msgstr ""
+"React Router é um framework JavaScript que nos permite lidar com o "
+"\"roteamento no lado do cliente\" em aplicações React."
 
 #: components/cotton/layouts/home/projects.html:63
 #: components/cotton/layouts/home/projects.html:171
@@ -977,29 +1065,40 @@ msgid ""
 "Tailwind CSS is a utility-first CSS framework for rapidly building modern "
 "websites without ever leaving your HTML."
 msgstr ""
+"Tailwind CSS é um framework CSS com foco em utilitários para construir "
+"rapidamente sites modernos sem precisar sair do seu HTML."
 
 #: components/cotton/layouts/home/projects.html:79
 msgid ""
 "Webpack is a module bundler. Its main purpose is to bundle JavaScript files "
 "for usage in a browser"
 msgstr ""
+"Webpack é um empacotador de módulos. Seu principal objetivo é agrupar "
+"arquivos JavaScript para uso em um navegador."
 
 #: components/cotton/layouts/home/projects.html:92
 msgid ""
 "Docker is a software platform that allows you to build, test, and deploy "
 "applications quickly using containers."
 msgstr ""
+"Docker é uma plataforma de software que permite construir, testar e "
+"implantar aplicações rapidamente usando contêineres."
 
 #: components/cotton/layouts/home/projects.html:109
 msgid ""
 "It is a landing page for a lawyer specialized in Commercial and Civil Law."
 msgstr ""
+"É uma landing page para uma advogada especializada em Direito Comercial e "
+"Civil."
 
 #: components/cotton/layouts/home/projects.html:113
 msgid ""
 "It has the typical structure of a landing page, as well as a blog section "
 "and a contact form that sends an email directly to the site owner."
 msgstr ""
+"Tem a estrutura típica de uma landing page, além de uma seção de blog e um "
+"formulário de contato que envia um e-mail diretamente para a proprietária do"
+" site."
 
 #: components/cotton/layouts/home/projects.html:120
 msgid ""
@@ -1009,12 +1108,32 @@ msgid ""
 "Finally, I made two separate deployments: one for the frontend in Next.js "
 "and another for the backend in Django."
 msgstr ""
+"Eu projetei a interface usando o Figma e a implementei com Next.js e "
+"Tailwind CSS. Desenvolvi uma API REST com Django e habilitei o painel de "
+"administração do Django para gerenciar as postagens do blog e configurar o "
+"envio de e-mails via SMTP. Finalmente, fiz dois deploys separados: um para o"
+" frontend em Next.js e outro para o backend em Django."
 
 #: components/cotton/layouts/home/projects.html:136
 msgid ""
 "Next.js is a flexible React framework that gives you building blocks to "
 "create fast, full-stack web applications."
 msgstr ""
+"Next.js é um framework flexível de React que fornece blocos de construção "
+"para criar aplicações web rápidas e full-stack."
+
+#: components/cotton/layouts/old_contact.html:15
+msgid ""
+"You can message me directly on WhatsApp. I will personally attend to you."
+msgstr ""
+
+#: components/cotton/ui/project_card_grid.html:14
+msgid "Process"
+msgstr "Processo"
+
+#: components/cotton/ui/project_card_grid.html:18
+msgid "Technologies"
+msgstr "Tecnologias"
 
 #: config/settings.py:146
 msgid "English"
@@ -1027,10 +1146,6 @@ msgstr "Espanhol"
 #: config/settings.py:148
 msgid "Portuguese"
 msgstr "Português"
-
-#: core/templates/admin/change_form_trix_handle_images.html:20
-msgid "Home"
-msgstr "Inicio"
 
 #: core/templates/admin/change_form_trix_handle_images.html:34
 #, python-format
