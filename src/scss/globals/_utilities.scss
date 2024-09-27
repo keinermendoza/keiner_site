@@ -81,7 +81,9 @@ a.disabled {
     @include button;
     background-color: $clr-primary;
     color: $clr-black;
-    &:hover {
+    &:hover,
+    &:focus
+     {
         // background-color:color.adjust($clr-primary, $lightness: 15%, $space: hsl);
         background-color:$clr-secondary;
     }
@@ -92,7 +94,8 @@ a.disabled {
     background-color: $clr-black;
     border: 2px solid $clr-white;
     color: $clr-white;
-    &:hover {
+    &:hover,
+    &:focus {
         background-color:$clr-secondary;
         background-color:color.adjust($clr-black, $lightness: 20%, $space: hsl);
     }

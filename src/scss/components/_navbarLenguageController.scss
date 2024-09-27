@@ -53,6 +53,9 @@
             &:hover {
                 background-color:color.adjust($clr-gray, $lightness: -20%, $space: hsl);
             }
+            &.current {
+                background-color:$clr-white;
+            }
         }
         
     }
