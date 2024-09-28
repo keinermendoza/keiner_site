@@ -246,3 +246,5 @@ CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672/'
 
 # # Url
 ROOT_URLCONF = os.environ.get('ROOT_URLCONF', 'config.urls')
+
+WHATSAPP_NUMBER = os.environ.get('WHATSAPP_NUMBER')

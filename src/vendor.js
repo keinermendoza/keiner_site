@@ -1,4 +1,6 @@
 import Alpine from 'alpinejs';
+import '../node_modules/lite-youtube-embed/src/lite-yt-embed.css';
+import '../node_modules/lite-youtube-embed/src/lite-yt-embed.js';
 import './scss/styles.scss';
 // import Swiper from 'swiper';
 // import { Autoplay, Navigation, Pagination, EffectCards } from 'swiper/modules';

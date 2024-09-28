@@ -30,35 +30,32 @@ module.exports = {
     // },
     module: {
         rules: [
-                        // {
-                        //     test: /\.(js|jsx)$/,
-                        //     exclude: /node_modules/,
-                        //     use: {
-                        //         loader:'babel-loader'
-                        //     }
-                        // },
-                        {
-                            test: /\.(js|jsx)$/,
-                            exclude: /node_modules/,
-                            use: {
-                              loader: 'babel-loader',
-                              options: {
-                                presets: ['@babel/preset-env', '@babel/preset-react']
-                              }
-                            }
-                          },
-
             {
-                test: /\.s[ac]ss$/i,
-                use: [
-                // Creates `style` nodes from JS strings
-                "style-loader",
-                // Translates CSS into CommonJS
-                "css-loader",
-                // Compiles Sass to CSS
-                "sass-loader",
-                ],
-            },
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                    presets: ['@babel/preset-env', '@babel/preset-react']
+                    }
+                }
+                },
+
+                {
+                    test: /\.css$/,  // Procesa archivos .css
+                    use: [
+                    'style-loader',  // Inyecta CSS en el DOM
+                    'css-loader'     // Interpreta @import y url()
+                    ]
+                },
+                {
+                    test: /\.scss$/,  // Procesa archivos .scss
+                    use: [
+                    'style-loader',  // Inyecta CSS en el DOM
+                    'css-loader',    // Interpreta @import y url()
+                    'sass-loader'    // Compila SCSS a CSS
+                    ]
+                },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
                 type: 'asset/resource',
