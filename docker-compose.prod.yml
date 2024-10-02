@@ -13,6 +13,7 @@ services:
       - 8000:8000
     env_file:
       - ./.env.prod
+    restart: unless-stopped
     depends_on:
       - rabbitmq
       - db
@@ -21,6 +22,7 @@ services:
     image: rabbitmq:3.13-management
     ports:
       - 5672:5672
+    restart: unless-stopped
     depends_on:
       - db
   
@@ -29,12 +31,14 @@ services:
     command: celery --app=config worker -l INFO
     env_file:
       - ./.env.prod
+    restart: unless-stopped
     depends_on:
       - rabbitmq
       - web
     
   db:
     image: postgres:14
+    restart: always
     volumes:
       - new_homesite_data_prod:/var/lib/postgresql/data/
     env_file:
