@@ -96,7 +96,7 @@ class ContactFormPartialView(FormView):
         """
         form = self.get_form()
         if form.is_valid():
-            form.send_email()
+            # form.send_email()
             return self.form_valid(form)
         else:
             if "username" in form.errors:

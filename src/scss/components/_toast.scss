@@ -1,0 +1,49 @@
+@use '../globals/variables' as *;
+
+
+/* animations */
+@keyframes appears {
+    0% {
+        translate: 0 -30%;
+        opacity: 0;
+        scale: 1.2;
+    }
+    100% {
+        translate: 0;
+        opacity: 1;
+        scale: 1;
+    }
+}
+.appears-300 {animation: appears .3s ease-out forwards;}
+.appears-500 {animation: appears .6s ease forwards;}
+.disappears-500 {animation: appears .6s ease reverse;}
+
+.toast {
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    background-color: $clr-gray;
+    color: $clr-black;
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+    border-radius: 0.5rem;
+    box-shadow:  0 0.9rem 1.5rem -0.2rem  $clr-gray-dark;
+    $border-width:0.5rem;
+    &.toast-error {
+        border-left: $border-width solid yellow;
+    }
+
+    &.toast-success {
+        border-left: $border-width solid $clr-secondary;
+    }
+
+    & #svg-placeholder {
+        width: 2rem;
+        height: auto;
+        display: flex;
+        align-items: center;
+    }
+}
