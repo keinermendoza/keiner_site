@@ -5,7 +5,9 @@ app_name = 'core'
 
 urlpatterns = [
     # path("", views.HomePage.as_view(), name="home"),
-    path("", TemplateView.as_view(template_name="pages/home/new_desing.html"), name="home"),
+    path("", views.simple_home, name="home"),
+
+    # path("", TemplateView.as_view(template_name="pages/home/new_desing.html"), name="home"),
 
     path("about", views.AboutPage.as_view(), name="about"),
     path("contact-me", views.ContactFormPartialView.as_view(), name="contact_me"),

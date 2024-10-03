@@ -28,5 +28,24 @@ services:
       - POSTGRES_DB=mydb
     ports:
       - 5431:5432
+
+  rabbitmq:
+    image: rabbitmq:3.13-management
+    ports:
+      - 5672:5672
+    restart: unless-stopped
+    depends_on:
+      - db
+  
+  celery:
+    image: keinermendoza/keinerdev:v1.1.0
+    command: celery --app=config worker -l INFO
+    env_file:
+      - ./.env.prod
+    restart: unless-stopped
+    depends_on:
+      - rabbitmq
+      - web
+
 volumes:
   new_homesite_data_dev:

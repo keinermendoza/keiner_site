@@ -26,6 +26,9 @@ from core.models import (
 from blog.models import (
     Post
 )
+def simple_home(request):
+    form = ContactForm()
+    return render(request, "pages/home/new_desing.html", {"form":form})
 
 class HomePage(TemplateView):
     template_name = "core/pages/home.html"
@@ -62,10 +65,11 @@ class AboutPage(TemplateView):
 
 class ContactFormPartialView(FormView):
     form_class = ContactForm
-    template_name = "cotton/layouts/contact_form.html"
+    # template_name = "cotton/layouts/contact_form.html"
+    template_name = "cotton/forms/contact_form.html"
 
     def form_valid(self, form) -> HttpResponse:
-        response = self.render_to_response({})
+        response = self.render_to_response({'form':form})
         return trigger_client_event(
             response,
             "display_toast",

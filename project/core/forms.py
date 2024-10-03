@@ -1,19 +1,39 @@
 from typing import Any
 from django import forms
-from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 from .task import (
     send_feedback_email,
     send_mail_to_owner
 )
 
+
+
 class ContactForm(forms.Form):
-    name = forms.CharField(max_length=100)
-    best_email = forms.EmailField()
-    message = forms.CharField(widget=forms.Textarea)
+    # https://docs.djangoproject.com/en/5.0/topics/forms/?source=post_page-----5f867f25f153--------------------------------#reusable-form-templates
+    template_name = "core/forms/base_form.html"
+
+    name = forms.CharField(
+        label=_("Name"),
+        max_length=100
+    )
+    best_email = forms.EmailField(
+        label=_("Email")
+    )
+    message = forms.CharField(
+        label=_("Message"),
+        widget=forms.Textarea(attrs={'rows':3})
+    )
+   
     
     # trap fields
-    username = forms.CharField(required=False)
-    email = forms.CharField(required=False)
+    username = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput()    
+    )
+    email = forms.CharField(
+        required=False,
+        widget=forms.HiddenInput()    
+    )
     
     def clean(self) -> dict[str, Any]:
         """

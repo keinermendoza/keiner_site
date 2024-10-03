@@ -66,7 +66,6 @@ TEMPLATES = [
         'DIRS': [
             BASE_DIR / 'allauth_templates',
             BASE_DIR / 'components',
-
         ],
         'APP_DIRS': True,
         'OPTIONS': {
