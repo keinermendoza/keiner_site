@@ -113,3 +113,8 @@ a.disabled {
     padding-inline: $inline-padding-mobile;
     padding-block: $block-padding-desktop;
 }
+.hidden-md-to-lg {
+    @media (min-width:$break-md) {display: none;}
+    @media (min-width:$break-lg) {display: block;}
+
+}

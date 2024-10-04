@@ -21,7 +21,6 @@ $break-smaller: 23rem;
         @media (min-width: $break-md) {
             align-items: end;
             padding-inline: $inline-padding-tablet;
-
         }
         @media (min-width: $break-lg) {
             align-items: center;
@@ -40,7 +39,6 @@ $break-smaller: 23rem;
             padding: 0.375rem 0.625rem;
             border-radius: 0.25rem;
             background-color: $clr-gray-dark;
-
             @media (min-width: $break-md) {
                 display: none;
             }
