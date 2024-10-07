@@ -1,7 +1,15 @@
 {% load static i18n %}
+{% if not image_mobile %}
+    <c-vars image_mobile={{image}} />
+{% endif %}
 
 <div class="project-card-grid">
-    <img class="project-card-grid__image" src={{image}} alt={{title}}>
+    
+    {% comment %} <img class="project-card-grid__image" src={{image}} > {% endcomment %}
+    <picture class="project-card-grid__image">
+        <source srcset="{{image}}" media="(min-width: 480px)" />
+        <img src="{{image_mobile}}" alt={{title}} />
+      </picture>
     <div class="project-card-grid__summary-section">
         <h3 class="h3">{{title}}</h3>
         <div class="summary">
