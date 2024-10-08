@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: keinermendoza/keinerdev:v1.1.0
+    image: keinermendoza/keinerdev:v1.2.0
     command:
       - /bin/sh
       - -c
@@ -27,7 +27,7 @@ services:
       - db
   
   celery:
-    image: keinermendoza/keinerdev:v1.1.0
+    image: keinermendoza/keinerdev:v1.2.0
     command: celery --app=config worker -l INFO
     env_file:
       - ./.env.prod
@@ -42,7 +42,7 @@ services:
     volumes:
       - new_homesite_data_prod:/var/lib/postgresql/data/
     env_file:
-      - ./.env.db
+      - ./.env.database
 
 volumes:
   new_homesite_data_prod:

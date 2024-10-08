@@ -29,11 +29,10 @@ urlpatterns = [
 ]
 
 urlpatterns +=  i18n_patterns(
-    path('api/', include('api.urls')),
     # path('account/', include('account.urls')),
-    path('blog/', include('blog.urls')),
+    # path('api/', include('api.urls')),
+    # path('blog/', include('blog.urls')),
     path('', include('core.urls', namespace='core')),
-    # prefix_default_language=False
 )
 
 if settings.DEBUG:
