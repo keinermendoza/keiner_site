@@ -198,25 +198,37 @@ DATABASES = {
 USE_S3 = bool(int(os.environ.get('USE_S3', 1)))
 
 if USE_S3:
-    AWS_S3_ACCESS_KEY_ID = os.getenv('AWS_S3_ACCESS_KEY_ID')
-    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-    AWS_BUCKET_NAMESPACE = os.getenv('AWS_BUCKET_NAMESPACE')
-    AWS_STORAGE_BUCKET_NAME = os.getenv('AWS_STORAGE_BUCKET_NAME')
-    AWS_S3_BUCKET_REGION = os.getenv('AWS_S3_BUCKET_REGION')
-    
-    AWS_S3_ENDPOINT_URL = f'https://{AWS_BUCKET_NAMESPACE}.compat.objectstorage.{AWS_S3_BUCKET_REGION}.oraclecloud.com'
+    ENDPOINT_URL = f"https://{os.getenv('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com"
+    STORAGES = {
+        "default": {
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+            "OPTIONS": {
+                "secret_key": os.getenv('R2_SECRET_ACCESS_KEY'),
+                "access_key": os.getenv('R2_ACCESS_KEY_ID'),
+                "bucket_name": os.getenv('R2_BUCKET_NAME'),
+                "location": "media",
+                "endpoint_url": ENDPOINT_URL
 
-    # AWS_QUERYSTRING_EXPIRE = 1800
-    AWS_LOCATION = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}'
-    
-    STATICFILES_STORAGE = 'core.custom_storages.StaticStorage'
-    DEFAULT_FILE_STORAGE = 'core.custom_storages.MediaStorage'
+            },
+        },
+        "staticfiles":{
+            "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
+            "OPTIONS": {
+                "secret_key": os.getenv('R2_SECRET_ACCESS_KEY'),
+                "access_key": os.getenv('R2_ACCESS_KEY_ID'),
+                "bucket_name": os.getenv('R2_BUCKET_NAME'),
+                "location": "static",
+                "endpoint_url": ENDPOINT_URL
+            },
+        },
+    }
 
-    STATIC_URL = f"{AWS_LOCATION}/static/"
+    STATIC_URL = f"{ENDPOINT_URL}/static/"
     STATIC_ROOT = 'static/'
     
-    MEDIA_URL = f"{AWS_LOCATION}/media/"
+    MEDIA_URL = f"{ENDPOINT_URL}/media/"
     MEDIA_ROOT = 'media/'
+
 else:
     
     STATIC_URL = 'static/'
