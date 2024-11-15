@@ -14,7 +14,7 @@ from unfold.admin import (
 # from unfold.contrib.forms.widgets import WysiwygWidget
 
 from unfold.widgets import UnfoldAdminTextareaWidget
-from core.admin_utils import WysiwygWidget 
+# from core.admin_utils import WysiwygWidget 
 from core.admin_utils import RichTextEditorAdmin
 from core.admin_utils import BaseWysiwygCustomForm
 
@@ -26,7 +26,7 @@ class PostAdminForm(BaseWysiwygCustomForm):
         fields = ["title", "image", "preview", "body", "topics"]
         widgets = {
             'preview': UnfoldAdminTextareaWidget(attrs={'rows':3}),
-            'body': WysiwygWidget
+            # 'body': WysiwygWidget
         }
 
 

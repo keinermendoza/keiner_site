@@ -40,14 +40,11 @@
     <link rel="icon" type="image/png" sizes="32x32" href="{% static 'icons/favicon-32x32.png' %}">
     <link rel="icon" type="image/png" sizes="16x16" href="{% static 'icons/favicon-16x16.png' %}">
     <link rel="icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon" />
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="{% static 'icons/site.webmanifest' %}" />
     
-    <c-layouts.urls-css />
-
     <script src="{% static 'js/vendor.js' %}"></script>
-    {% comment %} <link rel="stylesheet" href="{% static 'css/tailwind.css' %}"> {% endcomment %}
+    <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 
-    {% block script %}{% endblock script %}
 </head>
 <body class="purple">
     <c-ui.toast/>

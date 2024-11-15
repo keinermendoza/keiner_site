@@ -198,7 +198,9 @@ DATABASES = {
 USE_S3 = bool(int(os.environ.get('USE_S3', 1)))
 
 if USE_S3:
-    ENDPOINT_URL = f"https://{os.getenv('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com"
+    PRIVATE_ENDPOINT = f"https://{os.getenv('R2_ACCOUNT_ID')}.r2.cloudflarestorage.com"
+    PUBLIC_ENDPOINT = os.getenv('R2_CUSTOM_DOMAIN')
+    
     STORAGES = {
         "default": {
             "BACKEND": "storages.backends.s3boto3.S3Boto3Storage",
@@ -207,7 +209,10 @@ if USE_S3:
                 "access_key": os.getenv('R2_ACCESS_KEY_ID'),
                 "bucket_name": os.getenv('R2_BUCKET_NAME'),
                 "location": "media",
-                "endpoint_url": ENDPOINT_URL
+                "default_acl": "public-read",
+                "signature_version":"s3v4",
+                "endpoint_url": PRIVATE_ENDPOINT,
+                "custom_domain":PUBLIC_ENDPOINT,
 
             },
         },
@@ -218,16 +223,19 @@ if USE_S3:
                 "access_key": os.getenv('R2_ACCESS_KEY_ID'),
                 "bucket_name": os.getenv('R2_BUCKET_NAME'),
                 "location": "static",
-                "endpoint_url": ENDPOINT_URL
+                "default_acl": "public-read",
+                "signature_version":"s3v4",
+                "endpoint_url": PRIVATE_ENDPOINT,
+                "custom_domain":PUBLIC_ENDPOINT,
+
             },
         },
     }
 
-    STATIC_URL = f"{ENDPOINT_URL}/static/"
-    STATIC_ROOT = 'static/'
-    
-    MEDIA_URL = f"{ENDPOINT_URL}/media/"
-    MEDIA_ROOT = 'media/'
+    # Django’s STATIC_URL must end in a slash and this must not. It is best to set this variable independently of STATIC_URL.
+    # SEE  https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+    STATIC_URL = f"{PUBLIC_ENDPOINT}/static/"
+    MEDIA_URL = f"{PUBLIC_ENDPOINT}/media/"
 
 else:
     
