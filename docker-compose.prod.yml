@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: keinermendoza/keinerdev:v1.2.1
+    image: keinermendoza/keinerdev:v1.2.2
     command:
       - /bin/sh
       - -c

@@ -1,8 +1,7 @@
 rav:
-  dev: docker compose up
-  dev-down: docker compose down
-
+  dev: docker compose -f docker-compose.yml
   stage: docker compose -f docker-compose.stage.yml
+  prod: docker compose -f docker-compose.prod.yml
 
 
   web: docker exec -it new_homesite-web-1 bash
