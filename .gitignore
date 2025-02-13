@@ -14,5 +14,6 @@ _scripts/
 _backups/
 .venv
 venv
+venv-prod
 
 notes.md

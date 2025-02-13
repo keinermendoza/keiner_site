@@ -36,6 +36,42 @@
     & .nav-item {
         position: relative;
     }
+
+    .mobile-lenguage-selector {
+        margin-block: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        font-size: $fs-p-desktop;
+        gap: 1rem;
+
+        & button {
+            display: flex;
+            padding: 0.25rem 1rem 0.25rem 0.5rem;
+            border-radius: 1rem 1rem 1rem 0.5rem;
+
+            gap: 0.5rem;
+            align-items: center;
+            border: solid 1.5px $clr-primary;
+            background-color: transparent;
+            transition: background-color 0.2s;
+            
+            &:hover {
+                background-color: rgba(255,255,255, .2);
+            }
+
+            &.current {
+                border: solid 1.5px $clr-white;
+            }
+
+            & svg {
+                width: 2rem;
+                height: 2rem;
+            }
+
+            
+        }
+    }
 }
 
 

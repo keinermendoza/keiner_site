@@ -13,7 +13,30 @@ DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS =  os.environ.get('CSRF_TRUSTED_ORIGINS').split(' ')
 
-INSTALLED_APPS = [
+WAGTAIL_APPS = [
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+
+    'taggit',
+    'modelcluster',
+
+    'wg_blog'
+]
+
+
+
+INSTALLED_APPS = WAGTAIL_APPS + [
+    
+
     "unfold",  # before django.contrib.admin
     "unfold.contrib.forms",  # optional, if special form elements are needed
     "unfold.contrib.inlines",  # optional, if special inlines are needed
@@ -54,6 +77,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     "allauth.account.middleware.AccountMiddleware",
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 
@@ -77,35 +101,6 @@ TEMPLATES = [
     },
 ]
 
-
-LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "standard": {
-            "format": "%(levelname)s - %(asctime)s - %(name)s - %(message)s"
-        },
-    },
-    "handlers": {
-        "console": {
-            "level": "INFO",
-            "class": "logging.StreamHandler",
-            "formatter": "standard",
-            "filters": [],
-        },
-    },
-    "root": {
-        "handlers": ["console"],
-        "level": "WARNING",
-    },
-    "loggers": {
-        "django": {
-            "handlers": ["console"],
-            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
-            "propagate": False,
-        },
-    },
-}
 
 
 WSGI_APPLICATION = 'config.wsgi.application'
@@ -248,6 +243,15 @@ STATICFILES_DIRS = [
     BASE_DIR / 'staticfiles'
 ]
 
+
+
+ADMINS = [
+    ('Keiner Mendoza', 'keienrmendoza.pagos@gmail.com'),
+]
+
+MANAGERS = ADMINS
+
+
 # Email
 EMAIL_BACKEND = os.environ.get('EMAIL_BACKEND')
 USE_EMAIL = bool(int(os.environ.get('USE_EMAIL', 0)))
@@ -258,6 +262,59 @@ if USE_EMAIL:
     EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 0))
     EMAIL_USE_TLS = bool(int(os.environ.get('EMAIL_USE_TLS', 0)))
 
+    SERVER_EMAIL = 'servidor@example.com'  # Correo que aparecerá como remitente
+    ADMINS = [('Admin', 'admin@example.com')]  # Correo al que se enviarán los errores
+
+
+#Loggin
+    
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "standard": {
+            "format": "%(levelname)s - %(asctime)s - %(name)s - %(message)s"
+        },
+    },
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'  # Filtro para no enviar emails en modo DEBUG
+        }
+    },
+    "handlers": {
+        "console": {
+            "level": "INFO",
+            "class": "logging.StreamHandler",
+            "formatter": "standard",
+            "filters": [],
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'filters': ['require_debug_false'],
+            'class': 'django.utils.log.AdminEmailHandler'
+        }
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "WARNING",
+    },
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "level": os.getenv("DJANGO_LOG_LEVEL", "INFO"),
+            "propagate": False,
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': True,
+        },
+    },
+}
+
+
+
 # Celery
 CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672/'
 
@@ -265,3 +322,34 @@ CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672/'
 ROOT_URLCONF = os.environ.get('ROOT_URLCONF', 'config.urls')
 
 WHATSAPP_NUMBER = os.environ.get('WHATSAPP_NUMBER')
+
+
+# wagtail
+
+
+# This is the human-readable name of your Wagtail install
+# which welcomes users upon login to the Wagtail admin.
+WAGTAIL_SITE_NAME = 'My Project'
+
+# Replace the search backend
+#WAGTAILSEARCH_BACKENDS = {
+#  'default': {
+#    'BACKEND': 'wagtail.search.backends.elasticsearch8',
+#    'INDEX': 'myapp'
+#  }
+#}
+
+# Wagtail email notifications from address
+# WAGTAILADMIN_NOTIFICATION_FROM_EMAIL = 'wagtail@myhost.io'
+
+# Wagtail email notification format
+# WAGTAILADMIN_NOTIFICATION_USE_HTML = True
+
+# Allowed file extensions for documents in the document library.
+# This can be omitted to allow all files, but note that this may present a security risk
+# if untrusted users are allowed to upload files -
+# see https://docs.wagtail.org/en/stable/advanced_topics/deploying.html#user-uploaded-files
+WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'txt', 'xlsx', 'zip']
+
+# Reverse the default case-sensitive handling of tags
+TAGGIT_CASE_INSENSITIVE = True

@@ -1,0 +1,68 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-block: 0.5rem;
+}
+
+.breadcrumb ol {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem; /* Espaciado entre elementos */
+}
+
+@media (min-width: 768px) {
+    .breadcrumb ol {
+        gap: 0.5rem;
+    }
+}
+
+/* Estilos generales para los ítems */
+.breadcrumb li {
+    display: inline-flex;
+    align-items: center;
+}
+
+/* Enlaces dentro del breadcrumb */
+.breadcrumb a {
+    display: inline-flex;
+    align-items: center;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 500; /* font-medium */
+    color: #4b5563; /* text-gray-700 */
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.breadcrumb a:hover {
+    color: #2563eb; /* hover:text-blue-600 */
+}
+
+/* Icono de la casita */
+.breadcrumb .home-icon {
+    width: 0.75rem;
+    height: 0.75rem;
+    margin-right: 0.625rem;
+    fill: currentColor;
+}
+
+/* Separador (flecha) */
+.breadcrumb .separator {
+    width: 0.75rem;
+    height: 0.75rem;
+    color: #9ca3af; /* text-gray-400 */
+    margin: 0 0.25rem;
+}
+
+@media (min-width: 768px) {
+    .breadcrumb .separator {
+        margin: 0 0.5rem;
+    }
+}
+
+/* Último ítem */
+.breadcrumb .current {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #6b7280; /* text-gray-500 */
+}

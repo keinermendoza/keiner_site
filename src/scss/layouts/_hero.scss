@@ -1,57 +1,8 @@
 @use '../globals/variables' as *;
 @use "sass:color";
-$break-smaller: 23rem;
-.header-navegation-wrapper {
-    position: fixed;
-    top:0;
-    left:0;
-    right: 0;
-    z-index: 20;
-    background: linear-gradient(to right, $clr-black, color.adjust($clr-black, $lightness: 10%, $space: hsl));
-
-    // background-color: $clr-black;
-    width: 100%;
-    border-bottom: $clr-primary 1px solid;
-
-    .header-navegation {
-        @include flex-row-between;
-        padding: $inline-padding-mobile;
-        max-width: $break-lg;
-        margin-inline: auto;
-        @media (min-width: $break-md) {
-            align-items: end;
-            padding-inline: $inline-padding-tablet;
-        }
-        @media (min-width: $break-lg) {
-            align-items: center;
-        }
-
-        & .brand-logo {
-            font-size: $fs-h3-mobile;
-            font-weight: $fw-600;
-            flex-grow: 0;
-            @media (min-width: $break-md) {
-                flex-grow: 1; /** this interact with the flex grow of a navbar-desktop children **/
-            }
-        }
-
-        & .navbar-toggle-button {
-            padding: 0.375rem 0.625rem;
-            border-radius: 0.25rem;
-            background-color: $clr-gray-dark;
-            @media (min-width: $break-md) {
-                display: none;
-            }
-
-        }
-    }
-}
-
-
-
-
 
 .hero {
+
     background-color: $clr-black;
     color: $clr-white;
     text-align: start;

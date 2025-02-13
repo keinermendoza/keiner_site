@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   web:
-    image: keinermendoza/keinerdev:v1.2.3
+    image: keinermendoza/keinerdev:v1.2.4
     command:
       - /bin/sh
       - -c
@@ -27,7 +27,7 @@ services:
       - db
   
   celery:
-    image: keinermendoza/keinerdev:v1.2.3
+    image: keinermendoza/keinerdev:v1.2.4
     command: celery --app=config worker -l INFO
     env_file:
       - ./.env.prod

@@ -113,8 +113,19 @@ a.disabled {
     padding-inline: $inline-padding-mobile;
     padding-block: $block-padding-desktop;
 }
+
+.flex-grow {
+    flex-grow: 1;
+}
+.min-h-screen {
+    min-height: 100vh;
+}
 .hidden-md-to-lg {
     @media (min-width:$break-md) {display: none;}
     @media (min-width:$break-lg) {display: block;}
 
+}
+
+.max-w-md {
+    max-width: $break-md;
 }

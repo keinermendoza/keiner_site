@@ -1,15 +1,19 @@
 {% load static i18n whatsapp_link %}
 
-<c-vars :links="[{'text':'Inicio', 'href':'/'}, {'text':'Blog', 'href':'#blog', 'disabled':'true'}]" />
+{% comment %} <c-vars :links="[{'text':'Inicio', 'href':'/'}, {'text':'Blog', 'href':'#blog', 'disabled':'true'}]" /> {% endcomment %}
 
-<header
+{% comment %} <header
     x-data="{navMobileIsOpen: false}"
     class="hero"
-    id="hero">
+    id="hero"> {% endcomment %}
 
+    <header
+
+    class="hero"
+    id="hero">
     <c-layouts.section-wrapper>
-        
-        <div class="header-navegation-wrapper">
+{% comment %}         
+         <div class="header-navegation-wrapper">
             <nav class="header-navegation" >
                 <span class="brand-logo">Keiner Mendoza</span>
                 <button @click="navMobileIsOpen = !navMobileIsOpen" class="navbar-toggle-button" aria-label="Navbar toogle visibility button">
@@ -24,11 +28,11 @@
                 
             </nav>
             
-        </div>
+        </div>  {% endcomment %}
 
 
         {% comment %} This is outside the header navigation because I want to use z-index to overlay the header over the mobile navbar.  {% endcomment %}
-        <c-ui.navbar-mobile :links=links @click="navMobileIsOpen = false" />
+        {% comment %} <c-ui.navbar-mobile :links=links @click="navMobileIsOpen = false" /> {% endcomment %}
 
         <div class="hero-content">
                 <h1 class="title-page">

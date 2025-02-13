@@ -48,8 +48,14 @@
     <link rel="stylesheet" href="{% static 'css/fonts.css' %}">
 
 </head>
-<body class="purple">
+<body class="purple flex-col min-h-screen">
+    <c-layouts.nav />    
     <c-ui.toast/>
-    {{ slot }}
+
+    <div class="flex-grow">
+        {{ slot }}
+    </div>
+
+    <c-layouts.footer />
 </body>
 </html>
