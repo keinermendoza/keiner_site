@@ -77,5 +77,6 @@ tzdata==2024.1
 urllib3==2.2.1
 vine==5.1.0
 wagtail==6.4
+wagtail-localize==1.11.3
 wcwidth==0.2.13
 Willow==1.9.0

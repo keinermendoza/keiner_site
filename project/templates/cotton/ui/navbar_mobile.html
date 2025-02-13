@@ -1,6 +1,9 @@
 {% load i18n %}
 
-<ul :class="navMobileIsOpen && 'isOpen' " class="navbar-mobile" {{attrs}}>
+{% comment %} 
+navMobileIsOpen state is gestionated in it's parent nav.html 
+{% endcomment %}
+<ul :class="navMobileIsOpen && 'isOpen' "  class="navbar-mobile" {{attrs}}>
     {% for link in links  %}
     <li class="nav-item">
         <a class="nav-link" href="{{link.href}}">
@@ -15,8 +18,7 @@
         method="post"
         @change-lang.debounce="$el.submit()"
         
-        class="lang-option-list"
-        :class="tooltipIsOpen ? 'isOpen' : '' ">
+        class="lang-option-list">
         
         {% csrf_token %}
 
@@ -48,7 +50,7 @@
             type="button"
             class=" {% if language.code == LANGUAGE_CODE %}current{% endif %} " 
             {% if language.code != LANGUAGE_CODE %}
-                @click="lang = '{{language.code}}'; langText = '{{ language.name_local }}'; tooltipIsOpen = false; $refs.language.value = lang; $dispatch('change-lang');"
+                @click="lang = '{{language.code}}'; langText = '{{ language.name_local }}'; $dispatch('change-lang');"
             {% endif %}
             aria-label="{% blocktranslate %} change lenguage to {{language.name}}{% endblocktranslate %}">
 
@@ -68,3 +70,4 @@
 
     </form>
 </ul>
+

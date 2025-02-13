@@ -65,3 +65,6 @@
 
 }
 
+.overflow-hidden-in-mobile {
+    @media (max-width: $break-md) {overflow: hidden;}
+}

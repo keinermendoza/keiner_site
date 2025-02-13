@@ -13,34 +13,7 @@ DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(' ')
 CSRF_TRUSTED_ORIGINS =  os.environ.get('CSRF_TRUSTED_ORIGINS').split(' ')
 
-WAGTAIL_APPS = [
-    'wagtail.contrib.forms',
-    'wagtail.contrib.redirects',
-    'wagtail.embeds',
-    'wagtail.sites',
-    'wagtail.users',
-    'wagtail.snippets',
-    'wagtail.documents',
-    'wagtail.images',
-    'wagtail.search',
-    'wagtail.admin',
-    'wagtail',
-
-    'taggit',
-    'modelcluster',
-
-    'wg_blog'
-]
-
-
-
-INSTALLED_APPS = WAGTAIL_APPS + [
-    
-
-    "unfold",  # before django.contrib.admin
-    "unfold.contrib.forms",  # optional, if special form elements are needed
-    "unfold.contrib.inlines",  # optional, if special inlines are needed
-    
+DJANGO_CORE_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,19 +23,51 @@ INSTALLED_APPS = WAGTAIL_APPS + [
     'django.contrib.sites',
     'django_cotton',
 
-    'blog',
-    'core',
-    'api',
+]
+
+UNFOLD_APPS = [
+    "unfold",  # before django.contrib.admin
+    "unfold.contrib.forms",  # optional, if special form elements are needed
+    "unfold.contrib.inlines",  # optional, if special inlines are needed
+]
+
+WAGTAIL_APPS = [
+   "wagtail_localize",
+    "wagtail_localize.locales",
+    "wagtail.contrib.forms",
+    "wagtail.contrib.redirects",
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail',
+    'taggit',
+    'modelcluster',
+]
+
+THRID_PARTY_APPS = [
     'django_htmx',
     'django_filters',
     'django_extensions',
-
     'allauth',
     'allauth.account',
     'rest_framework',
     'rosetta',
-
 ]
+
+MY_APPS = [
+    'blog',
+    'core',
+    'api',
+    'wg_blog',
+]
+
+INSTALLED_APPS = WAGTAIL_APPS +  UNFOLD_APPS +  DJANGO_CORE_APPS + THRID_PARTY_APPS + MY_APPS
+
 SITE_ID = 1
 
 MIDDLEWARE = [
@@ -94,6 +99,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                # 'django.template.context_processors.i18n',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
@@ -132,7 +138,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'es'
 
 LANGUAGES = [
     ('en', _('English')),
@@ -330,6 +336,8 @@ WHATSAPP_NUMBER = os.environ.get('WHATSAPP_NUMBER')
 # This is the human-readable name of your Wagtail install
 # which welcomes users upon login to the Wagtail admin.
 WAGTAIL_SITE_NAME = 'My Project'
+WAGTAIL_I18N_ENABLED = USE_I18N
+WAGTAIL_CONTENT_LANGUAGES = LANGUAGES
 
 # Replace the search backend
 #WAGTAILSEARCH_BACKENDS = {

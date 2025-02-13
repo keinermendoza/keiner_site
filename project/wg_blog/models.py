@@ -1,5 +1,5 @@
 from django.db import models
-from wagtail.models import Page
+from wagtail.models import Page, Locale
 from wagtail.fields import RichTextField
 from wagtail.admin.panels import FieldPanel
 
@@ -11,11 +11,11 @@ class BlogIndexPage(Page):
     ]
 
     def get_context(self, request):
-        """Personaliza el contexto para incluir todas las entradas del blog."""
+        """Personaliza el contexto para incluir solo las entradas del idioma activo."""
         context = super().get_context(request)
-        context["posts"] = BlogPost.objects.live().order_by("-first_published_at")
+        context["posts"] = BlogPost.objects.live().filter(locale=Locale.get_active()).order_by("-first_published_at")
         return context
-    
+
 
 class BlogPost(Page):
     date = models.DateField("Fecha de publicación")

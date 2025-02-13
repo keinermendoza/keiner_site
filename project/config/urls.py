@@ -42,7 +42,6 @@ urlpatterns = [
 
     # For anything not caught by a more specific rule above, hand over to
     # Wagtail's serving mechanism
-    re_path(r'^blog/', include(wagtail_urls)),
 
 
     
@@ -53,6 +52,7 @@ urlpatterns +=  i18n_patterns(
     # path('api/', include('api.urls')),
     # path('blog/', include('blog.urls')),
     re_path(r'', include('core.urls', namespace='core')),
+    re_path(r'^blog/', include(wagtail_urls)),
 )
 
 if settings.DEBUG:
