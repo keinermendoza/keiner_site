@@ -4,14 +4,14 @@ rav:
   prod: docker compose -f docker-compose.prod.yml
 
 
-  web: docker exec -it new_homesite-web-1 bash
-  createsuperuser: docker exec -it new_homesite-web-1 python manage.py createsuperuser
-  makemigrations: docker exec -it new_homesite-web-1 python manage.py makemigrations
-  migrate: docker exec -it new_homesite-web-1 python manage.py migrate
-  seeder: docker exec -it new_homesite-web-1 python manage.py seeder
-  flush: docker exec -it new_homesite-web-1 python manage.py flush
-  db: docker exec -it new_homesite-db-1 bash
-  collect: docker exec -it new_homesite-web-1 python manage.py collectstatic
+  web: docker exec -it keiner_site-web-1 bash
+  createsuperuser: docker exec -it keiner_site-web-1 python manage.py createsuperuser
+  makemigrations: docker exec -it keiner_site-web-1 python manage.py makemigrations
+  migrate: docker exec -it keiner_site-web-1 python manage.py migrate
+  seeder: docker exec -it keiner_site-web-1 python manage.py seeder
+  flush: docker exec -it keiner_site-web-1 python manage.py flush
+  db: docker exec -it keiner_site-db-1 bash
+  collect: docker exec -it keiner_site-web-1 python manage.py collectstatic
 
   build:
     - cd project
