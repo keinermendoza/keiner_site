@@ -7,7 +7,7 @@ db.sqlite
 dev_homesite_db
 assets/tailwind/output.css
 node_modules
-project/staticfiles/css/
+!project/staticfiles/css
 project/staticfiles/js/
 media
 _scripts/
@@ -15,5 +15,7 @@ _backups/
 .venv
 venv
 venv-prod
+venv_prod
+
 
 notes.md
