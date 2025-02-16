@@ -64,6 +64,7 @@ MY_APPS = [
     'core',
     'api',
     'wg_blog',
+    'my_templatetags',
 ]
 
 INSTALLED_APPS = WAGTAIL_APPS +  UNFOLD_APPS +  DJANGO_CORE_APPS + THRID_PARTY_APPS + MY_APPS
@@ -361,3 +362,26 @@ WAGTAILDOCS_EXTENSIONS = ['csv', 'docx', 'key', 'odt', 'pdf', 'pptx', 'rtf', 'tx
 
 # Reverse the default case-sensitive handling of tags
 TAGGIT_CASE_INSENSITIVE = True
+
+
+# WAGTAIL PIGMENTS
+WAGTAIL_CODE_BLOCK_LANGUAGES = (
+    ('cpp', 'C++'),
+    ('java', 'Java'),
+    ('python3', 'Python 3'),
+    ('bash', 'Bash/Shell'),
+    ('javascript', 'Javascript'),
+    ('css', "CSS"),
+    ('html', "HTML"),
+    ('julia', "Julia"),
+    ('nginx', "Nginx configuration file"),
+    ('numpy', "NumPy"),
+    ('django', "Django"),
+    ('jinja', "Jinja"),
+    ('docker', "Docker"),
+    ('jinja', "Jinja"),
+    ('yaml', "YAML"),
+    ('json', "JSON"),
+    ('plpgsql', "PL/pgSQL"),
+    ('psql', "PostgreSQL console (psql)"),
+)

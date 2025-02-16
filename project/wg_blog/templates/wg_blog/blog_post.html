@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
 
 <c-base>
-    <c-layouts.section-wrapper extra_class="max-w-md">
+    <c-layouts.section-wrapper >
     <c-ui.breadcrumb 
         parent_1
         parent_1_href="/blog"
@@ -18,7 +18,9 @@
         </header>
 
         <div class="post-content">
-            {{ page.body|richtext }}
+            {% for block in page.body %}
+                {% include_block block %}
+            {% endfor %}
         </div>
 
         {% with tags=page.tags.all %}
@@ -35,6 +37,10 @@
 
     </article>
     </c-layouts.section-wrapper>
+
+    
+    <c-layouts.home.contact />
+
 </c-base>
 
 

@@ -1,4 +1,6 @@
-<c-vars :links="[{'text':'Inicio', 'href':'/'}, {'text':'Blog', 'href':'/blog' }]" />
+{% load get_navlinks %}
+{% get_navlinks as links %}
+<!-- this templatetag is registered in the app my_customtags and returns a list of dicts in format {text: 'visible name', href: '/some-url'} -->
 
 <div
 x-data="{navMobileIsOpen: false}"
@@ -18,7 +20,6 @@ class="main-nav {% if request.path_info != "/" %}no-homepage{% endif%}">
     </nav>
     
 </div>
-
 
 {% comment %} This is outside the header navigation because I want to use z-index to overlay the header over the mobile navbar.  {% endcomment %}
 <c-ui.navbar-mobile :links=links @click="navMobileIsOpen = false; $dispatch('handle-catch-view')" />

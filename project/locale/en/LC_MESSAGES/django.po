@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-26 12:37-0400\n"
+"POT-Creation-Date: 2025-02-15 19:12-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -854,164 +854,272 @@ msgstr ""
 msgid "Sign Out Other Sessions"
 msgstr ""
 
-#: components/cotton/forms/contact_form.html:5
+#: config/settings.py:145
+msgid "English"
+msgstr ""
+
+#: config/settings.py:146
+msgid "Spanish"
+msgstr ""
+
+#: config/settings.py:147
+msgid "Portuguese"
+msgstr ""
+
+#: core/forms.py:16
 msgid "Name"
 msgstr ""
 
-#: components/cotton/forms/contact_form.html:13
+#: core/forms.py:20
+msgid "Email"
+msgstr ""
+
+#: core/forms.py:23
 msgid "Message"
 msgstr ""
 
-#: components/cotton/forms/contact_form.html:21
+#: my_templatetags/templatetags/get_navlinks.py:9
+#: templates/admin/change_form_trix_handle_images.html:20
+#: templates/cotton/layouts/footer.html:30
+#: templates/cotton/ui/breadcrumb.html:10
+msgid "Home"
+msgstr ""
+
+#: my_templatetags/templatetags/get_navlinks.py:9
+msgid "Blog"
+msgstr ""
+
+#: templates/admin/change_form_trix_handle_images.html:34
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:7
+msgid "Paragraph"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:11
+msgid "Underlined"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:15
+msgid "Bold"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:19
+msgid "Italic"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:23
+msgid "Strike"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:27
+#: templates/admin/forms/helpers/toolbar.html:104
+msgid "Link"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:35
+#: templates/admin/forms/helpers/toolbar.html:39
+#: templates/admin/forms/helpers/toolbar.html:43
+#: templates/admin/forms/helpers/toolbar.html:47
+msgid "Heading"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:55
+msgid "Quote"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:59
+msgid "Code"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:63
+msgid "Unordered list"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:67
+msgid "Ordered list"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:71
+msgid "Indent increase"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:75
+msgid "Indent decrease"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:79
+msgid "Attach Files"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:89
+msgid "Undo"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:93
+msgid "Redo"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:101
+msgid "Enter an URL"
+msgstr ""
+
+#: templates/admin/forms/helpers/toolbar.html:108
+msgid "Unlink"
+msgstr ""
+
+#: templates/cotton/forms/contact_form.html:18
 msgid "Send"
 msgstr ""
 
-#: components/cotton/layouts/home/contact.html:10
-#: components/cotton/layouts/home/footer.html:46
-#: components/cotton/layouts/old_contact.html:11
+#: templates/cotton/layouts/footer.html:7
+msgid "Go to Keiner's Linkedin Profile"
+msgstr ""
+
+#: templates/cotton/layouts/footer.html:12
+msgid "Go to Keiner's Github Profile"
+msgstr ""
+
+#: templates/cotton/layouts/footer.html:22
+msgid "Pages on this site"
+msgstr ""
+
+#: templates/cotton/layouts/footer.html:40
+#: templates/cotton/layouts/home/contact.html:10
 msgid "Contact"
 msgstr ""
 
-#: components/cotton/layouts/home/contact.html:11
+#: templates/cotton/layouts/footer.html:43
+msgid "developer location"
+msgstr ""
+
+#: templates/cotton/layouts/footer.html:53
+msgid "send me an email"
+msgstr ""
+
+#: templates/cotton/layouts/footer.html:62
+msgid "my telephone number"
+msgstr ""
+
+#: templates/cotton/layouts/home/contact.html:11
 msgid ""
 "You can message me on WhatsApp, but if you prefer not to use that method, "
 "you can also contact me through the contact form in this section."
 msgstr ""
 
-#: components/cotton/layouts/home/contact.html:23
+#: templates/cotton/layouts/home/contact.html:23
 msgid "If you prefer, you can write to me directly at my email."
 msgstr ""
 
-#: components/cotton/layouts/home/contact.html:34
+#: templates/cotton/layouts/home/contact.html:34
 msgid "I prefer contact through WhatsApp."
 msgstr ""
 
-#: components/cotton/layouts/home/contact.html:44
+#: templates/cotton/layouts/home/contact.html:42
 msgid "Start conversation"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:6
+#: templates/cotton/layouts/home/contact.html:43
+#: templates/cotton/layouts/home/hero.html:57
+msgid ""
+"Hi, I found your website and I'm interested in your web development services."
+msgstr ""
+
+#: templates/cotton/layouts/home/features.html:6
 msgid "I am ready to contribute to your project."
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:7
+#: templates/cotton/layouts/home/features.html:7
 msgid ""
 "I love creating websites, these are some of the skills I have developed in "
 "previous projects."
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:11
+#: templates/cotton/layouts/home/features.html:11
 msgid "Responsive Design"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:18
+#: templates/cotton/layouts/home/features.html:18
 msgid ""
 "I implement visually appealing and user-friendly web designs through tools "
 "such as"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:18
-#: components/cotton/layouts/home/features.html:41
-#: components/cotton/layouts/home/features.html:52
+#: templates/cotton/layouts/home/features.html:18
+#: templates/cotton/layouts/home/features.html:41
+#: templates/cotton/layouts/home/features.html:52
 msgid "and"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:22
+#: templates/cotton/layouts/home/features.html:22
 msgid "Data management"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:41
+#: templates/cotton/layouts/home/features.html:41
 msgid ""
 "I create dynamic websites capable of handling user-customized data, based on "
 "languages, libraries, and frameworks such as"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:45
+#: templates/cotton/layouts/home/features.html:45
 msgid "Deployment to Production"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:52
+#: templates/cotton/layouts/home/features.html:52
 msgid "I have launched websites on various platforms such as"
 msgstr ""
 
-#: components/cotton/layouts/home/features.html:52
+#: templates/cotton/layouts/home/features.html:52
 msgid "I am also familiar with"
 msgstr ""
 
-#: components/cotton/layouts/home/footer.html:7
-msgid "Go to Keiner's Linkedin Profile"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:12
-msgid "Go to Keiner's Github Profile"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:22
-msgid "Pages on this site"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:30
-#: core/templates/admin/change_form_trix_handle_images.html:20
-msgid "Home"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:35
-msgid "Coming soon"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:49
-msgid "developer location"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:59
-msgid "send me an email"
-msgstr ""
-
-#: components/cotton/layouts/home/footer.html:68
-msgid "my telephone number"
-msgstr ""
-
-#: components/cotton/layouts/home/hero.html:33
+#: templates/cotton/layouts/home/hero.html:45
 msgid "I'm"
 msgstr ""
 
-#: components/cotton/layouts/home/hero.html:36
+#: templates/cotton/layouts/home/hero.html:48
 msgid "The full stack developer you're looking for"
 msgstr ""
 
-#: components/cotton/layouts/home/hero.html:39
+#: templates/cotton/layouts/home/hero.html:51
 msgid ""
 "I develop websites and applications focused on data management. I use my "
 "programming skills to create customized and visually appealing solutions, "
 "always focused on addressing the needs of each project."
 msgstr ""
 
-#: components/cotton/layouts/home/hero.html:46
+#: templates/cotton/layouts/home/hero.html:56
 msgid "Contact me"
 msgstr ""
 
-#: components/cotton/layouts/home/hero.html:52
+#: templates/cotton/layouts/home/hero.html:60
+msgid "download my CV"
+msgstr ""
+
+#: templates/cotton/layouts/home/hero.html:72
 msgid "Download CV"
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:5
+#: templates/cotton/layouts/home/projects.html:5
 msgid "Projects"
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:16
+#: templates/cotton/layouts/home/projects.html:17
 msgid ""
 "It is a website focused on promoting courses published on the Hotmart "
 "platform."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:19
+#: templates/cotton/layouts/home/projects.html:20
 msgid ""
 "Users can search and filter courses, while site administrators have a "
 "control panel with an integrated editor to modify course information, "
 "including image management."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:25
+#: templates/cotton/layouts/home/projects.html:26
 msgid ""
 "I designed it using Figma and implemented it with Tailwind CSS. I developed "
 "a REST API with Django, which included file handling, and integrated the "
@@ -1019,57 +1127,57 @@ msgid ""
 "the database, and enabled a storage service to manage the files."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:31
-#: components/cotton/layouts/home/projects.html:124
+#: templates/cotton/layouts/home/projects.html:32
+#: templates/cotton/layouts/home/projects.html:126
 msgid ""
 "Django is a high-level Python web framework that encourages rapid "
 "development and clean, pragmatic design."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:42
-#: components/cotton/layouts/home/projects.html:163
+#: templates/cotton/layouts/home/projects.html:43
+#: templates/cotton/layouts/home/projects.html:165
 msgid ""
 "React is the library for web and native user interfaces. Build user "
 "interfaces out of individual pieces called components written in JavaScript."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:52
+#: templates/cotton/layouts/home/projects.html:53
 msgid ""
 "React Router is a JavaScript framework that lets us handle \"client side "
 "routing\" routing in React applications."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:63
-#: components/cotton/layouts/home/projects.html:171
+#: templates/cotton/layouts/home/projects.html:64
+#: templates/cotton/layouts/home/projects.html:173
 msgid ""
 "Tailwind CSS is a utility-first CSS framework for rapidly building modern "
 "websites without ever leaving your HTML."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:79
+#: templates/cotton/layouts/home/projects.html:80
 msgid ""
 "Webpack is a module bundler. Its main purpose is to bundle JavaScript files "
 "for usage in a browser"
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:92
+#: templates/cotton/layouts/home/projects.html:93
 msgid ""
 "Docker is a software platform that allows you to build, test, and deploy "
 "applications quickly using containers."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:109
+#: templates/cotton/layouts/home/projects.html:111
 msgid ""
 "It is a landing page for a lawyer specialized in Commercial and Civil Law."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:113
+#: templates/cotton/layouts/home/projects.html:115
 msgid ""
 "It has the typical structure of a landing page, as well as a blog section "
 "and a contact form that sends an email directly to the site owner."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:120
+#: templates/cotton/layouts/home/projects.html:122
 msgid ""
 "I designed the interface using Figma and implemented it with Next.js and "
 "Tailwind CSS. I developed a REST API with Django and enabled the Django "
@@ -1078,114 +1186,26 @@ msgid ""
 "and another for the backend in Django."
 msgstr ""
 
-#: components/cotton/layouts/home/projects.html:136
+#: templates/cotton/layouts/home/projects.html:138
 msgid ""
 "Next.js is a flexible React framework that gives you building blocks to "
 "create fast, full-stack web applications."
 msgstr ""
 
-#: components/cotton/layouts/old_contact.html:15
-msgid ""
-"You can message me directly on WhatsApp. I will personally attend to you."
+#: templates/cotton/ui/navbar_lenguage_controller.html:73
+#: templates/cotton/ui/navbar_mobile.html:57
+#, python-format
+msgid " change lenguage to %(language.name)s"
 msgstr ""
 
-#: components/cotton/ui/project_card_grid.html:14
+#: templates/cotton/ui/project_card_grid.html:29
 msgid "Process"
 msgstr ""
 
-#: components/cotton/ui/project_card_grid.html:18
+#: templates/cotton/ui/project_card_grid.html:33
 msgid "Technologies"
 msgstr ""
 
-#: config/settings.py:146
-msgid "English"
-msgstr ""
-
-#: config/settings.py:147
-msgid "Spanish"
-msgstr ""
-
-#: config/settings.py:148
-msgid "Portuguese"
-msgstr ""
-
-#: core/templates/admin/change_form_trix_handle_images.html:34
-#, python-format
-msgid "Add %(name)s"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:7
-msgid "Paragraph"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:11
-msgid "Underlined"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:15
-msgid "Bold"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:19
-msgid "Italic"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:23
-msgid "Strike"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:27
-#: core/templates/admin/forms/helpers/toolbar.html:104
-msgid "Link"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:35
-#: core/templates/admin/forms/helpers/toolbar.html:39
-#: core/templates/admin/forms/helpers/toolbar.html:43
-#: core/templates/admin/forms/helpers/toolbar.html:47
-msgid "Heading"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:55
-msgid "Quote"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:59
-msgid "Code"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:63
-msgid "Unordered list"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:67
-msgid "Ordered list"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:71
-msgid "Indent increase"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:75
-msgid "Indent decrease"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:79
-msgid "Attach Files"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:89
-msgid "Undo"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:93
-msgid "Redo"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:101
-msgid "Enter an URL"
-msgstr ""
-
-#: core/templates/admin/forms/helpers/toolbar.html:108
-msgid "Unlink"
+#: wg_blog/templates/wg_blog/blog_index_page.html:17
+msgid "Posts"
 msgstr ""

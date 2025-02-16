@@ -1,7 +1,7 @@
-{% load wagtailcore_tags %}
+{% load wagtailcore_tags i18n %}
 
 <c-base>
-    <c-layouts.section-wrapper extra_class="max-w-md">
+    <c-layouts.section-wrapper >
 
     <c-ui.breadcrumb current_href="#{{ page.slug }}" :current_text="page.title" />
 
@@ -14,7 +14,7 @@
     
     
     <ul class="post-card-list">
-        <h2 class="post-card-list__title">Entradas</h2>
+        <h2 class="post-card-list__title">{% trans "Posts" %}</h2>
     
         {% for post in posts %}
         <li class="post-card">
@@ -32,6 +32,8 @@
 
 
     </c-layouts.section-wrapper>
+    <c-layouts.home.contact />
+
 
 </c-base>
 

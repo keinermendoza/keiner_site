@@ -1,6 +1,8 @@
 services:
   web:
-    build: ./project
+    build:
+      context: ./project
+      dockerfile: Dockerfile.prod
     command: 
       - /bin/sh
       - -c
@@ -36,7 +38,9 @@ services:
       - db
   
   celery:
-    build: ./project
+    build:
+      context: ./project
+      dockerfile: Dockerfile.prod
     command: celery --app=config worker -l INFO
     env_file:
       - ./.env.dev
