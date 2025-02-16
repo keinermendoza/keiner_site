@@ -1,9 +1,36 @@
 @use '../globals/variables' as *;
+.max-w-blog {
+    max-width: $break-blog;
+}
 
 .blog-post {
-    p, ul, div {
-        margin-block: 0.5rem;
+    font-size: $fs-h4-desktop;
+    line-height: 1.875rem;
+
+    & header {
+        margin-top: 1rem;
+        margin-bottom: 2rem;
     }
+
+    &__published {
+        font-size: $fs-p-mobile;
+    }
+    &__title {
+        font-size: $fs-title;
+        line-height: 3.75rem;
+        margin-block: 0.75rem;
+    }
+
+    &__content {
+        p, ul, div, img, h2, h3 {
+            margin-bottom: 1.25rem;
+        }
+
+        h2, h3 {
+            line-height: 1.4;
+        }
+    }
+    
     ul, ol {
         padding-left: 2rem; // Ajusta según sea necesario
     }
@@ -13,9 +40,11 @@
     li {
         padding-block: 0.25rem;
     }
+
 }
 
 .post-card-list {
+
     @include flex-column;
     gap: 1rem;
     .post-card-list__title {
@@ -46,10 +75,14 @@
             margin-top: 0.25rem;
         }
 
-        &__date {
+        &__published {
             font-size: $fs-p-mobile;
             margin-top: 0.5rem;
             filter: opacity(80%);
         }
     }
+}
+
+.block-codeblock {
+    font-size: $fs-p-mobile;
 }

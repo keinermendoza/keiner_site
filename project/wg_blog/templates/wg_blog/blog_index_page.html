@@ -1,7 +1,7 @@
 {% load wagtailcore_tags i18n %}
 
 <c-base>
-    <c-layouts.section-wrapper >
+    <c-layouts.section-wrapper extra_class="max-w-blog" >
 
     <c-ui.breadcrumb current_href="#{{ page.slug }}" :current_text="page.title" />
 
@@ -21,7 +21,7 @@
             <a href="{{ post.url }}">
                 <h3 class="post-card__title">{{post.title}}</h3>
                 <p class="post-card__excerpt">{{post.excerpt}}</p>
-                <p class="post-card__date" >{{ post.date }}</p>
+                <p class="post-card__published" >{{ post.date }}</p>
             </a>
         </li>
         {% endfor %}

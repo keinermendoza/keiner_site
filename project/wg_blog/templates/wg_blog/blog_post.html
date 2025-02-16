@@ -1,7 +1,7 @@
 {% load wagtailcore_tags %}
-
+{% load i18n %}
 <c-base>
-    <c-layouts.section-wrapper >
+    <c-layouts.section-wrapper extra_class="max-w-blog" >
     <c-ui.breadcrumb 
         parent_1
         parent_1_href="/blog"
@@ -11,13 +11,13 @@
         
         <article class="blog-post">
         <header>
-            <h1 id="{{ page.slug }}">{{ page.title }}</h1>
-            <p class="post-meta">
-                Publicado el {{ page.date|date:"d M Y" }}
+            <h1 class="blog-post__title" id="{{ page.slug }}">{{ page.title }}</h1>
+            <p class="blog-post__published">
+                {% trans "Posted on" %} {{ page.date|date:"d M Y" }}
             </p>
         </header>
 
-        <div class="post-content">
+        <div class="blog-post__content">
             {% for block in page.body %}
                 {% include_block block %}
             {% endfor %}

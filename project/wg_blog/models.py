@@ -31,11 +31,11 @@ class BlogIndexPage(Page):
 
 
 class BlogPost(Page):
-    date = models.DateField("Fecha de publicación")
+    date = models.DateField("Fecha de publicación", auto_now=True )
     body = StreamField([
         ("rich_Text", blocks.RichTextBlock()),
         ("quotes", blocks.BlockQuoteBlock()),
-        ("gits", GitHubGistBlock()),
+        # ("gits", GitHubGistBlock()),
         ("mensaje", AlertBlock()),
         ("code", CodeBlock())
     ])
@@ -43,7 +43,7 @@ class BlogPost(Page):
     excerpt = models.TextField(blank=True)
 
     content_panels = Page.content_panels + [
-        FieldPanel("date"),
+        # FieldPanel("date"),
         FieldPanel("excerpt"),
         FieldPanel("body"),
     ]

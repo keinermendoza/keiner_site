@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-15 19:12-0400\n"
-"PO-Revision-Date: 2025-02-15 19:14-0400\n"
+"POT-Creation-Date: 2025-02-16 19:16-0400\n"
+"PO-Revision-Date: 2025-02-16 19:16-0400\n"
 "Last-Translator:   <keinermendoza@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -922,7 +922,7 @@ msgstr ""
 msgid "Quote"
 msgstr ""
 
-#: templates/admin/forms/helpers/toolbar.html:59
+#: templates/admin/forms/helpers/toolbar.html:59 wg_blog/blocks.py:20
 msgid "Code"
 msgstr ""
 
@@ -1254,9 +1254,25 @@ msgstr "Proceso"
 msgid "Technologies"
 msgstr "Tecnologías"
 
+#: wg_blog/blocks.py:19
+msgid "Language"
+msgstr ""
+
+#: wg_blog/blocks.py:36
+msgid "Copy"
+msgstr ""
+
+#: wg_blog/blocks.py:37
+msgid "Copied!"
+msgstr ""
+
 #: wg_blog/templates/wg_blog/blog_index_page.html:17
 msgid "Posts"
 msgstr "Publicaciones"
+
+#: wg_blog/templates/wg_blog/blog_post.html:16
+msgid "Posted on"
+msgstr "Publicado el"
 
 #~ msgid "Coming soon"
 #~ msgstr "Próximamente"

@@ -38,7 +38,7 @@ class CodeBlock(blocks.StructBlock):
 
         return mark_safe(f"""
             <style>{estilo_css}</style>
-            <div style="position: relative; overflow-x: auto; border-radius: 5px; padding: 10px; background: #f5f5f5;">
+            <div class='block-codeblock' style="position: relative; overflow-x: auto; border-radius: 5px; padding: 10px; background: #f5f5f5;">
                 <!-- Botón de copiar con traducción -->
                 <button onclick="copyCode(this, '{copiar_texto}', '{copiado_texto}')" style="
                     position: absolute; top: 10px; right: 10px;
