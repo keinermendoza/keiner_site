@@ -1,45 +1,51 @@
-{% load wagtailcore_tags %}
-{% load i18n %}
+{% load i18n wagtailcore_tags wagtailmetadata_tags %}
 <c-base>
-    <c-layouts.section-wrapper extra_class="max-w-blog" >
-    <c-ui.breadcrumb 
-        parent_1
-        parent_1_href="/blog"
-        parent_1_text="Blog" 
-        current_href="#{{ page.slug }}" 
-        :current_text="page.title" />
-        
-        <article class="blog-post">
-        <header>
-            <h1 class="blog-post__title" id="{{ page.slug }}">{{ page.title }}</h1>
-            <p class="blog-post__published">
-                {% trans "Posted on" %} {{ page.date|date:"d M Y" }}
-            </p>
-        </header>
+    <c-slot name="meta">
+        {% meta_tags %}
+    </c-slot>
 
-        <div class="blog-post__content">
-            {% for block in page.body %}
-                {% include_block block %}
-            {% endfor %}
-        </div>
+    <c-slot name="content">
 
-        {% with tags=page.tags.all %}
-        {% if tags %}
-        <footer>
-            <p>Etiquetas: 
-                {% for tag in tags %}
-                    <span class="tag">{{ tag }}</span>
+        <c-layouts.section-wrapper extra_class="max-w-blog" >
+        <c-ui.breadcrumb 
+            parent_1
+            parent_1_href="/blog"
+            parent_1_text="Blog" 
+            current_href="#{{ page.slug }}" 
+            :current_text="page.title" />
+            
+            <article class="blog-post">
+            <header>
+                <h1 class="blog-post__title" id="{{ page.slug }}">{{ page.title }}</h1>
+                <p class="blog-post__published">
+                    {% trans "Posted on" %} {{ page.date|date:"d M Y" }}
+                </p>
+            </header>
+
+            <div class="blog-post__content">
+                {% for block in page.body %}
+                    {% include_block block %}
                 {% endfor %}
-            </p>
-        </footer>
-        {% endif %}
-        {% endwith %}
+            </div>
 
-    </article>
-    </c-layouts.section-wrapper>
+            {% with tags=page.tags.all %}
+            {% if tags %}
+            <footer>
+                <p>Etiquetas: 
+                    {% for tag in tags %}
+                        <span class="tag">{{ tag }}</span>
+                    {% endfor %}
+                </p>
+            </footer>
+            {% endif %}
+            {% endwith %}
 
-    
-    <c-layouts.home.contact />
+        </article>
+        </c-layouts.section-wrapper>
+
+        
+        <c-layouts.home.contact />
+    </c-slot>
 
 </c-base>
 

@@ -47,6 +47,7 @@ WAGTAIL_APPS = [
     'wagtail',
     'taggit',
     'modelcluster',
+    'wagtailmetadata',
 ]
 
 THRID_PARTY_APPS = [
@@ -253,7 +254,7 @@ STATICFILES_DIRS = [
 
 
 ADMINS = [
-    ('Keiner Mendoza', 'keienrmendoza.pagos@gmail.com'),
+    ('Keiner Mendoza', os.environ.get('EMAIL_OWNER')),
 ]
 
 MANAGERS = ADMINS
@@ -269,8 +270,8 @@ if USE_EMAIL:
     EMAIL_PORT = int(os.environ.get('EMAIL_PORT', 0))
     EMAIL_USE_TLS = bool(int(os.environ.get('EMAIL_USE_TLS', 0)))
 
-    SERVER_EMAIL = 'servidor@example.com'  # Correo que aparecerá como remitente
-    ADMINS = [('Admin', 'admin@example.com')]  # Correo al que se enviarán los errores
+    SERVER_EMAIL =  os.environ.get('EMAIL_OWNER')  # Correo que aparecerá como remitente
+    ADMINS = [('Admin',  os.environ.get('EMAIL_OWNER'))]  # Correo al que se enviarán los errores
 
 
 #Loggin
@@ -323,10 +324,13 @@ LOGGING = {
 
 
 # Celery
-CELERY_BROKER_URL = 'amqp://guest:guest@rabbitmq:5672/'
+CELERY_BROKER_URL = os.environ.get('BROKER_URL') #'amqp://guest:guest@rabbitmq:5672/'
 
 # # Url
 ROOT_URLCONF = os.environ.get('ROOT_URLCONF', 'config.urls')
+ADMIN_URL = os.environ.get('ADMIN_URL')
+ADMIN_DJANGO_URL = os.environ.get('ADMIN_DJANGO_URL')
+
 
 WHATSAPP_NUMBER = os.environ.get('WHATSAPP_NUMBER')
 

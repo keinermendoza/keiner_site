@@ -9,6 +9,14 @@ from django.views.generic import (
     FormView
     
 )
+
+from django.template.response import TemplateResponse
+
+from django.utils.translation import (
+    get_language,
+    gettext as _,
+) 
+
 from .mock import projects
 
 from django_htmx.http import trigger_client_event
@@ -65,21 +73,20 @@ class AboutPage(TemplateView):
 
 class ContactFormPartialView(FormView):
     form_class = ContactForm
-    # template_name = "cotton/layouts/contact_form.html"
     template_name = "cotton/forms/contact_form.html"
 
-    def form_valid(self, form) -> HttpResponse:
-        response = self.render_to_response({'form':form})
+    def form_valid(self, form) -> TemplateResponse:
+        response = self.render_to_response({'form':ContactForm()})
         return trigger_client_event(
             response,
             "display_toast",
             {
                 "status":200,
-                "message":"Email Enviado. Revisa la Bandeja de Entrada de tu Correo"
+                "message": _("Email sent. Check your inbox.")
             }
         )
     
-    def form_invalid(self, form) -> HttpResponse:
+    def form_invalid(self, form) -> TemplateResponse:
         response = super().form_invalid(form)
         return trigger_client_event(
             response,
@@ -96,7 +103,8 @@ class ContactFormPartialView(FormView):
         """
         form = self.get_form()
         if form.is_valid():
-            # form.send_email()
+            lang = get_language()
+            form.send_email(lang)
             return self.form_valid(form)
         else:
             if "username" in form.errors:

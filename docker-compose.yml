@@ -31,8 +31,8 @@ services:
 
   rabbitmq:
     image: rabbitmq:3.13-management
-    ports:
-      - 5672:5672
+    # ports:
+      # - 5672:5672
     restart: unless-stopped
     depends_on:
       - db
@@ -42,6 +42,8 @@ services:
       context: ./project
       dockerfile: Dockerfile.prod
     command: celery --app=config worker -l INFO
+    volumes:
+      - ./project:/usr/src/app
     env_file:
       - ./.env.dev
     restart: unless-stopped

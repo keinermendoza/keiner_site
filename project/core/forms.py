@@ -47,13 +47,13 @@ class ContactForm(forms.Form):
             self.add_error("username", "stop the bot")
         return cleaned_data
     
-    def send_email(self) -> None:
+    def send_email(self, lang) -> None:
         """
         using celery task for send emails
         """
         email = self.cleaned_data.get("best_email")
         name = self.cleaned_data.get("name")
         message = self.cleaned_data.get("message")
-        send_feedback_email.delay(email, name, message)
+        send_feedback_email.delay(email, name, message, lang)
         send_mail_to_owner.delay(email, name, message)
 

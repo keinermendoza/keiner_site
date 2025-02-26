@@ -27,14 +27,14 @@ from wagtail.admin import urls as wagtailadmin_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 urlpatterns = [
-    path('django-admin/', admin.site.urls),
+    path(settings.ADMIN_DJANGO_URL, admin.site.urls),
     path('account/', include('allauth.urls')),
-    path('old-blog/', include('blog.urls')),
+    # path('old-blog/', include('blog.urls')),
 
     path('rosetta/', include('rosetta.urls')),
     path("i18n/", include("django.conf.urls.i18n")),
 
-    path('admin/', include(wagtailadmin_urls)),
+    path(settings.ADMIN_URL, include(wagtailadmin_urls)),
     path('documents/', include(wagtaildocs_urls)),
 
     # Optional URL for including your own vanilla Django urls/views

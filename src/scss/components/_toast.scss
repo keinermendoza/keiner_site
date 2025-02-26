@@ -21,6 +21,7 @@
 .toast {
     font-size: 1rem;
     position: fixed;
+    z-index: 100;
     bottom: 0.5rem;
     right: 0.5rem;
     background-color: $clr-gray;

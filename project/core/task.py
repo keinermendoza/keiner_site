@@ -1,3 +1,4 @@
+from django.utils import translation 
 from django.core.mail import EmailMultiAlternatives, EmailMessage
 from django.template.loader import render_to_string
 from django.template import TemplateDoesNotExist
@@ -7,6 +8,9 @@ from celery import shared_task
 from django.contrib.auth import get_user_model
 from django.contrib.sites.models import Site
 import os
+from django.utils.translation import (
+    gettext_lazy as _,
+) 
 # @shared_task()
 # def send_feedback_email_task(email_address:str, message:str) -> None:
 #     """Sends an email when the feedback form has been submitted."""
@@ -28,17 +32,23 @@ import os
 #     )
 
 @shared_task()
-def send_feedback_email(email_address, name, message):
+def send_feedback_email(email_address, name, message, lang):
     """Sends an email when the feedback form has been submitted."""
-    subject = "Gracias por entrar en Contacto"
+
+    translation.activate(lang)
+
+    subject = _("Thank you for getting in touch")
     context = {
         'username':name,
         'message': message
     }
+
     html_message = render_to_string('core/mail/contact.html', context)
 
     message = EmailMessage(subject, html_message, os.getenv("EMAIL_HOST_USER"), [email_address])
     message.content_subtype = 'html' # this is required because there is no plain text email message
+
+   
     message.send()
 
 @shared_task()

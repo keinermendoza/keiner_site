@@ -14,6 +14,7 @@ class CodeBlock(blocks.StructBlock):
         ("bash", "Bash"),
         ("sql", "SQL"),
         ("django", "Django Template"),
+        ("react", "React")
     ]
 
     language = blocks.ChoiceBlock(choices=LANGUAGES, default="python", label=_("Language"))
@@ -38,15 +39,8 @@ class CodeBlock(blocks.StructBlock):
 
         return mark_safe(f"""
             <style>{estilo_css}</style>
-            <div class='block-codeblock' style="position: relative; overflow-x: auto; border-radius: 5px; padding: 10px; background: #f5f5f5;">
-                <!-- Botón de copiar con traducción -->
-                <button onclick="copyCode(this, '{copiar_texto}', '{copiado_texto}')" style="
-                    position: absolute; top: 10px; right: 10px;
-                    background: #000; color: #fff; border: none;
-                    padding: 5px 10px; font-size: 12px; cursor: pointer;
-                    border-radius: 5px;">📋 {copiar_texto}</button>
-
-                <!-- Código resaltado -->
+            <div class='block-codeblock'>
+                <button  onclick="copyCode(this, '{copiar_texto}', '{copiado_texto}')" class="button-copy-to-clipboard">📋 {copiar_texto}</button>
                 <pre class="codigo">{codigo_resaltado}</pre>
             </div>
 

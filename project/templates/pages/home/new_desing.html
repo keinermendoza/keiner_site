@@ -1,8 +1,16 @@
 <c-base>
-    <c-layouts.home.hero />
-    <c-layouts.home.features />
-    <c-layouts.home.projects />
-    {% comment %} <c-layouts.home.testimonials /> {% endcomment %}
-    <c-layouts.home.contact />
+    <c-slot name="meta">
+        <c-layouts.meta-base />
+    </c-slot>
+
+
+    <c-slot name="content">
+        <c-layouts.home.hero />
+        <c-layouts.home.features />
+        <c-layouts.home.projects />
+        {% comment %} <c-layouts.home.testimonials /> {% endcomment %}
+        <c-layouts.home.contact />
+    </c-slot>
+
 </c-base>
 

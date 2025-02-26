@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 19:16-0400\n"
-"PO-Revision-Date: 2025-02-16 19:17-0400\n"
+"POT-Creation-Date: 2025-02-22 10:28-0400\n"
+"PO-Revision-Date: 2025-02-22 10:34-0400\n"
 "Last-Translator:   <keinermendoza@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -869,6 +869,14 @@ msgstr ""
 msgid "Message"
 msgstr "Mensagem"
 
+#: core/task.py:40
+msgid "Thank you for getting in touch"
+msgstr "Obrigado por entrar em contato"
+
+#: core/views.py:83
+msgid "Email sent. Check your inbox."
+msgstr "Email enviado. Verifique sua caixa de entrada."
+
 #: my_templatetags/templatetags/get_navlinks.py:9
 #: templates/admin/change_form_trix_handle_images.html:20
 #: templates/cotton/layouts/footer.html:30
@@ -960,6 +968,38 @@ msgstr ""
 #: templates/admin/forms/helpers/toolbar.html:108
 msgid "Unlink"
 msgstr ""
+
+#: templates/core/mail/contact.html:101
+msgid "Hi"
+msgstr "Oi"
+
+#: templates/core/mail/contact.html:139
+msgid "I am Keiner Mendoza, I create custom websites and web applications."
+msgstr "Sou Keiner Mendoza, crio sites e aplicativos web personalizados."
+
+#: templates/core/mail/contact.html:176
+msgid ""
+"This email is an automatic reply to the following message you sent from my "
+"website"
+msgstr ""
+"Este e-mail é uma resposta automática à seguinte mensagem que você enviou do"
+" meu site:"
+
+#: templates/core/mail/contact.html:196
+msgid "Go to"
+msgstr "Ir para o"
+
+#: templates/core/mail/contact.html:241
+msgid "Feel free to make as many inquiries as you like."
+msgstr "Fique à vontade para fazer quantas consultas quiser."
+
+#: templates/core/mail/contact.html:258
+msgid ""
+"If the previous message was not sent by you, you can ignore it. Or, if you "
+"no longer wish to receive messages, you can report it through this email."
+msgstr ""
+"Se a mensagem anterior não foi enviada por você, pode ignorá-la. Ou, caso "
+"não queira mais receber mensagens, pode denunciá-la através deste e-mail."
 
 #: templates/cotton/forms/contact_form.html:18
 msgid "Send"

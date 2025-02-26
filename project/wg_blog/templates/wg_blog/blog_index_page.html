@@ -1,39 +1,45 @@
-{% load wagtailcore_tags i18n %}
+{% load i18n wagtailcore_tags wagtailmetadata_tags %}
 
 <c-base>
-    <c-layouts.section-wrapper extra_class="max-w-blog" >
+    <c-slot name="meta">
+        {% meta_tags %}
+    </c-slot>
 
-    <c-ui.breadcrumb current_href="#{{ page.slug }}" :current_text="page.title" />
+    <c-slot name="content">
+        <c-layouts.section-wrapper extra_class="max-w-blog" >
 
-    <h1 id="{{ page.slug }}">{{ page.title }}</h1>
-    <article class="blog-post">
+        <c-ui.breadcrumb current_href="#{{ page.slug }}" :current_text="page.title" />
 
-    {{ page.intro|richtext }}
-    </article>    
+        <h1 id="{{ page.slug }}">{{ page.title }}</h1>
+        <article class="blog-post">
 
-    
-    
-    <ul class="post-card-list">
-        <h2 class="post-card-list__title">{% trans "Posts" %}</h2>
-    
-        {% for post in posts %}
-        <li class="post-card">
-            <a href="{{ post.url }}">
-                <h3 class="post-card__title">{{post.title}}</h3>
-                <p class="post-card__excerpt">{{post.excerpt}}</p>
-                <p class="post-card__published" >{{ post.date }}</p>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+        {{ page.intro|richtext }}
+        </article>    
+
+        
+        
+        <ul class="post-card-list">
+            <h2 class="post-card-list__title">{% trans "Posts" %}</h2>
+        
+            {% for post in posts %}
+            <li class="post-card">
+                <a href="{{ post.url }}">
+                    <h3 class="post-card__title">{{post.title}}</h3>
+                    <p class="post-card__excerpt">{{post.excerpt}}</p>
+                    <p class="post-card__published" >{{ post.date }}</p>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
 
 
 
 
 
-    </c-layouts.section-wrapper>
-    <c-layouts.home.contact />
+        </c-layouts.section-wrapper>
 
+        <c-layouts.home.contact />
+    </c-slot>
 
 </c-base>
 

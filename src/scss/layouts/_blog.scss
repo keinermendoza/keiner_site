@@ -22,7 +22,7 @@
     }
 
     &__content {
-        p, ul, div, img, h2, h3 {
+        p, ul, div:not(.highlight), img, h2, h3 {
             margin-bottom: 1.25rem;
         }
 
@@ -31,6 +31,13 @@
         }
     }
     
+    a {
+        color: $clr-secondary;
+        font-weight: 500;
+        text-decoration: underline 1.75px;
+        text-underline-offset: 0.25em;
+    }
+
     ul, ol {
         padding-left: 2rem; // Ajusta según sea necesario
     }
@@ -84,5 +91,33 @@
 }
 
 .block-codeblock {
+    position: relative;
+    padding-top: 3.5rem !important;
+    padding-bottom: 0 !important;
+    border-radius: 5px;
+    padding: 10px;
+    background: hsl(0, 0%, 90%);
     font-size: $fs-p-mobile;
+
+    pre {
+        background-color: hsl(0, 0%, 90%) !important;
+    }
+
+    .codigo {
+        overflow-x: auto;
+    }
+
+    .button-copy-to-clipboard {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #000;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        font-size: 12px;
+        cursor: pointer;
+        border-radius: 5px;
+
+    }
 }

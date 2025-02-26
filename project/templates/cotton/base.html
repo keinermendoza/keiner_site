@@ -2,36 +2,14 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>Keiner Mendoza - {% block title %}{% endblock title %}</title>
 
     <meta http-equiv="x-ua-compatible" content="ie=edge,chrome=1">
     <link rel="canonical" href="https://keinermendoza.com/">
-    <meta name="title" content="Keiner Mendoza. Desarrollador Web">
-    <meta name="description" content="Keiner Mendoza es un desarrollador web fullstack, cubriendo todo el proceso de creación de sitios web de principio a fin, desde la creación del diseño hasta la implementación de la lógica de programación y la puesta en línea del sitio.">
-    
-    <meta property="og:title" content="Keiner Mendoza. Desarrollador Web">
-    <meta property="og:description" content="Keiner Mendoza es un desarrollador web fullstack, cubriendo todo el proceso de creación de sitios web de principio a fin, desde la creación del diseño hasta la implementación de la lógica de programación y la puesta en línea del sitio.">
-    
-    <meta property="og:site_name" content="keiner-mendoza-web-developer">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://keinermendoza.com/">
-    
-    
-
-    <meta charset="UTF-8">
     <meta name="author" description="keiner mendoza" >
-    <meta property="og:image" content="{% static 'core/images/preview-site.jpg' %}" />
 
+    {{meta}}
     
-    
-    <!-- Twitter -->
-    <meta name="twitter:title" content="Keiner Mendoza es un desarrollador web fullstack, cubriendo todo el proceso de creación de sitios web de principio a fin, desde la creación del diseño hasta la implementación de la lógica de programación y la puesta en línea del sitio." />
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://keinermendoza.com/">
-    <meta property="twitter:title" content="Keiner Mendoza. Desarrollador Web.">
-    <meta property="twitter:description" content="Keiner Mendoza es un desarrollador web fullstack, cubriendo todo el proceso de creación de sitios web de principio a fin, desde la creación del diseño hasta la implementación de la lógica de programación y la puesta en línea del sitio.">
-    <meta property="twitter:image" content="{% static 'core/images/preview-site.jpg' %}">
-
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'icons/apple-touch-icon.png' %}">
@@ -53,7 +31,7 @@
     <c-ui.toast/>
 
     <div class="flex-grow">
-        {{ slot }}
+        {{ content }}
     </div>
 
     <c-layouts.footer />

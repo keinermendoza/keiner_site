@@ -1,7 +1,16 @@
+{% load i18n %}
+{% get_current_language as lang %}
+
 <div bgcolor="#ffffff" text="#3b3f44" link="#696969" style="background-color:#ffffff">
     <a href="https://keinermendoza.com">
         <div align="center">
-            <img width="100%" height="auto"  style="max-width:600px" src="https://objectstorage.us-ashburn-1.oraclecloud.com/n/id8ztu6vhbyl/b/public-keiner-homesite/o/my-site-hero.png" class="" data-bit="">
+            {% if lang == "en" %}
+            <img width="100%" height="auto"  style="max-width:600px" src="https://objectstorage.us-ashburn-1.oraclecloud.com/n/id8ztu6vhbyl/b/public-keiner-homesite/o/meta-email-image-en.jpg" class="" data-bit="">
+            {% elif lang == "es" %}
+            <img width="100%" height="auto"  style="max-width:600px" src="https://objectstorage.us-ashburn-1.oraclecloud.com/n/id8ztu6vhbyl/b/public-keiner-homesite/o/meta-email-image-es.jpg" class="" data-bit="">
+            {% elif lang == "pt" %}
+            <img width="100%" height="auto"  style="max-width:600px" src="https://objectstorage.us-ashburn-1.oraclecloud.com/n/id8ztu6vhbyl/b/public-keiner-homesite/o/meta-email-image-pt.jpg" class="" data-bit="">
+            {% endif %}
         </div>
     </a>
 
@@ -88,8 +97,8 @@
                                                                                                 <td class="m_-5213953262133944624r10-c m_-5213953262133944624nl2go-default-textstyle" align="left" style="color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-top:15px;text-align:left"> 
                                                                                                     <div>
                                                                                                         <h1 class="m_-5213953262133944624default-heading1" style="color:#1f2d3d;font-family:arial,helvetica,sans-serif;font-size:36px;word-break:break-word;box-sizing:border-box;font-style:normal;letter-spacing:normal;margin:0px;padding:0px;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px">
-                                                                                                            <span style="font-size:28px">Hola {{username}}. Gracias por entrar en contacto.
-                                                                                                                
+                                                                                                            <span style="font-size:28px">
+                                                                                                              {% translate "Hi" %} {{username}}
                                                                                                             </span>
                         </h1>
                     </div> 
@@ -127,7 +136,7 @@
                                                                 <td class="m_-5213953262133944624r11-c m_-5213953262133944624nl2go-default-textstyle" align="left" style="color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px;text-align:left"> 
                                                                     <div>
                                                                         <h2 class="m_-5213953262133944624default-heading2" style="color:#1f2d3d;font-family:arial,helvetica,sans-serif;font-size:18px;word-break:break-word;box-sizing:border-box;font-style:normal;letter-spacing:normal;margin:0px;padding:0px;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px">
-                                                                            Soy Keiner Mendoza y desarrollo sitios web desde cero. Creo diseños personalizados, programo funciones según las necesidades de tu sitio y gestiono aspectos técnicos como la compra de dominio, certificado SSL, aprovisionamiento de hosting, envío de notificaciones automáticas y/o procesos en segundo plano (como este proceso).
+                                                                            {% translate "I am Keiner Mendoza, I create custom websites and web applications." %}
                                                                         </h2>
                                                                     </div> 
                                                                 </td> 
@@ -164,8 +173,8 @@
                                                                 <td class="m_-5213953262133944624r11-c m_-5213953262133944624nl2go-default-textstyle" align="left" style="color:#3b3f44;font-family:arial,helvetica,sans-serif;font-size:16px;line-height:1.5;word-break:break-word;padding-bottom:15px;padding-top:15px;text-align:left"> 
         <div>
         <h4 class="m_-5213953262133944624default-heading4" style="color:#1f2d3d;font-family:arial,helvetica,sans-serif;font-size:18px;word-break:break-word;box-sizing:border-box;font-style:normal;letter-spacing:normal;margin:auto;max-width:600px;padding:0px;text-decoration-style:initial;text-indent:0px;text-transform:none;white-space:normal;word-spacing:0px">
-            Este correo es una respuesta automática a la siguiente consulta realizada en mi sitio:
-
+        {% translate "This email is an automatic reply to the following message you sent from my website" %}
+        
     </h4>
     <p style="margin:0">&nbsp;
         
@@ -183,7 +192,8 @@
                     <tr>
                         <td height="18" align="center" valign="top" class="m_-5213953262133944624r14-i m_-5213953262133944624nl2go-default-textstyle" style="word-break:break-word;background-color:#1b1b1b;border-radius:4px;color:#ffffff;font-family:arial,helvetica,sans-serif;font-size:16px;font-style:normal;line-height:1.15;padding-bottom:12px;padding-left:15px;padding-right:15px;padding-top:12px;text-align:center"> 
                             <a href="https://keinermendoza.com" target="_blank" class="m_-5213953262133944624r15-r m_-5213953262133944624default-button" style="font-style:normal;font-weight:normal;line-height:1.15;text-decoration:none;word-break:break-word;word-wrap:break-word;display:block;color:#ffffff;font-family:arial,helvetica,sans-serif;font-size:16px"> 
-                                <span>Ir a keinermendoza.com
+                                <span>
+                                {% translate "Go to" %} keinermendoza.com
                                 </span>
                             </a> 
                         </td> 
@@ -228,12 +238,7 @@
                         <td align="center" valign="top" class="m_-5213953262133944624r19-i m_-5213953262133944624nl2go-default-textstyle" style="color:#3b3f44;font-family:arial,helvetica,sans-serif;word-break:break-word;font-size:18px;line-height:1.5;padding-top:15px;text-align:center"> 
                             <div>
                                 <p style="margin:0">
-                                    Próximamente 
-                                    <strong>
-                                    te escribiré desde este correo.
-                                    </strong>
-                                    <br>
-                                    Siéntete libre de hacer tantas preguntas como quieras.
+                                {% translate "Feel free to make as many inquiries as you like." %}
                                 </p>
                             </div> 
                         </td> 
@@ -250,7 +255,7 @@
                         <td align="center" valign="top" class="m_-5213953262133944624r19-i m_-5213953262133944624nl2go-default-textstyle" style="color:#3b3f44;font-family:arial,helvetica,sans-serif;word-break:break-word;font-size:18px;line-height:1.5;padding-top:15px;text-align:center"> 
                             <div>
                                 <p style="margin:0;font-size:14px">
-                                    Si el mensaje anterior no fue enviado por ti, puedes ignorarlo. O en caso de que no quieras recibir más mensajes, puedes reportarlo a través de este correo.
+                                {% translate "If the previous message was not sent by you, you can ignore it. Or, if you no longer wish to receive messages, you can report it through this email." %}
                                 </p>
                             </div> 
                         </td> 

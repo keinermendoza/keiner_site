@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 19:16-0400\n"
-"PO-Revision-Date: 2025-02-16 19:16-0400\n"
+"POT-Creation-Date: 2025-02-22 10:28-0400\n"
+"PO-Revision-Date: 2025-02-22 10:29-0400\n"
 "Last-Translator:   <keinermendoza@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -870,6 +870,14 @@ msgstr ""
 msgid "Message"
 msgstr "Mensaje"
 
+#: core/task.py:40
+msgid "Thank you for getting in touch"
+msgstr "Gracias por entrar en contacto"
+
+#: core/views.py:83
+msgid "Email sent. Check your inbox."
+msgstr "Email enviado. Revisa la bandeja de entrada de tu correo."
+
 #: my_templatetags/templatetags/get_navlinks.py:9
 #: templates/admin/change_form_trix_handle_images.html:20
 #: templates/cotton/layouts/footer.html:30
@@ -961,6 +969,39 @@ msgstr ""
 #: templates/admin/forms/helpers/toolbar.html:108
 msgid "Unlink"
 msgstr ""
+
+#: templates/core/mail/contact.html:101
+msgid "Hi"
+msgstr "Hola"
+
+#: templates/core/mail/contact.html:139
+msgid "I am Keiner Mendoza, I create custom websites and web applications."
+msgstr "Soy Keiner Mendoza, creo sitios y aplicaciones web personalizados."
+
+#: templates/core/mail/contact.html:176
+msgid ""
+"This email is an automatic reply to the following message you sent from my "
+"website"
+msgstr ""
+"Este correo es una respuesta automática al siguiente mensaje que enviaste "
+"desde mi sitio:"
+
+#: templates/core/mail/contact.html:196
+msgid "Go to"
+msgstr "Ir a "
+
+#: templates/core/mail/contact.html:241
+msgid "Feel free to make as many inquiries as you like."
+msgstr "Siéntete libre de hacer tantas consultas como quieras."
+
+#: templates/core/mail/contact.html:258
+msgid ""
+"If the previous message was not sent by you, you can ignore it. Or, if you "
+"no longer wish to receive messages, you can report it through this email."
+msgstr ""
+" Si el mensaje anterior no fue enviado por ti, puedes ignorarlo. O en caso "
+"de que no quieras recibir más mensajes, puedes reportarlo a través de este "
+"correo."
 
 #: templates/cotton/forms/contact_form.html:18
 msgid "Send"
