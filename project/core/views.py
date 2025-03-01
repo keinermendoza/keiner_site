@@ -31,9 +31,7 @@ from core.models import (
     Project
 )
 
-from blog.models import (
-    Post
-)
+
 def simple_home(request):
     form = ContactForm()
     return render(request, "pages/home/new_desing.html", {"form":form})
@@ -52,9 +50,9 @@ class HomePage(TemplateView):
         # return projects
         return Project.published.all()[:self.PROJECT_LIMIT]
     
-    def get_posts(self) -> QuerySet[Post]:
+    def get_posts(self):
         """last published posts"""
-        return Post.published.all()[:self.POST_LIMIT]
+        return []
     
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:

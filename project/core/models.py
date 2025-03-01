@@ -1,7 +1,7 @@
 
 import markdown
 from django.db import models
-from blog.models import Topic
+# from blog.models import Topic
 from django.core.exceptions import ValidationError
 from django.utils.safestring import mark_safe
 from .validators import for_published_status_require_image_not_none
@@ -63,7 +63,7 @@ class Project(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
-    tecnologies = models.ManyToManyField(Topic, related_name="projects", blank=True)
+    # tecnologies = models.ManyToManyField(Topic, related_name="projects", blank=True)
     is_public = models.BooleanField(default=False)
     video_demo = models.URLField(null=True, blank=True)
     

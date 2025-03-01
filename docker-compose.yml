@@ -17,6 +17,7 @@ services:
       - ./.env.dev
     depends_on:
       - db
+      - redis
   
   db:
     image: postgres:14
@@ -29,13 +30,8 @@ services:
     ports:
       - 5431:5432
 
-  rabbitmq:
-    image: rabbitmq:3.13-management
-    # ports:
-      # - 5672:5672
-    restart: unless-stopped
-    depends_on:
-      - db
+  redis:
+    image: redis:7-alpine
   
   celery:
     build:
@@ -48,7 +44,7 @@ services:
       - ./.env.dev
     restart: unless-stopped
     depends_on:
-      - rabbitmq
+      - redis
       - web
 
 volumes:

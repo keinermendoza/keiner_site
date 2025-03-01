@@ -15,16 +15,11 @@ services:
       - ./.env.prod
     restart: unless-stopped
     depends_on:
-      - rabbitmq
+      - redis
       - db
 
-  rabbitmq:
-    image: rabbitmq:3.13-management
-    ports:
-      - 5672:5672
-    restart: unless-stopped
-    depends_on:
-      - db
+  redis:
+    image: redis:7-alpine
   
   celery:
     image: keinermendoza/keinerdev:v1.2.5
@@ -33,7 +28,7 @@ services:
       - ./.env.prod
     restart: unless-stopped
     depends_on:
-      - rabbitmq
+      - redis
       - web
     
   db:
