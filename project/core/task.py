@@ -1,3 +1,4 @@
+import json
 from django.utils import translation 
 from django.core.mail import EmailMultiAlternatives, EmailMessage
 from django.template.loader import render_to_string
@@ -52,10 +53,30 @@ def send_feedback_email(email_address, name, message, lang):
     message.send()
 
 @shared_task()
-def send_mail_to_owner(email_address, name, message):
+def send_mail_to_owner(email_address, name, message, serialized_request):
+
+    body_message = f"""
+        Responder a: {email_address}
+        Mensaje: {message}
+        
+        Request information:
+        USER: {serialized_request['user']}
+
+        GET: {json.dumps(serialized_request['get'], indent=4) or "No GET data"}
+
+        POST: {json.dumps(serialized_request['post'], indent=4) or "No POST data"}
+
+        FILES: {json.dumps(serialized_request['files'], indent=4) or "No FILES data"}
+
+        COOKIES: {json.dumps(serialized_request['cookies'], indent=4) or "No cookie data"}
+
+        META:
+        {json.dumps(serialized_request['meta'], indent=4)}
+            """.strip()
+
     send_mail(
         f"Recibiste un mensaje de {name}",
-        f"Responder a: {email_address}\n\n{message}",
+        body_message,
         os.getenv("EMAIL_HOST_USER"),
         [os.getenv("EMAIL_OWNER")],
         fail_silently=False,

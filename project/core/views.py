@@ -17,6 +17,7 @@ from django.utils.translation import (
     gettext as _,
 ) 
 
+from .utils import serialize_request
 from .mock import projects
 
 from django_htmx.http import trigger_client_event
@@ -102,7 +103,8 @@ class ContactFormPartialView(FormView):
         form = self.get_form()
         if form.is_valid():
             lang = get_language()
-            form.send_email(lang)
+            serialized_request = serialize_request(request)
+            form.send_email(lang, serialized_request)
             return self.form_valid(form)
         else:
             if "username" in form.errors:

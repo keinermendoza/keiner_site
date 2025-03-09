@@ -8,8 +8,6 @@ from .task import (
     send_mail_to_owner
 )
 
-
-
 class ContactForm(forms.Form):
     # https://docs.djangoproject.com/en/5.0/topics/forms/?source=post_page-----5f867f25f153--------------------------------#reusable-form-templates
     template_name = "core/forms/base_form.html"
@@ -56,7 +54,7 @@ class ContactForm(forms.Form):
             self.add_error("username", "stop the bot")
         return cleaned_data
     
-    def send_email(self, lang) -> None:
+    def send_email(self, lang, serialized_request) -> None:
         """
         using celery task for send emails
         """
@@ -64,5 +62,5 @@ class ContactForm(forms.Form):
         name = self.cleaned_data.get("name")
         message = self.cleaned_data.get("message")
         send_feedback_email.delay(email, name, message, lang)
-        send_mail_to_owner.delay(email, name, message)
+        send_mail_to_owner.delay(email, name, message, serialized_request)
 
