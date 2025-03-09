@@ -1,6 +1,8 @@
 from typing import Any
+from re import findall
 from django import forms
 from django.utils.translation import gettext_lazy as _
+from django.core.exceptions import ValidationError
 from .task import (
     send_feedback_email,
     send_mail_to_owner
@@ -34,6 +36,13 @@ class ContactForm(forms.Form):
         required=False,
         widget=forms.HiddenInput()    
     )
+
+    def clean_message(self):
+        if message := self.cleaned_data.get("message", None):
+            
+            if len(findall(r"://", message)):
+                self.add_error("message", _("Sorry, you cannot include links in the message"))
+            return message
     
     def clean(self) -> dict[str, Any]:
         """
